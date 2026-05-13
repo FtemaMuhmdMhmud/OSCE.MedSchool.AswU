@@ -1,0 +1,1661 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OSCE Neurology - دفعة 12 & 13 | مرتب بالدكتور + إجابات</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --deep: #0d1f3c;
+  --blue: #1a3a6b;
+  --accent: #2563eb;
+  --gold: #f59e0b;
+  --teal: #0d9488;
+  --red: #dc2626;
+  --green: #16a34a;
+  --light: #e2e8f0;
+  --lighter: #f8fafc;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #cbd5e1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Cairo', 'Tajawal', sans-serif;
+  background: var(--lighter);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #1d4ed8 100%);
+  color: white;
+  padding: 40px 20px 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(37,99,235,0.3), transparent 60%),
+              radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.15), transparent 50%);
+}
+.header h1 { font-size: 2rem; font-weight: 900; position: relative; letter-spacing: -0.5px; }
+.header h1 span { color: var(--gold); }
+.header p { margin-top: 8px; font-size: 0.95rem; opacity: 0.85; position: relative; }
+
+/* NAV TABS */
+.tabs {
+  display: flex; gap: 0;
+  background: white;
+  border-bottom: 2px solid var(--border);
+  overflow-x: auto;
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.tab-btn {
+  padding: 14px 20px;
+  border: none; background: none;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.9rem; font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.tab-btn:hover { background: #f1f5f9; color: var(--accent); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: #eff6ff; }
+
+/* MAIN CONTENT */
+.container { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* DOCTOR SECTION */
+.doctor-section {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  border: 1px solid var(--border);
+}
+
+.doctor-header {
+  padding: 18px 24px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.doctor-header:hover { background: #f8fafc; }
+
+.doctor-avatar {
+  width: 46px; height: 46px;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; font-weight: 900;
+  color: white; flex-shrink: 0;
+}
+
+.doctor-info { flex: 1; }
+.doctor-name { font-size: 1.1rem; font-weight: 700; }
+.doctor-cases { font-size: 0.8rem; color: var(--muted); margin-top: 2px; }
+.chevron { color: var(--muted); transition: transform 0.3s; font-size: 1.2rem; }
+.doctor-header.open .chevron { transform: rotate(180deg); }
+
+.doctor-body { display: none; }
+.doctor-body.open { display: block; }
+
+/* CASE CARD */
+.case-card {
+  border-top: 1px solid #f1f5f9;
+  padding: 0;
+}
+.case-title {
+  padding: 14px 24px;
+  background: #f8fafc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--blue);
+  border-bottom: 1px solid #e2e8f0;
+  display: flex; align-items: center; gap: 8px;
+}
+.case-badge {
+  background: var(--accent);
+  color: white;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+}
+
+/* QUESTION */
+.question-block {
+  padding: 18px 24px;
+  border-bottom: 1px dashed #e2e8f0;
+}
+.question-block:last-child { border-bottom: none; }
+
+.question-text {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex; gap: 10px; align-items: flex-start;
+}
+.q-num {
+  background: var(--accent);
+  color: white;
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.8rem; font-weight: 700;
+  flex-shrink: 0; margin-top: 1px;
+}
+
+.answer-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: #166534;
+}
+.answer-box strong { color: #14532d; }
+
+.toggle-answer {
+  background: none; border: 1px solid var(--teal);
+  color: var(--teal);
+  padding: 5px 14px;
+  border-radius: 6px;
+  font-family: 'Cairo', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: all 0.2s;
+}
+.toggle-answer:hover { background: var(--teal); color: white; }
+
+/* COLORS */
+.color-1 { background: linear-gradient(135deg, #1e40af, #3b82f6); }
+.color-2 { background: linear-gradient(135deg, #065f46, #10b981); }
+.color-3 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
+.color-4 { background: linear-gradient(135deg, #b45309, #f59e0b); }
+.color-5 { background: linear-gradient(135deg, #be123c, #f43f5e); }
+.color-6 { background: linear-gradient(135deg, #0e7490, #22d3ee); }
+
+/* LEGEND */
+.legend {
+  background: white; border-radius: 12px; padding: 16px 20px;
+  margin-bottom: 24px;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.legend h3 { font-size: 0.9rem; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+.legend-items { display: flex; flex-wrap: wrap; gap: 8px; }
+.legend-item {
+  display: flex; align-items: center; gap: 6px;
+  background: #f8fafc; border: 1px solid var(--border);
+  padding: 4px 10px; border-radius: 20px;
+  font-size: 0.8rem;
+}
+.legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+
+/* NOTE BOX */
+.note-box {
+  background: #fffbeb; border: 1px solid #fde68a;
+  border-radius: 10px; padding: 12px 16px;
+  font-size: 0.85rem; color: #78350f;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* TABLE */
+.compare-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.85rem; margin: 8px 0;
+}
+.compare-table th {
+  background: var(--accent); color: white;
+  padding: 8px 12px; text-align: right;
+}
+.compare-table td { padding: 8px 12px; border-bottom: 1px solid #e2e8f0; }
+.compare-table tr:nth-child(even) td { background: #f8fafc; }
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.4rem; }
+  .container { padding: 16px 10px 50px; }
+  .doctor-header { padding: 14px 16px; }
+  .question-block { padding: 14px 16px; }
+  .case-title { padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🧠 OSCE Neurology <span>بالإجابات</span></h1>
+  <p>دفعة 12 (شفوي) + دفعة 13 (OSCE) · مرتب على حسب الدكتور</p>
+</div>
+
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('d12')">📋 دفعة 12 - شفوي</button>
+  <button class="tab-btn" onclick="showTab('d13-sabir')">د. مصطفى صابر</button>
+  <button class="tab-btn" onclick="showTab('d13-shoeib')">د. أحمد شعيب</button>
+  <button class="tab-btn" onclick="showTab('d13-waris')">د. أحمد عبد الوارث</button>
+  <button class="tab-btn" onclick="showTab('d13-bostawi')">د. بسطاوي</button>
+  <button class="tab-btn" onclick="showTab('d13-others')">دكاترة أخرى</button>
+</div>
+
+<!-- ==================== دفعة 12 ==================== -->
+<div id="d12" class="tab-panel active">
+<div class="container">
+
+<div class="note-box">
+  📌 <strong>دفعة 12 - شفوي نيورو:</strong> الأسئلة دي اتسألت في الشفوي، مش OSCE منظم. الدكاترة: د. أحمد شعيب، د. عبير، د. بسطاوي، د. أحمد عبد الوارث، د. زينب سيكاتري.
+</div>
+
+<!-- د. أحمد شعيب - دفعة 12 -->
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-1">ش</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. أحمد شعيب</div>
+      <div class="doctor-cases">دفعة 12 - شفوي نيورو</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+
+    <div class="case-card">
+      <div class="case-title">🧠 أسئلة متكررة من د. شعيب</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Causes of hypertonia & hypotonia — Compare spasticity vs rigidity — Compare sensory vs motor ataxia — Muscle doing abduction of shoulder</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Causes of Hypertonia:</strong><br>
+          • <strong>Spasticity (UMNL):</strong> Stroke, MS, CP, Spinal cord injury<br>
+          • <strong>Rigidity (Extrapyramidal):</strong> Parkinson's, Parkinsonism, Wilson's disease<br><br>
+          <strong>Causes of Hypotonia:</strong> LMNL (PN, AHC disease, myopathy), Cerebellar disease, Shock (early UMNL)<br><br>
+          <strong>Spasticity vs Rigidity:</strong><br>
+          • Spasticity: UMNL → velocity-dependent ↑ tone, "clasp-knife" phenomenon, affects flexors in UL & extensors in LL, hyperreflexia, clonus<br>
+          • Rigidity: Extrapyramidal → not velocity-dependent, "lead pipe" or "cog-wheel" (if tremor superimposed), all directions, normal reflexes<br><br>
+          <strong>Sensory vs Motor Ataxia:</strong><br>
+          • Sensory ataxia: Loss of proprioception → wide-based gait, Romberg +ve, worse in dark/eyes closed, causes: PN, posterior column lesion (tabes dorsalis, B12 def)<br>
+          • Motor (Cerebellar) ataxia: Cerebellar lesion → wide-based REELING gait, Romberg -ve, no improvement with eye closure, dysmetria, dysdiadochokinesia, intention tremor<br><br>
+          <strong>Abduction of shoulder:</strong> Deltoid (C5) – primary abductor first 15°: supraspinatus
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Examine deep reflex — Types of hypertonia — Segment of ankle & knee</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Deep reflexes:</strong><br>
+          • Biceps C5,6 | Brachioradialis C5,6 | Triceps C7,8 | Knee L3,4 | Ankle S1,2<br><br>
+          <strong>Technique:</strong> Relax patient → use tendon hammer → compare sides → grade 0-4 (0=absent, 2=normal, 4=clonus)<br><br>
+          <strong>Types of Hypertonia:</strong><br>
+          1. Spasticity (UMNL) – clasp-knife, velocity-dependent<br>
+          2. Rigidity (Extrapyramidal) – lead-pipe / cog-wheel<br>
+          3. Paratonia (Gegenhalten) – frontal lobe lesion<br>
+          4. Dystonia – sustained muscle contractions<br><br>
+          <strong>Ankle reflex:</strong> S1, S2 | <strong>Knee reflex:</strong> L3, L4
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Examine CN 9,10,11,12 — Difference between absence seizures & psychomotor fits (complex partial)</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>CN 9 (Glossopharyngeal):</strong> Gag reflex (afferent), taste posterior 1/3 tongue, sensation pharynx<br>
+          <strong>CN 10 (Vagus):</strong> Gag reflex (efferent), uvula midline, palate elevation, voice quality (nasal?), swallowing<br>
+          <strong>CN 11 (Accessory):</strong> Sternomastoid power (turn head against resistance), Trapezius (shrug shoulders)<br>
+          <strong>CN 12 (Hypoglossal):</strong> Tongue protrusion (deviates to lesion side in LMNL), wasting, fasciculations<br><br>
+          <strong>Absence vs Complex Partial Seizures:</strong>
+          <table class="compare-table">
+            <tr><th>Feature</th><th>Absence</th><th>Complex Partial (Psychomotor)</th></tr>
+            <tr><td>Duration</td><td>5-20 sec</td><td>30 sec - 5 min</td></tr>
+            <tr><td>Aura</td><td>No</td><td>Yes (epigastric rising, déjà vu)</td></tr>
+            <tr><td>Automatisms</td><td>Minimal</td><td>Prominent (lip-smacking, picking)</td></tr>
+            <tr><td>Post-ictal</td><td>No</td><td>Confusion, drowsiness</td></tr>
+            <tr><td>EEG</td><td>3 Hz spike-wave</td><td>Temporal lobe activity</td></tr>
+            <tr><td>Origin</td><td>Generalized</td><td>Temporal/limbic lobe</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Brown-Séquard syndrome — What is it? What happens in it?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Brown-Séquard Syndrome = Hemisection of spinal cord</strong><br><br>
+          <strong>On side of lesion (ipsilateral):</strong><br>
+          • UMNL below lesion (spastic paresis, hyperreflexia, Babinski)<br>
+          • Loss of proprioception, vibration, fine touch (posterior column)<br><br>
+          <strong>On opposite side (contralateral):</strong><br>
+          • Loss of pain & temperature (spinothalamic – crosses at cord level)<br>
+          • Normal motor & proprioception<br><br>
+          <strong>Causes:</strong> Trauma (most common), MS, tumor, cord infarction, transverse myelitis
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">5</span>Internuclear ophthalmoplegia (INO) — What is it and what do we find?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>INO = Lesion of Medial Longitudinal Fasciculus (MLF)</strong><br><br>
+          <strong>Clinical features:</strong><br>
+          • Ipsilateral eye: fails to adduct on lateral gaze<br>
+          • Contralateral eye: abducts with nystagmus<br>
+          • Convergence: usually preserved (unless bilateral)<br><br>
+          <strong>Cause in young adults: Multiple Sclerosis (MS)</strong><br>
+          Cause in elderly: Brainstem vascular disease<br><br>
+          <strong>Pathology:</strong> MLF connects CN6 nucleus to contralateral CN3 nucleus, coordinating conjugate horizontal gaze
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">6</span>Examine reflexes of upper and lower limbs — Normal findings vs with Babinski</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Upper limb reflexes:</strong><br>
+          • Biceps (C5,6): flex elbow slightly, finger on biceps tendon, strike finger<br>
+          • Triceps (C7,8): flex elbow 90°, strike triceps tendon above olecranon<br>
+          • Brachioradialis/Supinator (C5,6): strike styloid process of radius<br><br>
+          <strong>Lower limb reflexes:</strong><br>
+          • Knee (L3,4): patient sitting, strike patellar tendon<br>
+          • Ankle (S1,2): dorsiflex foot, strike Achilles tendon<br><br>
+          <strong>Babinski sign:</strong> Stroke lateral sole of foot → extensor plantar (dorsiflexion of big toe + fanning) = UMNL
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- د. عبير - دفعة 12 -->
+<div class="doctor-section">
+  <div class="doctor-header" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-2">ع</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. عبير</div>
+      <div class="doctor-cases">دفعة 12 - شفوي نيورو</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body">
+    <div class="case-card">
+      <div class="case-title">💊 أسئلة د. عبير</div>
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Muscle status + deep reflex in lower limbs with centers — Muscle wasting causes — UMNL with wasting?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Muscle tone grading:</strong> Normal / Hypotonia / Hypertonia (spastic/rigid)<br><br>
+          <strong>Deep reflexes:</strong> Knee L3,4 | Ankle S1,2 (ankle most commonly lost in PN)<br><br>
+          <strong>Causes of muscle wasting:</strong><br>
+          • LMNL: LMN lesion, peripheral neuropathy, myopathy, disuse atrophy<br>
+          • <strong>UMNL:</strong> Wasting can occur LATE (disuse atrophy after months/years) – NOT early feature<br><br>
+          <strong>Causes of lost ankle reflex:</strong><br>
+          • Peripheral neuropathy (most common)<br>
+          • S1 radiculopathy<br>
+          • Elderly (normal age-related loss)<br>
+          • Diabetes, hypothyroidism
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Examine facial nerve — UMNL vs LMNL facial appearance — Parasympathetic fibers of facial nerve</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Examination of facial nerve (motor):</strong><br>
+          Upper: raise eyebrows, close eyes tight, wrinkle forehead<br>
+          Lower: show teeth, puff cheeks, close mouth against resistance<br><br>
+          <strong>UMNL (Central) facial palsy:</strong><br>
+          • ONLY lower face affected (forehead spared)<br>
+          • Reason: upper face has BILATERAL cortical representation<br>
+          • Contralateral to lesion<br><br>
+          <strong>LMNL (Peripheral/Bell's palsy):</strong><br>
+          • WHOLE hemifacial palsy (upper AND lower)<br>
+          • Ipsilateral<br>
+          • May have: hyperacusis (stapedius), loss of taste (anterior 2/3 tongue), dry eye<br><br>
+          <strong>Parasympathetic fibers of facial nerve:</strong><br>
+          • Greater Superficial Petrosal Nerve (GSPN) → lacrimal glands<br>
+          • Chorda tympani → submandibular & sublingual salivary glands
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Bad prognostic factors of MS — Types of MS — Predisposing factors of MS</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Bad prognostic factors of MS:</strong><br>
+          • Male sex, onset > 40 years, high lesion load on MRI<br>
+          • Motor/cerebellar symptoms at onset (vs sensory)<br>
+          • Frequent relapses, incomplete recovery<br>
+          • Primary progressive course<br><br>
+          <strong>Types of MS (courses):</strong><br>
+          1. Relapsing-Remitting (RRMS) – 85% – most common<br>
+          2. Secondary Progressive (SPMS) – RRMS that becomes progressive<br>
+          3. Primary Progressive (PPMS) – 10-15% – progressive from onset<br>
+          4. <strong>Benign MS</strong> – mild, limited disability after 15 years<br><br>
+          <strong>Predisposing factors:</strong><br>
+          • HLA-DR2 (DRB1*1501)<br>
+          • Female > Male (2:1), EBV infection history<br>
+          • Vitamin D deficiency, smoking, high latitude (less sun)<br>
+          • Age 20-40 years
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Crossed hemiplegia — What is it? Level?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Crossed (Alternating) Hemiplegia = Brainstem lesion</strong><br><br>
+          <strong>Pattern:</strong><br>
+          • LMNL of cranial nerve on SAME side as lesion<br>
+          • UMNL of body on OPPOSITE side<br><br>
+          <strong>Levels:</strong><br>
+          • <strong>Midbrain:</strong> CN3 palsy + contralateral hemiplegia (Weber's syndrome)<br>
+          • <strong>Pons:</strong> CN6/7 palsy + contralateral hemiplegia (Millard-Gubler)<br>
+          • <strong>Medulla:</strong> CN12 palsy + contralateral hemiplegia<br>
+          • <strong>Lateral medullary syndrome (Wallenberg):</strong> CN9,10,11 + ipsilateral face pain/temp loss + contralateral body pain/temp loss + ataxia + Horner's
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- د. بسطاوي - دفعة 12 -->
+<div class="doctor-section">
+  <div class="doctor-header" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-3">ب</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. بسطاوي</div>
+      <div class="doctor-cases">دفعة 12 - شفوي نيورو</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body">
+    <div class="case-card">
+      <div class="case-title">🧠 أسئلة د. بسطاوي</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Coordination examination — Ataxic or not — Cause of ataxia — Difference sensory vs cerebellar ataxia — Romberg test</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Coordination tests:</strong><br>
+          UL: Finger-nose test (intention tremor?), Dysdiadochokinesia (rapid alternating movements), Rebound test<br>
+          LL: Heel-shin test, Heel-to-toe gait<br><br>
+          <strong>Cerebellar signs (DANISH):</strong><br>
+          D-Dysdiadochokinesia | A-Ataxia | N-Nystagmus | I-Intention tremor | S-Slurred speech | H-Hypotonia<br><br>
+          <strong>Sensory vs Cerebellar Ataxia:</strong>
+          <table class="compare-table">
+            <tr><th>Feature</th><th>Sensory</th><th>Cerebellar</th></tr>
+            <tr><td>Romberg</td><td>Positive ✓</td><td>Negative</td></tr>
+            <tr><td>Eyes closed</td><td>Worse</td><td>No change</td></tr>
+            <tr><td>Gait</td><td>Stamps feet</td><td>Reeling, wide-base</td></tr>
+            <tr><td>Cause</td><td>Posterior column/PN</td><td>Cerebellar lesion</td></tr>
+            <tr><td>Nystagmus</td><td>No</td><td>Yes</td></tr>
+          </table>
+          <br>
+          <strong>Romberg test:</strong> Stand with feet together → close eyes → positive if falls/sways = proprioception loss
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>3 criteria of Parkinson — Red flags of headache — Rebound test</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>3 Cardinal Features of Parkinson's:</strong><br>
+          1. <strong>Resting tremor</strong> (4-6 Hz, pill-rolling)<br>
+          2. <strong>Rigidity</strong> (lead pipe/cog-wheel)<br>
+          3. <strong>Bradykinesia</strong> (slowness of movement)<br>
+          + Postural instability (4th feature)<br><br>
+          <strong>Red Flags of Headache (SNOOP4):</strong><br>
+          • <strong>S</strong>ystemic symptoms (fever, weight loss)<br>
+          • <strong>N</strong>eurological signs<br>
+          • <strong>O</strong>nset sudden (thunderclap = SAH until proven otherwise)<br>
+          • <strong>O</strong>nset >50 years<br>
+          • <strong>P</strong>ositional change (worse lying down = ↑ICP)<br>
+          • <strong>P</strong>rogressive worsening<br>
+          • <strong>P</strong>apilledema<br>
+          • <strong>P</strong>recipitated by valsalva<br><br>
+          <strong>Rebound test:</strong> Flex elbow against resistance → release → normal: stops | Cerebellar: hits chest (failure of check reflex)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Good prognostic factors of MS — Lamotrigine: what is it, use, side effects — Beevor's sign</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Good prognostic factors of MS:</strong><br>
+          • Female, young onset, sensory symptoms at onset<br>
+          • RRMS course, complete recovery from attacks<br>
+          • Few lesions on MRI, optic neuritis at onset<br><br>
+          <strong>Lamotrigine:</strong><br>
+          • <strong>Mechanism:</strong> Sodium channel blocker → reduces glutamate release<br>
+          • <strong>Uses:</strong> Epilepsy (focal & generalized), Bipolar disorder<br>
+          • <strong>Side effects:</strong> Steven-Johnson syndrome (serious!), dizziness, diplopia, rash<br>
+          • In <strong>pregnancy:</strong> Safest AED option (though requires monitoring) – preferred over valproate due to teratogenicity<br><br>
+          <strong>Beevor's sign:</strong> Patient lies flat, lifts head → navel moves UPWARD = lower rectus abdominis weakness (T9-10 lesion at T10 level)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- د. أحمد عبد الوارث - دفعة 12 -->
+<div class="doctor-section">
+  <div class="doctor-header" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-4">و</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. أحمد عبد الوارث</div>
+      <div class="doctor-cases">دفعة 12 - شفوي نيورو</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body">
+    <div class="case-card">
+      <div class="case-title">🔬 أسئلة د. أحمد عبد الوارث</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Deep reflexes of lower limbs — Centers — Causes of absent knee reflex — Reflex of chorea — Why?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>LL Deep Reflexes:</strong><br>
+          • Knee: L3, L4 (femoral nerve)<br>
+          • Ankle: S1, S2 (sciatic → tibial nerve)<br>
+          • Plantar: S1, S2<br><br>
+          <strong>Causes of absent knee reflex:</strong><br>
+          • Peripheral neuropathy (most common – diabetes, GBS, B12 def)<br>
+          • L3/L4 radiculopathy<br>
+          • LMN lesion (AHC disease, PN)<br>
+          • Tabes dorsalis<br>
+          • Hypothyroidism (slow relaxation), elderly<br><br>
+          <strong>Reflex in Chorea = PENDULAR REFLEX</strong><br>
+          Why? Loss of muscle tone → after knee jerk, leg swings like a pendulum multiple times. Reason: hypotonia from loss of striatal control of γ-motor neurones
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Examine power of upper limb — Names of hand muscles — Difference between UMNL & LMNL (anatomy & pathology)</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Muscle power grading (MRC):</strong><br>
+          0 = No contraction | 1 = Flicker | 2 = Movement gravity eliminated | 3 = Against gravity | 4 = Against resistance | 5 = Normal<br><br>
+          <strong>Hand muscles:</strong><br>
+          • Thenar (T1): Abductor pollicis brevis, Flexor pollicis brevis, Opponens pollicis – MEDIAN nerve<br>
+          • Hypothenar (T1): Abductor digiti minimi, Flexor digiti minimi – ULNAR nerve<br>
+          • Lumbricals 1&2: MEDIAN | Lumbricals 3&4 + Interossei: ULNAR<br><br>
+          <strong>UMNL vs LMNL:</strong>
+          <table class="compare-table">
+            <tr><th>Feature</th><th>UMNL</th><th>LMNL</th></tr>
+            <tr><td>Lesion site</td><td>Cortex → cord</td><td>Anterior horn → end-organ</td></tr>
+            <tr><td>Tone</td><td>Increased (spastic)</td><td>Decreased (flaccid)</td></tr>
+            <tr><td>Reflexes</td><td>Hyperreflexia</td><td>Hyporeflexia/absent</td></tr>
+            <tr><td>Babinski</td><td>Positive</td><td>Negative</td></tr>
+            <tr><td>Wasting</td><td>Mild (late, disuse)</td><td>Severe (early)</td></tr>
+            <tr><td>Fasciculations</td><td>No</td><td>Yes (AHC disease)</td></tr>
+            <tr><td>Clonus</td><td>Present</td><td>Absent</td></tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Optic nerve examination — Light & accommodation reflexes — Color vision test — Differentiating Parkinson's disease vs Parkinson's from arteriosclerosis</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Optic nerve exam:</strong><br>
+          • Visual acuity (Snellen chart)<br>
+          • Visual fields (confrontation)<br>
+          • Fundoscopy (optic disc – pallor? papilledema?)<br>
+          • Pupil: direct & consensual light reflex, accommodation (PERRLA)<br>
+          • Color vision: Ishihara plates<br><br>
+          <strong>Light reflex arc:</strong><br>
+          Afferent: CN2 → pretectal nucleus → bilateral Edinger-Westphal nucleus<br>
+          Efferent: CN3 (parasympathetic) → ciliary ganglion → constrictor pupillae<br><br>
+          <strong>PD vs Vascular Parkinsonism:</strong><br>
+          • PD: Insidious, resting tremor prominent, responds to L-dopa, asymmetric onset<br>
+          • Vascular: "Lower body" parkinsonism, gait difficulty > tremor, stepwise progression, doesn't respond well to L-dopa, MRI shows ischemic changes
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Complications of subarachnoid hemorrhage — Complication is infarction due to vasospasm</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Complications of SAH:</strong><br>
+          • <strong>Rebleeding</strong> (peak 24-72h) – most fatal<br>
+          • <strong>Vasospasm → cerebral infarction</strong> (most common serious complication, days 4-14)<br>
+          • Hydrocephalus (obstructive or communicating)<br>
+          • Hyponatremia (SIADH or cerebral salt wasting)<br>
+          • Seizures<br>
+          • Cardiac arrhythmias (neurogenic)<br><br>
+          <strong>Treatment of vasospasm:</strong> Nimodipine (calcium channel blocker), Triple H therapy (Hypertension, Hemodilution, Hypervolemia)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- د. زينب سيكاتري - دفعة 12 -->
+<div class="doctor-section">
+  <div class="doctor-header" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-5">ز</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. زينب سيكاتري</div>
+      <div class="doctor-cases">دفعة 12 - شفوي نيورو</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body">
+    <div class="case-card">
+      <div class="case-title">🧬 أسئلة د. زينب سيكاتري</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Reflexes of upper limb — Tone of lower limb — Examine CN 9,10,11,12 — Complications of SAH — Brown-Séquard — Inverted supinator reflex — Red flags of headache</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Inverted Supinator Reflex:</strong><br>
+          • Occurs when C5 lesion is at that level (level lesion)<br>
+          • Tap brachioradialis → FINGER FLEXION instead of forearm supination<br>
+          • Mechanism: C5,6 arc disrupted (absent supination) + UMNL below (hyperactive C8 = finger flexors)<br>
+          • Localizes lesion to C5/C6<br><br>
+          <strong>Hakim-Adams Syndrome (Normal Pressure Hydrocephalus):</strong><br>
+          Classic TRIAD: <strong>Wet, Wobbly, Wacky</strong><br>
+          • Urinary incontinence<br>
+          • Gait ataxia (magnetic gait)<br>
+          • Dementia<br>
+          Reversible if treated (VP shunt) – LP test (CSF drainage improves gait)<br><br>
+          <em>(Other questions covered above under other doctors)</em>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<!-- ==================== د. مصطفى صابر ==================== -->
+<div id="d13-sabir" class="tab-panel">
+<div class="container">
+
+<div class="note-box">
+  🏥 <strong>د. مصطفى صابر:</strong> حالاته الأساسية Parkinson's & Parkinsonism. بيحب أوي الأدوية وآليات عملها والآثار الجانبية. لازم تحفظ المحاضرة بالظبط.
+</div>
+
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-1">ص</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. مصطفى صابر</div>
+      <div class="doctor-cases">دفعة 13 OSCE · Parkinson's / Parkinsonism</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Parkinson's</span> أسئلة متكررة جداً</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Examine deep reflexes + plantar reflex — What's the findings?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>In Parkinson's disease:</strong><br>
+          • Deep reflexes: <strong>Normal</strong> (PD is extrapyramidal, not pyramidal → no hyperreflexia)<br>
+          • Plantar reflex: <strong>Flexor (normal)</strong> – no Babinski sign<br>
+          • ⚠️ Important: Positive Babinski → suggests parkinsonism NOT idiopathic PD (vascular, MSA, etc.)<br><br>
+          <strong>Planter reflex reporting:</strong><br>
+          Normal = "plantar flexion" (NOT "negative Babinski")<br>
+          Abnormal = "extensor plantar / positive Babinski sign"<br>
+          Equivocal = "no clear response"
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Side effects of Dopamine agonists — Treatment of dystonia</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Dopamine agonists (Pramipexole, Ropinirole, Cabergoline):</strong><br>
+          Side effects:<br>
+          • Nausea, vomiting (most common)<br>
+          • Orthostatic hypotension<br>
+          • Hallucinations, psychosis (especially in elderly)<br>
+          • Impulse control disorders (gambling, hypersexuality)<br>
+          • Daytime somnolence, sleep attacks<br>
+          • Peripheral edema<br><br>
+          <strong>Treatment of Dystonia:</strong><br>
+          1st line: <strong>Botulinum toxin injection</strong> (focal dystonia)<br>
+          Oral: Anticholinergics (trihexyphenidyl), Baclofen, Clonazepam, Tetrabenazine<br>
+          Surgical: Deep Brain Stimulation (DBS) for generalized dystonia
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Types of Parkinsonism + examples</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Primary (Idiopathic):</strong> Parkinson's disease (most common ~75%)<br><br>
+          <strong>Secondary Parkinsonism:</strong><br>
+          • <strong>Drug-induced:</strong> Dopamine blockers (metoclopramide, haloperidol, chlorpromazine) – most common secondary cause<br>
+          • <strong>Vascular</strong> (lacunar infarcts in basal ganglia)<br>
+          • <strong>Post-encephalitic</strong> (encephalitis lethargica)<br>
+          • Toxic (MPTP, manganese, CO)<br>
+          • Structural (tumor, hydrocephalus)<br><br>
+          <strong>Parkinson Plus Syndromes (atypical):</strong><br>
+          • MSA (Multiple System Atrophy) – autonomic failure + parkinsonism<br>
+          • PSP (Progressive Supranuclear Palsy) – vertical gaze palsy + falls<br>
+          • CBD (Corticobasal Degeneration) – asymmetric, alien limb<br>
+          • DLB (Dementia with Lewy Bodies) – dementia + parkinsonism + hallucinations
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Treatment of Parkinson's + Pathophysiology + How drugs work</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Pathophysiology:</strong><br>
+          Degeneration of dopaminergic neurons in <strong>Substantia Nigra (pars compacta)</strong> → ↓Dopamine in nigrostriatal pathway → <strong>↑ACh relative</strong> → bradykinesia, rigidity, tremor<br><br>
+          <strong>Treatment:</strong><br>
+          1. <strong>Levodopa/Carbidopa</strong> (Sinemet) – GOLD STANDARD<br>
+             Carbidopa: peripheral dopa-decarboxylase inhibitor → ↑L-dopa reaching brain, ↓peripheral SE<br>
+             SE: Wearing off, on-off fluctuations, dyskinesias (after years), nausea, postural hypotension<br><br>
+          2. <strong>Dopamine agonists</strong> (Pramipexole, Ropinirole) – used alone early or adjunct<br><br>
+          3. <strong>MAO-B inhibitors</strong> (Selegiline, Rasagiline) – slow progression, mild symptomatic<br><br>
+          4. <strong>COMT inhibitors</strong> (Entacapone, Tolcapone) – extend L-dopa effect, reduce "off" time<br><br>
+          5. <strong>Anticholinergics</strong> (Trihexyphenidyl) – mainly for tremor in young patients<br><br>
+          6. <strong>Amantadine</strong> – mild dopaminergic + anticholinergic, helps dyskinesias<br><br>
+          7. <strong>Surgical:</strong> DBS (subthalamic nucleus or globus pallidus)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">5</span>Myerson's sign — What is it? In which CN?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Myerson's sign (Glabellar reflex):</strong><br>
+          • Tap glabella (between eyebrows) repeatedly<br>
+          • Normal: blink only on first tap then HABITUATES (stops)<br>
+          • Abnormal (Myerson's positive): continuous blinking with each tap = NO habituation<br>
+          • Indicates: Parkinson's disease, frontal lobe lesion<br>
+          • <strong>CN7 (facial nerve)</strong> – efferent (blink)<br>
+          • Afferent: CN5 (trigeminal)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">6</span>Location of substantia nigra — Pathogenesis of Parkinsonism</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Substantia Nigra location: MIDBRAIN (mesencephalon)</strong><br>
+          Specifically: dorsal part of midbrain, posterior to cerebral peduncles<br><br>
+          <strong>Also important: Globus Pallidus internus (GPi) & Subthalamic nucleus (STN)</strong><br><br>
+          <strong>Pathogenesis:</strong><br>
+          1. Accumulation of <strong>α-synuclein (Lewy bodies)</strong> in dopaminergic neurons<br>
+          2. Oxidative stress → mitochondrial dysfunction → neuronal death<br>
+          3. Loss of ≥60-70% of SNc neurons before symptoms appear<br>
+          4. ↓Dopamine → disinhibition of STN → ↑GPi activity → inhibits thalamus → ↓cortical activation = bradykinesia<br><br>
+          <strong>Subthalamic stroke:</strong> Contralateral hemiballismus (violent flinging movements)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">7</span>Types of hyperkinetic disorders — Types of myoclonus — Treatment of myoclonus</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Types of Hyperkinetic Movement Disorders:</strong><br>
+          • <strong>Tremor</strong> – rhythmic oscillation (rest/action/intention)<br>
+          • <strong>Chorea</strong> – random, jerky, flowing (Huntington's, drug-induced)<br>
+          • <strong>Athetosis</strong> – slow, writhing (CP)<br>
+          • <strong>Ballismus</strong> – violent flinging (STN lesion)<br>
+          • <strong>Dystonia</strong> – sustained contractions → abnormal postures<br>
+          • <strong>Myoclonus</strong> – sudden, brief, shock-like jerks<br>
+          • <strong>Tics</strong> – repetitive, suppressible movements/sounds<br><br>
+          <strong>Types of Myoclonus:</strong><br>
+          • Physiological (hiccups, hypnic jerks)<br>
+          • Essential myoclonus (benign)<br>
+          • Epileptic (JME, progressive myoclonic epilepsy)<br>
+          • Symptomatic: Metabolic (renal/liver failure), drug-induced, post-anoxic (Lance-Adams)<br><br>
+          <strong>Treatment of Myoclonus:</strong><br>
+          • Clonazepam (1st line)<br>
+          • Levetiracetam (very effective)<br>
+          • Valproate<br>
+          • Piracetam (for cortical myoclonus)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">8</span>Examination of ocular CN (2,3,4,6) — Most common cranial nerve affected in Parkinson's — What is olfactory affection?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Ocular CN examination:</strong><br>
+          • <strong>CN2:</strong> Visual acuity, fields, fundus, RAPD<br>
+          • <strong>CN3:</strong> Ptosis, eye deviation (down & out), pupil dilated (if complete CN3 palsy)<br>
+          • <strong>CN4:</strong> Vertical diplopia (worse going down stairs), head tilt<br>
+          • <strong>CN6:</strong> Horizontal diplopia, eye can't abduct, convergent squint<br>
+          Examine: Primary position, 9 positions of gaze, cover test<br><br>
+          <strong>Most common CN affected in Parkinson's:</strong><br>
+          • <strong>CN1 (Olfactory)</strong> – anosmia/hyposmia is an EARLY feature of PD, often precedes motor symptoms by years<br><br>
+          <strong>Glabellar reflex cranial nerves:</strong><br>
+          • Afferent: CN5 (ophthalmic branch)<br>
+          • Efferent: CN7 (facial – orbicularis oculi)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">9</span>Investigation of stroke — Each occular muscle & its nerve — Treatment mechanism of Parkinson's drugs</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Investigation of Stroke:</strong><br>
+          • CT brain STAT (to exclude hemorrhage, CT is faster)<br>
+          • MRI brain (DWI – more sensitive for acute ischemia, takes time)<br>
+          • ECG, cardiac monitoring, Echo (source of embolism?)<br>
+          • FBC, coagulation, glucose, lipids, CXR<br>
+          • Carotid Doppler USS<br><br>
+          <strong>Ocular muscles & nerves:</strong><br>
+          • CN3 (oculomotor): SR, IR, MR, IO, levator palpebrae + pupil constriction<br>
+          • CN4 (trochlear): Superior Oblique (SO4) – intort, depress, abduct<br>
+          • CN6 (abducens): Lateral Rectus (LR6) – abduction only<br>
+          Mnemonic: <strong>LR6SO4</strong> (rest = CN3)<br><br>
+          <strong>COMT inhibitors (Entacapone):</strong><br>
+          Block COMT enzyme → prevent L-dopa breakdown in periphery → more L-dopa available → extends duration of L-dopa effect → reduces "wearing off"
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">10</span>What are the causes of provoked epilepsy?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Causes of Provoked (Acute Symptomatic) Seizures:</strong><br>
+          • <strong>Metabolic:</strong> Hypoglycemia (most important!), hypo/hypernatremia, hypocalcemia, hypomagnesemia, uremia, hepatic failure<br>
+          • <strong>Drugs/Toxins:</strong> Alcohol withdrawal (most common in adults), cocaine, tramadol, bupropion, fluoroquinolones<br>
+          • <strong>Infections:</strong> Meningitis, encephalitis, brain abscess<br>
+          • <strong>Structural:</strong> Acute stroke, head trauma, SAH, tumor<br>
+          • <strong>Sleep deprivation, fever, stress, flashing lights</strong><br>
+          • Eclampsia (pregnancy)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">11</span>Types of rigidity — Examination of muscle tone — Tremors examination</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Types of Rigidity:</strong><br>
+          1. <strong>Lead-pipe rigidity</strong> – uniform resistance throughout movement (basal ganglia)<br>
+          2. <strong>Cog-wheel rigidity</strong> – ratchet-like breaks = lead pipe + tremor<br>
+          3. <strong>Spastic rigidity / Clasp-knife</strong> – velocity-dependent, UMNL (technically spasticity not rigidity)<br><br>
+          <strong>Examination of tone:</strong><br>
+          • Distract patient (ask to count backwards)<br>
+          • Flex/extend joints passively: elbow, wrist, knee<br>
+          • For wrist: shaking method (passive flexion-extension)<br>
+          • Report: normal / ↑(spastic/rigid) / ↓(flaccid)<br><br>
+          <strong>Tremor examination:</strong><br>
+          1. Observe at rest (arms on lap) → Resting tremor (PD)<br>
+          2. Arms outstretched → Postural tremor (essential, physiological)<br>
+          3. Finger-nose → Intention tremor (cerebellar)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ==================== د. أحمد شعيب - دفعة 13 ==================== -->
+<div id="d13-shoeib" class="tab-panel">
+<div class="container">
+
+<div class="note-box">
+  📌 <strong>د. أحمد شعيب - دفعة 13:</strong> حالاته Myotonia & Parkinsonism. بيسأل كتير عن UMNL/LMNL والفرق بينهم وعن MS.
+</div>
+
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-1">ش</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. أحمد شعيب</div>
+      <div class="doctor-cases">دفعة 13 OSCE · Myotonia / Parkinsonism / Facial palsy</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Myotonia</span> أسئلة</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Examine power — Types of Myotonia — Clinical presentation — Definition of Guillain-Barré + how to diagnose</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Types of Myotonia:</strong><br>
+          1. <strong>Myotonia Congenita</strong> (Thomsen/Becker) – chloride channel defect, improves with warm-up, "warm-up phenomenon"<br>
+          2. <strong>Myotonic Dystrophy (DM1/DM2)</strong> – CTG repeat expansion in DMPK gene<br>
+          • Cold makes it worse, heat improves<br>
+          • Differentiates: myotonia congenita (no weakness/systemic) vs myotonic dystrophy (weakness + systemic)<br><br>
+          <strong>Guillain-Barré Syndrome (GBS):</strong><br>
+          Definition: Acute inflammatory demyelinating polyneuropathy (AIDP) – ascending flaccid paralysis<br><br>
+          Diagnosis:<br>
+          • Clinical: Ascending weakness, areflexia, ± cranial nerve involvement<br>
+          • CSF: <strong>Albuminocytological dissociation</strong> (↑protein, normal cells)<br>
+          • NCS: Demyelinating pattern (↓conduction velocity, prolonged F-waves)<br>
+          • Anti-ganglioside antibodies (anti-GQ1b in Miller-Fisher variant)<br><br>
+          <strong>In which disease does incrementation occur?</strong><br>
+          <strong>Myasthenic syndrome (Lambert-Eaton)</strong> – incremental response on repetitive nerve stimulation at high frequency (opposite to MG which shows decrement)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Types of Myotonia & differences — Myasthenia Gravis definition & diagnose by decrement test</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Myotonia Congenita vs Myotonic Dystrophy:</strong>
+          <table class="compare-table">
+            <tr><th>Feature</th><th>Myotonia Congenita</th><th>Myotonic Dystrophy</th></tr>
+            <tr><td>Weakness</td><td>None/mild</td><td>Progressive distal weakness</td></tr>
+            <tr><td>Systemic</td><td>No</td><td>Yes (cataracts, cardiac, endocrine)</td></tr>
+            <tr><td>Cold</td><td>Worse</td><td>Worse</td></tr>
+            <tr><td>Genetics</td><td>CLCN1 (chloride)</td><td>CTG repeat (DMPK)</td></tr>
+            <tr><td>Warm-up</td><td>Improves</td><td>Less improvement</td></tr>
+          </table>
+          <br>
+          <strong>Myasthenia Gravis:</strong><br>
+          Definition: Autoimmune NMJ disorder → anti-AChR antibodies (80%) or anti-MuSK (10%)<br><br>
+          <strong>Decrement test (Repetitive Nerve Stimulation at 3Hz):</strong><br>
+          • MG: ≥10% decrement in amplitude = POSITIVE (fatigability due to ↓ACh in vesicles)<br>
+          • Lambert-Eaton: Increment at high frequency (20-50Hz)<br><br>
+          <strong>Types/Classification:</strong> Osserman classification (Ocular, Mild generalized, Moderate, Severe, Crisis)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Grades of power — Definition of MS — Why affects CNS not PNS?</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Grades of Muscle Power (MRC scale):</strong><br>
+          0 – No contraction<br>
+          1 – Visible/palpable contraction, no movement<br>
+          2 – Movement possible, but not against gravity<br>
+          3 – Movement against gravity, not against resistance<br>
+          4 – Movement against resistance (4- weak, 4 moderate, 4+ nearly normal)<br>
+          5 – Normal strength<br><br>
+          <strong>Multiple Sclerosis (MS):</strong><br>
+          Definition: Chronic inflammatory demyelinating disease of the <strong>CNS</strong><br><br>
+          <strong>Why CNS not PNS?</strong><br>
+          • PNS myelin made by <strong>Schwann cells</strong> (different antigens – MOG, MBP not primary targets in PNS)<br>
+          • CNS myelin made by <strong>Oligodendrocytes</strong> – targeted by autoreactive T-cells in MS<br>
+          • Blood-Brain barrier breach allows access to CNS myelin antigens<br>
+          • PNS has own immune privilege mechanisms<br><br>
+          <strong>Clinical picture of MS:</strong> Optic neuritis, INO, sensory symptoms, cerebellar signs, Uhthoff's phenomenon (worsening with heat), Lhermitte's sign
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Investigation of MS — CSF (oligoclonal bands) — MRI findings</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Investigations of MS (McDonald Criteria 2017):</strong><br><br>
+          <strong>MRI brain & spine:</strong><br>
+          • T2/FLAIR: hyperintense plaques – periventricular (Dawson's fingers), juxtacortical, infratentorial, spinal cord<br>
+          • T1 gadolinium enhancing: active inflammation<br>
+          • "Black holes" (T1 hypointense): axonal loss<br><br>
+          <strong>CSF:</strong><br>
+          • <strong>Oligoclonal bands (IgG)</strong> in CSF but NOT in serum = strongly supportive (present in 85-90%)<br>
+          • ↑IgG index<br>
+          • Normal cell count (or mild pleocytosis)<br><br>
+          <strong>Evoked potentials:</strong><br>
+          • VEP (visual): prolonged P100 latency (optic neuritis subclinical)<br>
+          • SSEP, BAEP: assess other pathways
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">5</span>Hypertonia causes — Catatonia & myotonia — MS definition & treatment</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Hypertonia causes:</strong><br>
+          • Spasticity (UMNL): stroke, MS, CP, SCI<br>
+          • Rigidity (extrapyramidal): PD, parkinsonism<br>
+          • Myotonia (muscle membrane): myotonic disorders<br>
+          • Catatonia (psychiatric/organic): schizophrenia, metabolic<br><br>
+          <strong>Treatment of MS (Disease-Modifying Therapy):</strong><br>
+          • 1st line (RRMS): IFN-β, Glatiramer acetate, Dimethyl fumarate<br>
+          • Higher efficacy: Natalizumab, Fingolimod, Alemtuzumab, Ocrelizumab<br>
+          • Acute relapse: IV methylprednisolone 3-5 days<br>
+          • PPMS: Ocrelizumab (only approved)<br>
+          • Symptomatic: Baclofen (spasticity), Amantadine (fatigue), Gabapentin (pain)<br><br>
+          <strong>⚠️ Natalizumab SE:</strong> PML (progressive multifocal leukoencephalopathy) – JC virus reactivation
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">6</span>Blood supply of brain — Pyramidal tract & extra-pyramidal tract — UMNL vs LMNL diff & causes of hypertonia</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإjabة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Blood supply of brain:</strong><br>
+          • <strong>Anterior circulation (ICA):</strong> ACA (medial hemisphere) + MCA (lateral hemisphere, most of cortex, internal capsule)<br>
+          • <strong>Posterior circulation (Vertebrobasilar):</strong> PICA (lateral medulla, cerebellar tonsil), AICA, SCA, PCA (occipital, thalamus)<br>
+          • Circle of Willis: provides collateral circulation<br><br>
+          <strong>Pyramidal tract (Corticospinal):</strong><br>
+          Motor cortex (Betz cells) → internal capsule → cerebral peduncle → decussation at medullary pyramids → lateral corticospinal tract → AHC<br>
+          Voluntary movement control<br><br>
+          <strong>Extrapyramidal system:</strong><br>
+          Basal ganglia → thalamus → motor cortex loop<br>
+          Controls: initiation, speed, rhythm, coordination of movement<br>
+          Lesion: Parkinsonism, dystonia, chorea
+        </div>
+      </div>
+
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Facial Palsy</span> أسئلة</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">7</span>Examination of power — Definition of MS — Compare between UMNL/LMNL</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          Already covered above. Key points for UMNL/LMNL facial:<br><br>
+          <strong>UMNL facial palsy:</strong><br>
+          • Lower face only (forehead spared)<br>
+          • No taste/hearing loss<br>
+          • Cause: cortical/subcortical stroke, tumor<br>
+          • Ipsilesional forehead still moves (bilateral cortical supply)<br><br>
+          <strong>LMNL facial palsy (Bell's palsy):</strong><br>
+          • Entire hemifacial<br>
+          • Can have: hyperacusis, loss of taste anterior 2/3, dry eye/mouth<br>
+          • Treatment: Prednisolone (within 72h) ± Acyclovir if HSV suspected<br>
+          • Prognosis: 70% full recovery within 6 months<br>
+          • Complication: Synkinesis, Hemifacial spasm, Crocodile tears
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ==================== د. أحمد عبد الوارث - دفعة 13 ==================== -->
+<div id="d13-waris" class="tab-panel">
+<div class="container">
+
+<div class="note-box">
+  📌 <strong>د. أحمد عبد الوارث - دفعة 13:</strong> حالاته Peripheral Neuropathy, Crossed hemiplegia, GBS. بيسأل بالتفصيل عن كل examination وعن GBS وعن PN.
+</div>
+
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-2">و</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. أحمد عبد الوارث</div>
+      <div class="doctor-cases">دفعة 13 OSCE · Peripheral Neuropathy / Crossed Hemiplegia / GBS</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة PN</span> Peripheral Neuropathy</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Full motor examination (UL & LL) — Sensation (type in PN) — Brown-Séquard def & C/P — Dissociated sensory loss</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Sensation in Peripheral Neuropathy:</strong><br>
+          • Pattern: <strong>Glove & Stocking distribution</strong> (distal > proximal, length-dependent)<br>
+          • All modalities affected (both small fibers: pain/temp, and large fibers: vibration/proprioception)<br>
+          • But predominantly depends on which fibers involved (small fiber PN: pain/autonomic; large fiber: ataxia, proprioception loss)<br><br>
+          <strong>Dissociated Sensory Loss:</strong><br>
+          Definition: Loss of some modalities with preservation of others<br>
+          Types:<br>
+          • <strong>Syringomyelia:</strong> Lost pain/temp (spinothalamic), preserved touch/proprioception (posterior column) – "cape distribution"<br>
+          • <strong>Brown-Séquard:</strong> Ipsilateral loss of proprioception/vibration + Contralateral loss of pain/temp<br>
+          • <strong>Posterior column:</strong> Lost vibration/proprioception, preserved pain/temp (tabes dorsalis, B12 deficiency)<br>
+          • <strong>Thalamic:</strong> All contralateral modalities lost<br><br>
+          <strong>Brown-Séquard syndrome:</strong> C/P described in dofaa 12 tab above
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>Guillain-Barré: manifestation, management — Hemiplegia — Sensory & motor of PN</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>GBS Clinical Features:</strong><br>
+          • Preceding infection (Campylobacter jejuni, CMV, EBV, Flu) 2-4 weeks earlier<br>
+          • Ascending symmetrical flaccid weakness<br>
+          • Areflexia (universal feature)<br>
+          • Mild sensory symptoms<br>
+          • Autonomic dysfunction (arrhythmias, BP fluctuations) – dangerous!<br>
+          • <strong>Respiratory failure</strong> – most dangerous complication (monitor FVC)<br>
+          • Cranial nerve involvement (bilateral facial palsy most common CN)<br>
+          • Pain (common, often backache)<br><br>
+          <strong>Management of GBS:</strong><br>
+          1. ICU if FVC < 20 mL/kg or rapidly declining<br>
+          2. <strong>IVIg (2g/kg over 5 days)</strong> OR <strong>Plasmapheresis</strong> – equal efficacy<br>
+          3. NO steroids (worsen outcome in GBS)<br>
+          4. Supportive: Physiotherapy, DVT prophylaxis, pain management, monitor autonomic<br><br>
+          <strong>GBS vs CIDP:</strong> GBS acute (<4 weeks), CIDP chronic (>8 weeks)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Deep reflexes upper & lower — How to determine sensory level — Brown-Séquard def</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>How to determine sensory level:</strong><br>
+          • Test light touch/pin-prick from below upward on trunk<br>
+          • The level where sensation changes from abnormal to normal = sensory level<br>
+          • Use dermatome map: T4 = nipples, T10 = umbilicus, T12/L1 = inguinal ligament<br><br>
+          <strong>In cord lesions:</strong><br>
+          • UMNL below level<br>
+          • LMN signs at level (due to AHC/nerve root compression)<br>
+          • Sensory level on trunk<br>
+          • Bladder/bowel involvement (often)<br>
+          <br>
+          Already covered Brown-Séquard above.
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Crossed Hemiplegia</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Full cranial nerves examination — Optic nerve abnormalities — 3rd nerve examination — How to examine olfactory & why non-irritant</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Why use non-irritant substance for CN1:</strong><br>
+          Irritant substances (ammonia, peppermint) stimulate CN5 (trigeminal – free nerve endings in nasal mucosa), not CN1<br>
+          → Use: coffee, vanilla, cloves, soap<br><br>
+          <strong>CN1 pathway:</strong> Olfactory epithelium → olfactory nerve → cribriform plate → olfactory bulb → olfactory tract → primary olfactory cortex (uncus, piriform cortex)<br>
+          <strong>NO THALAMIC RELAY</strong> (unique among sensory CNs)<br><br>
+          <strong>Optic nerve abnormalities:</strong><br>
+          • Color vision abnormality (dyschromatopsia) → optic neuritis (MS)<br>
+          • RAPD (relative afferent pupillary defect) → afferent limb defect<br>
+          • Pallor of disc → optic atrophy<br>
+          • Papilledema → ↑ICP (bilateral, no visual loss initially)<br><br>
+          <strong>Light & Accommodation reflex pathway:</strong><br>
+          Light reflex: CN2 → Pretectal nucleus → bilateral EW nucleus → CN3 (ciliary ganglion) → sphincter pupillae<br>
+          Accommodation: Visual cortex → EW nucleus → CN3 → ciliary muscle (constriction, convergence, accommodation)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">5</span>3rd nerve CN palsy — Nuclei in brainstem — Position of 8th nerve nuclei (Pons) — Complete vs partial ptosis — Differentiate GBS hereditary vs acquired</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>3rd nerve (CN3) palsy:</strong><br>
+          Complete: Ptosis + eye "down and out" + dilated fixed pupil<br>
+          <strong>Pupil-sparing CN3 palsy = Medical (ischemic, DM, HTN)</strong><br>
+          <strong>Pupil-involved CN3 palsy = Surgical (posterior communicating artery aneurysm – EMERGENCY)</strong><br><br>
+          <strong>Degree of ptosis:</strong><br>
+          • Complete ptosis: upper lid covers pupil entirely (CN3 or sympathetic)<br>
+          • Partial ptosis: MRD1 (margin-reflex distance) reduced but not zero<br>
+          • Pseudo-ptosis: dermatochalasis, brow ptosis<br><br>
+          <strong>CN8 nuclei in Pons:</strong><br>
+          • Cochlear nuclei (dorsal & ventral cochlear nuclei) – in caudal pons/medulla junction<br>
+          • Vestibular nuclei (4 nuclei: medial, lateral, superior, inferior) – in pons and upper medulla<br><br>
+          <strong>GBS: Hereditary vs Acquired:</strong><br>
+          • Hereditary (CMT – Charcot-Marie-Tooth): insidious onset, pes cavus, family history, NCS shows chronic demyelination<br>
+          • GBS: Acute, preceding infection, areflexia, CSF albuminocytological dissociation<br>
+          • GBS CNs: Face most important (bulbar CN – facial bilateral most common)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">6</span>Tone, deep reflex — manifestation of GBS — Hemiplegia — Sensory motor of PN — Facial nerve exam</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Motor exam in crossed hemiplegia:</strong><br>
+          • Ipsilateral LMNL of cranial nerve (depends on level)<br>
+          • Contralateral UMNL of limbs<br>
+          • This pattern confirms BRAINSTEM lesion<br><br>
+          <strong>Facial nerve examination (complete):</strong><br>
+          Motor: Raise eyebrows (frontalis, temporal branch), Close eyes tight (orbicularis oculi, zygomatic branch), Show teeth/smile (zygomatic, buccal), Puff cheeks (buccal), Lower lip/platysma (marginal mandibular)<br>
+          Sensory: Taste anterior 2/3 tongue (chorda tympani)<br>
+          Special: Stapedius (ask about hyperacusis), Lacrimation (Schirmer test)<br>
+          Reflexes: Corneal reflex (afferent CN5, efferent CN7), Glabellar reflex
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">Third nerve palsy</span> أسئلة د. عبد الوارث</div>
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">7</span>Nuclei of CN 3 — Examine olfactory nerve — Light reflex + afferent/efferent</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>CN3 nucleus location: MIDBRAIN (periaqueductal grey)</strong><br>
+          • Main motor nucleus → extraocular muscles<br>
+          • <strong>Edinger-Westphal nucleus</strong> (accessory parasympathetic) → pupil constriction & accommodation<br><br>
+          <strong>Olfactory nerve relay:</strong><br>
+          Olfactory epithelium (bipolar neurons) → cribriform plate → olfactory bulb (1st relay) → olfactory tract → olfactory cortex<br>
+          ⚠️ NO thalamic relay (only CN with no thalamic relay)<br><br>
+          <strong>Light reflex:</strong><br>
+          Afferent: CN2 (optic nerve) → optic chiasm → optic tract → pretectal nucleus<br>
+          Efferent: EW nucleus → preganglionic CN3 parasympathetic → ciliary ganglion → short ciliary nerves → sphincter pupillae (constriction)<br><br>
+          Accommodation reflex:<br>
+          Visual cortex → EW nucleus via CN3 → ciliary muscle (accommodates) + medial rectus (converges) + pupil constricts
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ==================== د. بسطاوي - دفعة 13 ==================== -->
+<div id="d13-bostawi" class="tab-panel">
+<div class="container">
+
+<div class="note-box">
+  📌 <strong>د. بسطاوي - دفعة 13:</strong> حالاته Parkinson's, Facial palsy, Motor Neuron Disease. بيسأل عن العلاج بالتفصيل وعن MND وALS.
+</div>
+
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-3">ب</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. بسطاوي</div>
+      <div class="doctor-cases">دفعة 13 OSCE · Parkinson's / Facial Palsy / MND / Stroke</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Parkinson's</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Examine tone (distal UL & LL) — Diff between rigidity and spasticity — CN affection with Parkinson's — Types of parkinsonism — Treatment + pathophysiology + how drugs affect</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          Already covered in detail. Key additions for د. بسطاوي:<br><br>
+          <strong>CN affection in Parkinson's:</strong><br>
+          • <strong>CN1 (olfactory)</strong> – anosmia (early pre-motor feature, Braak stage 1-2)<br>
+          • CN2: retinal dopaminergic cells affected (subtle visual changes)<br>
+          • CN7: masked facies (hypomimia) – face muscles affected by bradykinesia<br><br>
+          <strong>Tone examination (distal joints):</strong><br>
+          • Wrist: passive flexion-extension (or shaking method)<br>
+          • Feel for lead-pipe or cog-wheel<br>
+          • Reinforce with distraction (count backwards)<br><br>
+          <strong>MAO-B inhibitors side effects:</strong><br>
+          • Selegiline: cheese effect (interaction with tyramine-rich foods → hypertensive crisis)<br>
+          • Rasagiline: safer, selective MAO-B<br>
+          • Both: insomnia (selegiline), headache, nausea
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">2</span>LL tone + triceps reflex + centre — TTT of Parkinson — MAO inhibitor side effects — Important cranial nerve to examine — Glabellar reflex — Festination</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Triceps reflex:</strong> C7, C8 (radial nerve)<br><br>
+          <strong>Festination:</strong><br>
+          • Gait in Parkinson's: shuffling, small steps, stooped posture<br>
+          • Festination = accelerating forward with short rapid steps → patient can't stop<br>
+          • Due to: forward shift of center of gravity + impaired postural reflexes<br>
+          • Leads to frequent falls (postural instability)<br><br>
+          <strong>Why olfactory CN important in Parkinson's (most important to examine):</strong><br>
+          • Anosmia is earliest feature → diagnostic clue<br>
+          • Differentiates PD from other parkinsonisms<br>
+          • Also: olfactory testing used in research for early diagnosis<br><br>
+          <strong>Glabellar reflex in Parkinson's:</strong><br>
+          • Positive (no habituation) in PD<br>
+          • Due to frontal lobe dysfunction / subcortical degeneration<br>
+          • Tested as part of frontal release signs<br><br>
+          <strong>MAO inhibitor interactions:</strong><br>
+          • Selegiline + tyramine foods → hypertensive crisis<br>
+          • Selegiline + meperidine → serotonin syndrome<br>
+          • Serotonin syndrome with SSRIs/TCAs
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">3</span>Examination of tone — Brachioradialis reflex and its centers — Radial styloid process landmark — Inverted supinator sign in C5</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Brachioradialis reflex:</strong><br>
+          • Center: C5, C6 (radial nerve)<br>
+          • Landmark: <strong>Radial styloid process</strong> (distal radius, lateral wrist)<br>
+          • Technique: Strike over radial styloid → forearm supination + elbow flexion<br><br>
+          <strong>Inverted Supinator Reflex:</strong><br>
+          • Occurs at C5 level lesion<br>
+          • Strike brachioradialis → FINGER FLEXION (not forearm supination)<br>
+          • Loss of C5,6 arc (no supination) + UMNL of C8 level (hyperactive finger flexors)<br>
+          • Key localizing sign for C5/C6 cord/root lesion<br><br>
+          <strong>What completes at C5 lesion:</strong><br>
+          • Inverted supinator reflex<br>
+          • Loss of biceps reflex<br>
+          • Deltoid weakness (abduction of shoulder)
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة MND</span> Motor Neuron Disease</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">4</span>Examine tongue — Examine state of UL — Tone of LL — Tongue fasciculations — MND diagnosis — AHC lesion location — Treatment (symptomatic)</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Motor Neuron Disease (MND) / ALS:</strong><br>
+          <strong>Mixed UMNL + LMNL</strong> in same patient = hallmark of ALS<br><br>
+          <strong>Examination findings:</strong><br>
+          • UL: Wasting + fasciculations (LMNL) + hyperreflexia + Babinski (UMNL)<br>
+          • Tongue: Wasting + fasciculations (LMNL of CN12) + spastic tongue (UMNL)<br>
+          • Speech: Dysarthria (bulbar/pseudobulbar)<br><br>
+          <strong>AHC (Anterior Horn Cell) lesion:</strong><br>
+          Causes pure LMNL: wasting, fasciculations, flaccid paralysis, areflexia<br>
+          Diseases: ALS (MND), Polio, SMA, syringomyelia<br><br>
+          <strong>Diagnosis:</strong><br>
+          • Clinical (El Escorial criteria)<br>
+          • EMG: denervation + fasciculations (diagnostic of AHC)<br>
+          • MRI spine: exclude structural causes<br>
+          • No specific blood test<br><br>
+          <strong>Treatment:</strong><br>
+          • <strong>Riluzole</strong> – only disease-modifying (glutamate antagonist, extends life ~3 months)<br>
+          • <strong>Edaravone</strong> (IV, free radical scavenger)<br>
+          • Symptomatic: PEG tube (dysphagia), NIV (respiratory failure), Baclofen (spasticity)<br>
+          • TTT: symptomatic only → imaging to exclude (CT to exclude structural, MRI gold standard)
+        </div>
+      </div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">5</span>Tone UL — Wasting + fasciculations (DD) — Motor aphasia — ALS definition — DD of MND</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>MND DD (differential diagnosis):</strong><br>
+          • Multifocal Motor Neuropathy (no UMNL signs, responds to IVIg)<br>
+          • Cervical myelopathy (pure UMNL, no bulbar, imaging shows compression)<br>
+          • Kennedy's disease (SBMA – X-linked bulbospinal muscular atrophy)<br>
+          • Myasthenia Gravis (fatiguable, NMJ, no fasciculations)<br>
+          • Inclusion Body Myositis<br><br>
+          <strong>Motor Aphasia (Broca's):</strong><br>
+          • Non-fluent, effortful speech<br>
+          • Comprehension relatively preserved<br>
+          • Repetition impaired<br>
+          • Lesion: left inferior frontal gyrus (Broca's area, 44/45)<br><br>
+          <strong>In MND with motor aphasia:</strong><br>
+          Suggests pseudobulbar palsy (bilateral UMNL of CN9-12) → dysarthria/aphasia-like picture
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Facial Palsy</span> LMN</div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">6</span>What are you seeing? LMN facial — Examination — Sensation — Stapedius — Why hyperacusis — Treatment of facial palsy + duration + complications</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>LMN Facial Palsy (Bell's Palsy) features:</strong><br>
+          • Loss of wrinkles on affected side<br>
+          • Patient can't close eye (lagophthalmos) → risk of corneal damage<br>
+          • Loss of nasolabial fold<br>
+          • Angle of mouth droops<br>
+          • Taste loss (anterior 2/3 tongue – chorda tympani)<br>
+          • Hyperacusis<br><br>
+          <strong>Hyperacusis mechanism:</strong><br>
+          • Nerve to stapedius (branch of facial nerve above chorda tympani)<br>
+          • Stapedius normally dampens tympanic membrane vibration<br>
+          • When paralyzed → sounds appear excessively loud (hyperacusis)<br><br>
+          <strong>Treatment of Bell's Palsy:</strong><br>
+          • <strong>Prednisolone 25mg twice daily × 10 days</strong> (within 72 hours of onset – most effective)<br>
+          • ± Acyclovir (if HSV suspected/associated)<br>
+          • Eye protection: artificial tears, eye patch at night<br>
+          • Duration: 70% recover fully within 6 months<br><br>
+          <strong>Complications:</strong><br>
+          • Synkinesis (abnormal co-movement)<br>
+          • Hemifacial spasm<br>
+          • Crocodile tears (gustatory lacrimation – aberrant regeneration)<br>
+          • Corneal ulceration (if no eye care)
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">حالة Stroke</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">7</span>CN in face — Type of speech — Examination — Babinski sign — First 3 hours treatment — Lesion location — TTT</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Types of speech disorders:</strong><br>
+          • <strong>Dysarthria:</strong> Motor speech difficulty (slurred/slow/nasal) – no language deficit<br>
+          • <strong>Dysphasia/Aphasia:</strong> Language disorder<br>
+          • <strong>Dysphonia:</strong> Voice quality disorder (CN10 or cord)<br><br>
+          <strong>Acute Stroke Treatment (first 3 hours):</strong><br>
+          1. <strong>IV tPA (Alteplase)</strong> within 4.5 hours of onset (if ischemic + no contraindications)<br>
+          2. Mechanical thrombectomy (large vessel occlusion) – up to 24 hours in selected patients<br>
+          3. Antiplatelet (aspirin 300mg) if thrombolysis not given<br><br>
+          <strong>Contraindications to tPA:</strong><br>
+          • Hemorrhagic stroke (CT shows blood)<br>
+          • Recent surgery/trauma, anticoagulant use<br>
+          • BP > 185/110 (must treat first)<br><br>
+          <strong>Conservative treatment:</strong><br>
+          • Aspirin + Clopidogrel (dual antiplatelet 21 days in minor stroke)<br>
+          • Statin, antihypertensive, diabetic control<br>
+          • Physiotherapy, speech therapy, OT
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">Facial palsy + Brachioradialis</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">8</span>Facial examination + stapedius testing — Which facial muscles affected — Platysma & stapedius — Inverted supinator reflex — Hemifacial spasm</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Facial muscles supplied by CN7:</strong><br>
+          Upper face: Frontalis, Corrugator, Orbicularis oculi<br>
+          Middle: Zygomaticus, Levator labii<br>
+          Lower: Orbicularis oris, Depressor anguli oris, Mentalis<br>
+          Other: <strong>Platysma</strong> (neck), <strong>Stapedius</strong> (middle ear), Buccinator<br><br>
+          <strong>Platysma test:</strong> Ask patient to clench teeth/pull corners of mouth down → neck bands appear<br><br>
+          <strong>Stapedius test:</strong> Ask about hyperacusis (history). Acoustic reflexometry (audiometry)<br><br>
+          <strong>Hemifacial Spasm:</strong><br>
+          • Unilateral clonic/tonic spasm of CN7 muscles<br>
+          • Cause: Vascular compression of CN7 at root entry zone (usually PICA or AICA)<br>
+          • Treatment: Botulinum toxin injection (1st line), Microvascular decompression (surgical)<br>
+          • Complications of physio: after facial palsy treatment → hemifacial spasm can develop<br><br>
+          <strong>True bulbar vs Pseudobulbar palsy:</strong>
+          <table class="compare-table">
+            <tr><th>Feature</th><th>True Bulbar (LMNL)</th><th>Pseudobulbar (UMNL)</th></tr>
+            <tr><td>Tongue</td><td>Flaccid, wasted</td><td>Small, spastic</td></tr>
+            <tr><td>Jaw jerk</td><td>Absent</td><td>Brisk</td></tr>
+            <tr><td>Gag reflex</td><td>Absent</td><td>Exaggerated</td></tr>
+            <tr><td>Emotional</td><td>Normal</td><td>Emotionally labile</td></tr>
+            <tr><td>Cause</td><td>Medullary lesion, PN</td><td>Bilateral cortical/subcortical</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">Parkinson – facial</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">9</span>Clinical picture of Parkinson — What's most important — Treatment — Glabellar reflex — True & pseudo bulbar comparison</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Clinical picture of Parkinson's:</strong><br>
+          Motor: <strong>TRAP</strong> (Tremor-resting, Rigidity, Akinesia/Bradykinesia, Postural instability)<br>
+          Non-motor: Anosmia (early!), constipation, REM sleep behavior disorder, depression, cognitive decline, autonomic dysfunction (orthostatic hypotension, dripping of saliva)<br><br>
+          <strong>Most important features = Bradykinesia + Rigidity OR Tremor</strong> (bradykinesia must be present for diagnosis)<br><br>
+          <strong>Surgical treatment of Parkinson's:</strong><br>
+          <strong>Deep Brain Stimulation (DBS)</strong>:<br>
+          • Targets: Subthalamic nucleus (STN) or Globus pallidus interna (GPi)<br>
+          • Indications: Motor fluctuations, dyskinesias, refractory tremor<br>
+          • Contraindications: Dementia, psychiatric illness, poor L-dopa response<br><br>
+          <strong>Olfactory nerve affection in Parkinson:</strong><br>
+          • Anosmia in 90% of PD patients<br>
+          • Braak staging: starts in olfactory bulb and lower brainstem (stage 1-2) before substantia nigra (stage 3)
+        </div>
+      </div>
+    </div>
+
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">Parkinsonism & Facial LMNL</span></div>
+
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">10</span>Tone examination — examination brachioradialis reflex — Radial styloid process — Parkinsonism types — L.L tone + reflexes</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          Already comprehensively covered in previous questions.<br><br>
+          <strong>Additional: Parkinsonism examination tips from د. بسطاوي:</strong><br>
+          1. Check tone first (wrist shaking method)<br>
+          2. Note: cog-wheel if tremor present<br>
+          3. Test brachioradialis (land on radial styloid)<br>
+          4. Identify lead-pipe rigidity (no tremor → smooth resistance)<br>
+          5. For Parkinson's: test glabellar, olfactory, facial expression, gait<br><br>
+          <strong>L.L reflexes with centers:</strong><br>
+          • Knee: L3, L4 (saphenous/femoral)<br>
+          • Ankle: S1, S2 (posterior tibial nerve)<br>
+          • In PD: normal (extrapyramidal disease, reflexes not affected)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- ==================== دكاترة أخرى ==================== -->
+<div id="d13-others" class="tab-panel">
+<div class="container">
+
+<div class="note-box">
+  📌 دكاترة آخرين ظهروا في دفعة 13: د. محمد التمر (Facial LMN), د. زينب سيكاتري (دفعة 12)
+</div>
+
+<div class="doctor-section">
+  <div class="doctor-header open" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-6">ت</div>
+    <div class="doctor-info">
+      <div class="doctor-name">د. محمد التمر</div>
+      <div class="doctor-cases">دفعة 13 OSCE · Facial Lower Motor</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body open">
+    <div class="case-card">
+      <div class="case-title"><span class="case-badge">Facial LMN</span></div>
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">1</span>Cranial nerve exam — Facial: lower motor? — Difference upper vs lower facial palsy — Bilatral lower motor facial — True vs pseudo bulbar — Pellagra + bedside test + causes</div>
+        <button class="toggle-answer" onclick="toggleAns(this)">إظهار الإجابة</button>
+        <div class="answer-box" style="display:none">
+          <strong>Bilateral lower motor facial palsy:</strong><br>
+          Causes (think BILATERAL):<br>
+          • <strong>GBS</strong> (most common bilateral facial palsy)<br>
+          • Lyme disease (Borrelia burgdorferi)<br>
+          • Sarcoidosis (Heerfordt syndrome)<br>
+          • Bilateral Bell's palsy (rare)<br>
+          • Leprosy, HIV, Melkersson-Rosenthal syndrome<br><br>
+          <strong>True vs Pseudobulbar Palsy:</strong> See d. Bostawi section above<br><br>
+          <strong>Pellagra (Vitamin B3/Niacin Deficiency):</strong><br>
+          "3 D's": <strong>Dermatitis + Diarrhea + Dementia</strong><br>
+          4th D: Death (if untreated)<br>
+          Causes: Poor diet, malabsorption, alcoholism, isoniazid therapy, carcinoid<br><br>
+          <strong>Bedside test for Pellagra:</strong><br>
+          <strong>Urine test:</strong> 24-hour urine N-methylnicotinamide (↓ in pellagra)<br>
+          Or: serum niacin/NAD levels<br><br>
+          <strong>Treatment:</strong> Oral niacinamide (nicotinamide) 300-500mg/day
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ملخص المواضيع الأكثر تكراراً -->
+<div class="doctor-section">
+  <div class="doctor-header" onclick="toggleDoctor(this)">
+    <div class="doctor-avatar color-4">★</div>
+    <div class="doctor-info">
+      <div class="doctor-name">⭐ أهم المواضيع المتكررة في الملفين</div>
+      <div class="doctor-cases">ملخص سريع للمذاكرة</div>
+    </div>
+    <span class="chevron">▼</span>
+  </div>
+  <div class="doctor-body">
+    <div class="case-card">
+      <div class="case-title">🔥 الأكثر تكراراً</div>
+      <div class="question-block">
+        <div class="question-text"><span class="q-num">★</span>المواضيع الأكثر تكراراً والإجابات السريعة</div>
+        <div class="answer-box">
+          <strong>1. UMNL vs LMNL:</strong> Tone ↑spastic vs ↓flaccid | Reflexes ↑ vs ↓ | Babinski + vs - | Wasting late vs early | Fasciculations no vs yes<br><br>
+          <strong>2. Deep reflexes centers:</strong> Biceps C5,6 | Brachioradialis C5,6 | Triceps C7,8 | Knee L3,4 | Ankle S1,2<br><br>
+          <strong>3. Red flags of headache:</strong> Thunderclap, fever+neck stiffness, progressive, seizures, ↑ICP signs, onset >50, postural<br><br>
+          <strong>4. Crossed hemiplegia:</strong> LMNL CN ipsilateral + UMNL limbs contralateral = BRAINSTEM<br><br>
+          <strong>5. Parkinson's treatment:</strong> L-dopa/Carbidopa → MAO-B inhibitors → DA agonists → COMT inhibitors → DBS surgical<br><br>
+          <strong>6. Complications SAH:</strong> Rebleeding + Vasospasm→infarction + Hydrocephalus + Hyponatremia<br><br>
+          <strong>7. Sensory vs Cerebellar ataxia:</strong> Romberg +/- | Eyes closed worse/no change | Gait stamping vs reeling<br><br>
+          <strong>8. MS investigations:</strong> MRI (periventricular plaques) + CSF (oligoclonal bands) + VEP<br><br>
+          <strong>9. GBS treatment:</strong> IVIg or Plasmapheresis (NO steroids!)<br><br>
+          <strong>10. Facial palsy LMN vs UMN:</strong> Whole face vs lower face only
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+
+function toggleDoctor(header) {
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('open');
+}
+
+function toggleAns(btn) {
+  const box = btn.nextElementSibling;
+  if (box.style.display === 'none' || !box.style.display) {
+    box.style.display = 'block';
+    btn.textContent = 'إخفاء الإجابة';
+    btn.style.background = '#0d9488';
+    btn.style.color = 'white';
+  } else {
+    box.style.display = 'none';
+    btn.textContent = 'إظهار الإجابة';
+    btn.style.background = 'none';
+    btn.style.color = '#0d9488';
+  }
+}
+
+// Open first section of each tab automatically when switching
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    setTimeout(() => {
+      const panel = document.querySelector('.tab-panel.active');
+      const first = panel.querySelector('.doctor-header');
+      if (first && !first.classList.contains('open')) {
+        first.classList.add('open');
+        first.nextElementSibling.classList.add('open');
+      }
+    }, 50);
+  });
+});
+</script>
+</body>
+</html>
