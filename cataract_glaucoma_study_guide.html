@@ -1,0 +1,518 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans); }
+.guide { padding: 1rem 0; }
+.top-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.nav-btn { padding: 7px 16px; border-radius: 999px; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); font-size: 13px; cursor: pointer; transition: all 0.15s; font-family: var(--font-sans); }
+.nav-btn.active { background: #185FA5; color: #E6F1FB; border-color: #185FA5; font-weight: 500; }
+.nav-btn:hover:not(.active) { background: var(--color-background-tertiary); color: var(--color-text-primary); }
+.section { display: none; }
+.section.active { display: block; }
+.section-title { font-size: 18px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 1rem; padding-bottom: 8px; border-bottom: 0.5px solid var(--color-border-tertiary); }
+
+/* Cards grid */
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
+.card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; }
+.card-title { font-size: 14px; font-weight: 500; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.card-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; }
+.tag { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; margin-bottom: 8px; }
+.tag-blue { background: #E6F1FB; color: #185FA5; }
+.tag-coral { background: #FAECE7; color: #993C1D; }
+.tag-teal { background: #E1F5EE; color: #0F6E56; }
+.tag-amber { background: #FAEEDA; color: #854F0B; }
+.tag-purple { background: #EEEDFE; color: #534AB7; }
+.tag-green { background: #EAF3DE; color: #3B6D11; }
+
+/* Compare table */
+.compare-table { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 1.5rem; }
+.compare-table th { background: var(--color-background-secondary); padding: 10px 14px; text-align: left; font-weight: 500; font-size: 12px; color: var(--color-text-secondary); border-bottom: 0.5px solid var(--color-border-tertiary); }
+.compare-table th.blue-h { color: #185FA5; }
+.compare-table th.coral-h { color: #993C1D; }
+.compare-table td { padding: 9px 14px; border-bottom: 0.5px solid var(--color-border-tertiary); vertical-align: top; line-height: 1.5; color: var(--color-text-primary); }
+.compare-table td.feature { color: var(--color-text-secondary); font-weight: 500; font-size: 12px; white-space: nowrap; }
+.compare-table tr:hover td { background: var(--color-background-secondary); }
+
+/* Accordion */
+.accordion { margin-bottom: 8px; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); overflow: hidden; }
+.accordion-header { padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 14px; font-weight: 500; color: var(--color-text-primary); background: var(--color-background-primary); user-select: none; }
+.accordion-header:hover { background: var(--color-background-secondary); }
+.accordion-icon { font-size: 18px; color: var(--color-text-secondary); transition: transform 0.2s; }
+.accordion-icon.open { transform: rotate(180deg); }
+.accordion-body { display: none; padding: 12px 16px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; border-top: 0.5px solid var(--color-border-tertiary); background: var(--color-background-secondary); }
+.accordion-body.open { display: block; }
+.accordion-body ul { padding-left: 16px; }
+.accordion-body li { margin-bottom: 4px; }
+
+/* Shared connection section */
+.connection-box { background: var(--color-background-secondary); border-left: 3px solid #185FA5; border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0; padding: 10px 14px; margin-bottom: 10px; font-size: 13px; line-height: 1.6; }
+.connection-box strong { color: var(--color-text-primary); font-weight: 500; }
+
+/* Mnemonic */
+.mnemo-card { background: #EEEDFE; border: 0.5px solid #AFA9EC; border-radius: var(--border-radius-lg); padding: 1rem 1.25rem; margin-bottom: 12px; }
+.mnemo-card .letter { font-size: 22px; font-weight: 500; color: #534AB7; margin-right: 4px; }
+.mnemo-card .word { font-size: 14px; color: #3C3489; font-weight: 500; }
+.mnemo-card .desc { font-size: 12px; color: #534AB7; margin-left: 28px; margin-top: 2px; }
+
+/* Stage timeline */
+.timeline { position: relative; padding-left: 24px; }
+.timeline::before { content: ''; position: absolute; left: 7px; top: 4px; bottom: 4px; width: 1px; background: var(--color-border-secondary); }
+.tl-item { position: relative; margin-bottom: 14px; }
+.tl-dot { position: absolute; left: -20px; top: 4px; width: 10px; height: 10px; border-radius: 50%; border: 2px solid; }
+.tl-dot-blue { border-color: #185FA5; background: #E6F1FB; }
+.tl-dot-coral { border-color: #993C1D; background: #FAECE7; }
+.tl-dot-amber { border-color: #854F0B; background: #FAEEDA; }
+.tl-dot-red { border-color: #A32D2D; background: #FCEBEB; }
+.tl-dot-gray { border-color: #5F5E5A; background: #F1EFE8; }
+.tl-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 2px; }
+.tl-body { font-size: 12px; color: var(--color-text-secondary); line-height: 1.5; }
+
+.badge { display: inline-block; font-size: 11px; padding: 2px 8px; border-radius: 999px; font-weight: 500; margin-left: 6px; }
+.badge-red { background: #FCEBEB; color: #A32D2D; }
+.badge-green { background: #EAF3DE; color: #3B6D11; }
+.badge-amber { background: #FAEEDA; color: #854F0B; }
+</style>
+
+<div class="guide">
+<h2 class="sr-only">Study guide: Cataract and Glaucoma</h2>
+
+<div class="top-nav">
+  <button class="nav-btn active" onclick="showSection('overview')">نظرة عامة</button>
+  <button class="nav-btn" onclick="showSection('cataract')">Cataract</button>
+  <button class="nav-btn" onclick="showSection('glaucoma')">Glaucoma</button>
+  <button class="nav-btn" onclick="showSection('shared')">الأمور المشتركة</button>
+  <button class="nav-btn" onclick="showSection('compare')">جدول المقارنة</button>
+  <button class="nav-btn" onclick="showSection('mnemo')">Mnemonics</button>
+</div>
+
+<div id="overview" class="section active">
+  <p class="section-title">نظرة عامة سريعة</p>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-title"><span class="tag tag-blue">Cataract</span></div>
+      <div class="card-body">
+        أي <strong>opacity في العدسة أو capsule</strong> الخاصة بها.<br><br>
+        الأنواع الرئيسية:<br>
+        • Congenital<br>
+        • Senile (Cortical / Nuclear)<br>
+        • Traumatic<br>
+        • Complicated
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-coral">Glaucoma</span></div>
+      <div class="card-body">
+        مجموعة أمراض بسمة مشتركة: <strong>progressive optic neuropathy + visual field defect</strong> و IOP عامل خطر مهم.<br><br>
+        الأنواع:<br>
+        • Congenital (Buphthalmos)<br>
+        • Open angle (POAG)<br>
+        • Angle closure (PACG)
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-teal">الرابط بينهم</span></div>
+      <div class="card-body">
+        العدسة لها دور مباشر في بعض أنواع الجلوكوما!<br><br>
+        • <strong>Phacomorphic G</strong>: العدسة المنتفخة تسد الزاوية<br>
+        • <strong>Phacolytic G</strong>: البروتين المسرب يسد trabecular meshwork<br>
+        • الـ Hypermature cataract تسبب IOP مرتفع
+      </div>
+    </div>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-title" style="color:#185FA5">🎯 D.D. الفقدان التدريجي للرؤية (هام!)</div>
+      <div class="card-body">
+        — Cataract<br>
+        — Chronic open angle glaucoma<br>
+        — Corneal dystrophy<br>
+        — Macular degeneration<br>
+        — Optic atrophy<br>
+        — Diabetic retinopathy
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title" style="color:#993C1D">⚠️ نقطة مهمة: Colored Halos</div>
+      <div class="card-body">
+        الـ Colored halos موجودة في:<br>
+        • <strong>Immature cataract</strong> (cortical) → light scattering<br>
+        • <strong>Acute angle closure glaucoma</strong> → corneal edema<br><br>
+        الفرق: في الجلوكوما يصحبها ألم شديد
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="cataract" class="section">
+  <p class="section-title">Cataract — الملخص الكامل</p>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Congenital Cataract
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Definition:</strong> Lens opacity present at birth or shortly after.<br><br>
+      <strong>Causes:</strong>
+      <ul>
+        <li>Maternal malnutrition</li>
+        <li>Maternal infection (Rubella 1st trimester) → Total cataract</li>
+        <li>Deficient oxygenation (placenta praevia)</li>
+      </ul>
+      <strong>Symptoms (by mother):</strong> Defective vision, White pupil (leucocoria), Abnormal eye movements / nystagmus / squint<br><br>
+      <strong>Signs (by doctor):</strong> White reflex by torch, cataract by ophthalmoscopy<br><br>
+      <strong>Types:</strong> Anterior polar, Posterior polar, <span style="color:#185FA5"><strong>Lamellar (most common!)</strong></span>, Coronary, Sutural, Blue dot, Total<br><br>
+      <strong>Lamellar:</strong> Steering wheel appearance — Vitamin D deficiency → opaque fibers<br><br>
+      <strong>Complications:</strong> Bilateral → nystagmus | Unilateral → amblyopia & squint<br><br>
+      <strong>Management:</strong><br>
+      • Unilateral + affects vision → early surgery (avoid amblyopia)<br>
+      • Bilateral dense → early surgery | Bilateral partial → surgery at 2 years<br>
+      • Operative: Irrigation & Aspiration + posterior capsulotomy + anterior vitrectomy<br>
+      • Postop rehabilitation: &lt;2yr → contact lens/glasses | &gt;2yr → IOL<br>
+      • Occlusion therapy for amblyopia<br><br>
+      <span style="color:#A32D2D"><strong>⚠️ Total cataract (Rubella):</strong> Operation risky: cardiac anomaly (GA risk) + virus dormant 3 years → endophthalmitis</span>
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Senile Cataract
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Definition:</strong> Bilateral, gradual, progressive lens opacity in elderly (no local/systemic disease)<br>
+      <strong>Incidence:</strong> Age &gt;50, males = females, bilateral<br><br>
+      <strong>Etiology (4D + 1E):</strong>
+      <ul>
+        <li>Disturbed capsular permeability</li>
+        <li>Disturbed pH around lens</li>
+        <li>Disturbance of metabolites (↓ vit. C & glutathione)</li>
+        <li>Disturbance of endocrine hormones</li>
+        <li>Exposure to UV rays</li>
+      </ul>
+      <strong>Pathogenesis:</strong> Lactic acid accumulation → ↓pH → proteases activation → protein breakdown → lens opacity<br>
+      Two changes: <strong>Hydration of cortex</strong> (water enters cortex → opaque) VS <strong>Sclerosis of nucleus</strong><br><br>
+      <hr style="margin:8px 0; border:none; border-top: 0.5px solid var(--color-border-tertiary);">
+      <strong>Types: Cortical | Nuclear | Corticonuclear</strong><br><br>
+      <strong>Senile Cortical — Stages:</strong>
+      <ul>
+        <li><strong>Immature:</strong> partially opaque, iris shadow +, fundus visible — Symptoms: gradual ↓VA, uniocular diplopia, colored halos</li>
+        <li><strong>Intumescent:</strong> hydration → swelling → shallow AC → phacomorphic glaucoma!</li>
+        <li><strong>Mature:</strong> totally opaque, iris shadow absent, RR absent, VA=HM</li>
+        <li><strong>Hypermature:</strong> shrinks (wrinkled capsule + cholesterol) | Morgagnian = nucleus sinks in milky fluid → IOP↑ (phacolytic G)</li>
+      </ul>
+      <strong>Senile Nuclear:</strong> &gt;40 yrs, UV → photo-oxidation → brown pigment. Grades 1-4 (yellowish → brown → red → black = cataracta nigra). No hypermature stage!<br><br>
+      <strong>Examination:</strong> Torchlight | Slit-lamp | Red reflex
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Complicated & Traumatic Cataract
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Complicated Cataract</strong> = opacity due to local or systemic disease. Posterior cortex affected first.<br>
+      <strong>Local causes:</strong> Chronic iridocyclitis, Long-standing RD, <span style="color:#993C1D">Glaucoma</span>, Retinitis pigmentosa, Degenerative myopia, Intraocular tumors, Drugs (corticosteroids, pilocarpine, adrenaline)<br>
+      <strong>Systemic:</strong> Diabetes (snow flake OR presenile cataract), Hypoparathyroidism, Galactosemia, Irradiation, Naphthalene, Steroids, Chlorpromazine, Ankylostoma infestation<br><br>
+      <strong>Traumatic Cataract:</strong><br>
+      • Perforation → direct damage<br>
+      • Retained IOFB: Iron → siderotic cataract | Copper → sunflower cataract<br>
+      • Blunt trauma → Vossius ring (iris pigment print on capsule)<br>
+      <strong>Management:</strong> Suture rupture → remove IOFB → cataract extraction
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Treatment of Cataract (Surgery)
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Indications:</strong> ↓VA + lens-induced complications (subluxated lens, phacolytic uveitis/glaucoma, phacomorphic glaucoma)<br><br>
+      <strong>Preoperative:</strong> Macular function test (two pinhole, projection of light, pupillary reaction) + IOP + US + ERG<br><br>
+      <strong>Surgical options:</strong><br>
+      • <strong>ICCE:</strong> entire lens + capsule removed<br>
+      • <strong>ECCE:</strong> 1. ECCE classic | 2. Phacoemulsification (40,000/sec ultrasonic) | 3. Phacolaser (erbium YAG)<br><br>
+      <strong>Complications:</strong><br>
+      Operative: vitreous loss, posterior lens fragment loss, suprachoroidal hemorrhage<br>
+      Early postop: iris prolapse, striate keratopathy, bacterial endophthalmitis<br>
+      Late postop: capsular opacification (PCO → YAG laser capsulotomy), implant displacement, corneal decompensation, retinal detachment<br><br>
+      <strong>After Cataract:</strong> Opacity in papillary area after operation or trauma. YAG laser capsulotomy if thick.
+    </div>
+  </div>
+</div>
+
+<div id="glaucoma" class="section">
+  <p class="section-title">Glaucoma — الملخص الكامل</p>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Aqueous Dynamics + Definition
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Definition:</strong> Progressive optic neuropathy + characteristic visual field defect where IOP is an important risk factor.<br><br>
+      <strong>Aqueous production:</strong> Ciliary body processes (non-pigmented epithelium)<br>
+      <strong>Drainage:</strong> Trabecular meshwork (90%) → Schlemm's canal | Uveoscleral route | Iris root<br><br>
+      <strong>Optic disc damage theories:</strong> Mechanical | Vascular | Combined
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Congenital Glaucoma (Buphthalmos)
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Pathogenesis:</strong> 1. Persistent mesodermal membrane (Barakan) | 2. Trabeculodysgenesis<br><br>
+      <strong>Clinical picture:</strong><br>
+      Symptoms (by mother): Photophobia, Lacrimation, Blepharospasm → "Bull's eye"<br>
+      Signs: Cloudy cornea, Haab's striae, ↑corneal diameter, Scleral thinning, Deep AC, Iridodonesis, Cupping, ↑IOP, Axial myopia<br><br>
+      <strong>Examination under GA:</strong> Corneal diameter &gt;12mm, IOP, Cupping, Angle<br><br>
+      <strong>Management = SURGICAL</strong> (medical only adjunctive):<br>
+      • Goniotomy (Barkan knife) — if angle visible<br>
+      • Trabeculotomy (trabeculotome) — if angle not visible<br>
+      • Trabeculectomy
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      POAG — Primary Open Angle Glaucoma
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Most common type of glaucoma!</strong><br>
+      Mostly <strong>asymptomatic</strong> — accidentally discovered.<br><br>
+      <strong>Risk factors:</strong> Age &gt;50, Female, Black race, Myopia, Family history<br><br>
+      <strong>Diagnosis (all 4 required):</strong>
+      <ul>
+        <li>↑ IOP</li>
+        <li>Open, normal-appearing anterior chamber angle (gonioscopy)</li>
+        <li>Characteristic optic disc damage (cupping)</li>
+        <li>Visual function loss on perimetry</li>
+      </ul>
+      <strong>Treatment:</strong> Anti-glaucoma medications first → laser (trabeculoplasty) → trabeculectomy / shunt (Ahmed valve)
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      PACG — Acute Angle Closure Glaucoma
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      <strong>Risk factors:</strong> Hyperopia, FH, Age &gt;60, Female, Asian/Inuit, Shallow AC, Shorter axial length, Thicker lens<br>
+      <strong>Precipitating (mid-dilated pupil):</strong> Anxiety, Prone position, TV in dim light, Mydriatics<br><br>
+      <strong>Pathogenesis:</strong> Iris bombe (most common!) | Iris crowding (rare)<br>
+      Aqueous builds up → forward bowing of iris → closes angle → sharp ↑IOP<br><br>
+      <strong>Stages:</strong>
+      <div class="timeline" style="margin-top:8px">
+        <div class="tl-item"><div class="tl-dot tl-dot-blue"></div><div class="tl-title">1. Prodromal</div></div>
+        <div class="tl-item"><div class="tl-dot tl-dot-coral"></div><div class="tl-title">2. Acute (Acute Congestive Glaucoma)</div><div class="tl-body">Ophthalmic emergency! IOP &gt;50 mmHg, acute pain, N&V, halos, markedly ↓VA, cloudy cornea</div></div>
+        <div class="tl-item"><div class="tl-dot tl-dot-amber"></div><div class="tl-title">3. Chronic</div></div>
+        <div class="tl-item"><div class="tl-dot tl-dot-red"></div><div class="tl-title">4. Absolute</div></div>
+        <div class="tl-item"><div class="tl-dot tl-dot-gray"></div><div class="tl-title">5. Atrophic</div></div>
+      </div>
+      <br>
+      <strong>Treatment of Acute Attack:</strong><br>
+      Hospitalize → supine position → Acetazolamide 500mg oral → Timolol 0.5% + Prednisolone 1% drops → Pilocarpine 2% → Analgesic + Antiemetic<br>
+      If not responding → 50% glycerol oral / 20% Mannitol IV<br><br>
+      After 48h (gonioscopy):<br>
+      • PAS &lt;50% → LPI (Laser Peripheral Iridotomy)<br>
+      • PAS &gt;50% → Trabeculectomy<br>
+      • LPI in fellow eye prophylactically
+    </div>
+  </div>
+
+  <div class="accordion">
+    <div class="accordion-header" onclick="toggleAcc(this)">
+      Visual Field Defects in Glaucoma
+      <i class="ti ti-chevron-down accordion-icon" aria-hidden="true"></i>
+    </div>
+    <div class="accordion-body">
+      ترتيب من الأخف للأشد:<br>
+      <ul>
+        <li>Generalised depression of sensitivity</li>
+        <li>Isolated paracentral scotoma</li>
+        <li>Seidel's scotoma</li>
+        <li>Roenne's nasal step</li>
+        <li>Arcuate scotoma</li>
+        <li>Double arcuate (ring) scotoma</li>
+        <li>Tubular field (tunnel vision)</li>
+        <li>Temporal island of vision</li>
+        <li>Total field loss</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="shared" class="section">
+  <p class="section-title">الأمور المشتركة والروابط المهمة</p>
+
+  <div class="connection-box">
+    <strong>Lens-induced Glaucoma (الرابط الأهم!)</strong><br>
+    العدسة نفسها ممكن تسبب الجلوكوما بأكتر من طريقة:
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-title"><span class="tag tag-coral">Phacomorphic Glaucoma</span> <span class="badge badge-amber">Closed angle</span></div>
+      <div class="card-body">
+        <strong>المصدر:</strong> Intumescent cataract (cortical)<br>
+        <strong>الآلية:</strong> العدسة تتنتفخ → تدفع الـ iris للأمام → تضيق زاوية الـ AC → angle closure<br>
+        <strong>ملاحظة:</strong> يطلع في Immature stage
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-coral">Phacolytic Glaucoma</span> <span class="badge badge-amber">Open angle</span></div>
+      <div class="card-body">
+        <strong>المصدر:</strong> Hypermature cataract<br>
+        <strong>الآلية:</strong> البروتين بيترشح من العدسة → الـ macrophages تاكله → تسد الـ trabecular meshwork → IOP↑<br>
+        <strong>ملاحظة:</strong> أيضًا Phacotoxic uveitis
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-blue">Glaucoma causes Cataract</span></div>
+      <div class="card-body">
+        الجلوكوما نفسها تسبب Complicated cataract<br><br>
+        وكمان في Acute angle closure:<br>
+        <strong>Glaukomflecken</strong> = spots على الـ anterior lens capsule due to epithelial necrosis
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-teal">Colored Halos (في الاتنين!)</span></div>
+      <div class="card-body">
+        <strong>Cataract (immature):</strong> light scattering من خلال الـ opacities<br>
+        <strong>Acute angle closure G:</strong> corneal edema بتكسر الضوء<br><br>
+        <span style="color:#993C1D">الفرق: الجلوكوما → ألم شديد + IOP مرتفع جدًا</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-purple">Congenital (الاتنين!)</span></div>
+      <div class="card-body">
+        كلهم ممكن يكونوا congenital:<br>
+        • Congenital cataract → Lamellar most common<br>
+        • Congenital glaucoma (Buphthalmos) → surgical condition<br><br>
+        كلهم بيظهروا علامات على الأم لازم تلاحظها
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title"><span class="tag tag-amber">Risk factors مشتركة</span></div>
+      <div class="card-body">
+        <strong>Advanced age</strong> → ↑risk لكليهما<br>
+        <strong>Diabetes</strong> → cataract (diabetic/presenile) + neovascular G<br>
+        <strong>Steroids</strong> → posterior subcapsular cataract + ↑IOP<br>
+        <strong>Family history</strong> → مهم في كليهما
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:14px; font-weight:500; color:var(--color-text-primary); margin:1rem 0 8px;">سؤال امتحانى محتمل: Patient with mature cataract develops ↑IOP</p>
+  <div class="connection-box">
+    <strong>الـ D.D.:</strong><br>
+    1. <strong>Phacolytic glaucoma</strong> (open angle) — hypermature cataract + leaking protein<br>
+    2. <strong>Phacomorphic glaucoma</strong> (closed angle) — intumescent cataract + angle closure<br>
+    الفرق بالـ gonioscopy: open angle vs closed angle
+  </div>
+</div>
+
+<div id="compare" class="section">
+  <p class="section-title">جدول المقارنة: Immature vs Mature Cataract</p>
+  <table class="compare-table">
+    <tr><th class="feature"></th><th class="blue-h">Immature</th><th class="coral-h">Mature</th></tr>
+    <tr><td class="feature">VA</td><td>↓ to counting fingers</td><td>↓ to HM or PL</td></tr>
+    <tr><td class="feature">Lens</td><td>Partially opaque</td><td>Totally opaque</td></tr>
+    <tr><td class="feature">Iris shadow</td><td>Present ✓</td><td>Absent ✗</td></tr>
+    <tr><td class="feature">Fundus</td><td>May be visible</td><td>No fundus details</td></tr>
+    <tr><td class="feature">Red reflex</td><td>Black sectors on reddish bg</td><td>Absent</td></tr>
+  </table>
+
+  <p class="section-title" style="margin-top:1.5rem">POAG vs PACG</p>
+  <table class="compare-table">
+    <tr><th class="feature"></th><th class="blue-h">POAG</th><th class="coral-h">PACG (Acute)</th></tr>
+    <tr><td class="feature">Onset</td><td>Insidious / asymptomatic</td><td>Sudden / emergency</td></tr>
+    <tr><td class="feature">Pain</td><td>None</td><td>Severe / unbearable</td></tr>
+    <tr><td class="feature">Angle</td><td>Open</td><td>Closed</td></tr>
+    <tr><td class="feature">IOP</td><td>Mildly ↑</td><td>Very high &gt;50 mmHg</td></tr>
+    <tr><td class="feature">Cornea</td><td>Clear</td><td>Hazy / edematous</td></tr>
+    <tr><td class="feature">Halos</td><td>No</td><td>Yes (corneal edema)</td></tr>
+    <tr><td class="feature">Common in</td><td>Black, myopic, &gt;50y</td><td>Female, hyperopic, Asian, &gt;60y</td></tr>
+    <tr><td class="feature">1st treatment</td><td>Medications (topical)</td><td>Emergency medical + surgery</td></tr>
+  </table>
+
+  <p class="section-title" style="margin-top:1.5rem">Congenital Cataract vs Congenital Glaucoma</p>
+  <table class="compare-table">
+    <tr><th class="feature"></th><th class="blue-h">Congenital Cataract</th><th class="coral-h">Congenital Glaucoma</th></tr>
+    <tr><td class="feature">Key sign</td><td>White pupil (leucocoria)</td><td>Bull's eye, cloudy cornea</td></tr>
+    <tr><td class="feature">Corneal diameter</td><td>Normal</td><td>&gt;12 mm</td></tr>
+    <tr><td class="feature">IOP</td><td>Normal</td><td>↑↑</td></tr>
+    <tr><td class="feature">Haab's striae</td><td>Absent</td><td>Present</td></tr>
+    <tr><td class="feature">Mother's complaint</td><td>White pupil, squint</td><td>Photophobia, lacrimation, blepharospasm</td></tr>
+    <tr><td class="feature">Treatment</td><td>Surgery (I&A / lensectomy)</td><td>Surgery (goniotomy/trabeculotomy)</td></tr>
+  </table>
+</div>
+
+<div id="mnemo" class="section">
+  <p class="section-title">Mnemonics للحفظ</p>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter">5S</span><span class="word">& 2D — Risk Factors for Cataract</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      <strong>S</strong>enility | <strong>S</strong>unlight (UV) | <strong>S</strong>moking | <strong>S</strong>teroids | <strong>S</strong>ystemic diseases<br>
+      <strong>D</strong>eficiency (vit. A,C,E) | <strong>D</strong>iabetes
+    </div>
+  </div>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter">4D</span><span class="word">+ 1E — Etiology of Senile Cataract</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      <strong>D</strong>isturbed capsular permeability | <strong>D</strong>isturbed pH | <strong>D</strong>isturbance of metabolites | <strong>D</strong>isturbance of hormones | <strong>E</strong>xposure to UV
+    </div>
+  </div>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter" style="font-size:16px">POAG Diagnosis</span><span class="word">= 4 things كلهم لازم يكونوا موجودين</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      1. ↑ IOP<br>
+      2. Open angle (gonioscopy)<br>
+      3. Optic disc damage (cupping)<br>
+      4. Visual field loss (perimetry)
+    </div>
+  </div>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter" style="font-size:16px">Acute ACG Treatment</span><span class="word">= ATPPA + اتنين هيبرتونيك</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      <strong>A</strong>cetazolamide 500mg | <strong>T</strong>imolol 0.5% | <strong>P</strong>ilocarpine 2% | <strong>P</strong>rednisolone 1% | <strong>A</strong>nalgesic/Antiemetic<br>
+      If resistant: Glycerol 50% oral | Mannitol 20% IV
+    </div>
+  </div>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter" style="font-size:16px">Stages of PACG</span><span class="word">= 5 مراحل</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      <strong>P</strong>rodromal → <strong>A</strong>cute (emergency!) → <strong>C</strong>hronic → <strong>A</strong>bsolute → <strong>A</strong>trophic
+    </div>
+  </div>
+  <div class="mnemo-card">
+    <div style="margin-bottom:6px"><span class="letter" style="font-size:16px">Lens-induced Glaucoma</span><span class="word">= اتذكرهم كده</span></div>
+    <div style="font-size:13px; color:#3C3489; line-height:1.8">
+      <strong>Morphic</strong> = شكل العدسة اتغير (انتفخت) → angle closure (Phaco<strong>morphic</strong>)<br>
+      <strong>Lytic</strong> = العدسة اتحللت (protein leaked) → open angle (Phaco<strong>lytic</strong>)
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+function toggleAcc(header) {
+  const body = header.nextElementSibling;
+  const icon = header.querySelector('.accordion-icon');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  icon.classList.toggle('open', !isOpen);
+}
+</script>

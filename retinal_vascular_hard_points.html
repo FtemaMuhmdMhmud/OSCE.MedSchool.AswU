@@ -1,0 +1,512 @@
+
+<h2 class="sr-only">شرح النقاط الصعبة في Retinal Vascular Occlusion و ROP</h2>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans,system-ui);background:transparent}
+.page{padding:1.2rem 0}
+.tabs{display:flex;gap:6px;margin-bottom:1.4rem;flex-wrap:wrap}
+.tab{padding:7px 16px;border-radius:20px;border:0.5px solid var(--color-border-secondary);background:var(--color-background-secondary);color:var(--color-text-secondary);cursor:pointer;font-size:13px;font-weight:500;transition:all .15s}
+.tab.active{background:var(--color-background-primary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+.tab.t0.active{border-color:#EF4444;color:#7F1D1D}
+.tab.t1.active{border-color:#3B82F6;color:#1E3A8A}
+.tab.t2.active{border-color:#8B5CF6;color:#4C1D95}
+.section{display:none}
+.section.active{display:block}
+.card{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.1rem 1.3rem;margin-bottom:.9rem}
+.card-head{display:flex;align-items:center;gap:10px;margin-bottom:.85rem;cursor:pointer;user-select:none}
+.card-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.card-title{font-size:14.5px;font-weight:500;color:var(--color-text-primary);flex:1}
+.chevron{color:var(--color-text-tertiary);transition:transform .2s;font-size:16px}
+.chevron.open{transform:rotate(180deg)}
+.card-body{font-size:13.5px;color:var(--color-text-secondary);line-height:1.7}
+.card-body.hidden{display:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:.7rem 0}
+.row.three{grid-template-columns:1fr 1fr 1fr}
+.box{background:var(--color-background-secondary);border-radius:8px;padding:.75rem .9rem;border:0.5px solid var(--color-border-tertiary)}
+.box-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-tertiary);margin-bottom:4px}
+.box-val{font-size:13px;color:var(--color-text-primary);line-height:1.5;font-weight:500}
+.box-sub{font-size:12px;color:var(--color-text-secondary);margin-top:2px;font-weight:400}
+.tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:12px;border:0.5px solid;font-weight:500;margin:.15rem .1rem}
+.tag-r{background:#FEF2F2;color:#7F1D1D;border-color:#FCA5A5}
+.tag-b{background:#EFF6FF;color:#1E3A8A;border-color:#93C5FD}
+.tag-g{background:#F0FDF4;color:#14532D;border-color:#86EFAC}
+.tag-y{background:#FEFCE8;color:#78350F;border-color:#FDE68A}
+.tag-p{background:#F5F3FF;color:#4C1D95;border-color:#C4B5FD}
+.tag-o{background:#FFF7ED;color:#7C2D12;border-color:#FDBA74}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:.7rem 0}
+.alert{background:var(--color-background-warning);border:0.5px solid var(--color-border-warning);border-radius:8px;padding:.6rem .9rem;font-size:13px;color:var(--color-text-warning);margin:.6rem 0;display:flex;gap:8px;align-items:flex-start}
+.alert.info{background:var(--color-background-info);border-color:var(--color-border-info);color:var(--color-text-info)}
+.alert.success{background:var(--color-background-success);border-color:var(--color-border-success);color:var(--color-text-success)}
+.alert.danger{background:var(--color-background-danger);border-color:var(--color-border-danger);color:var(--color-text-danger)}
+.compare-table{width:100%;border-collapse:collapse;font-size:12.5px;margin:.6rem 0}
+.compare-table th{background:var(--color-background-secondary);padding:6px 10px;text-align:left;font-weight:500;color:var(--color-text-secondary);border:0.5px solid var(--color-border-tertiary);font-size:11.5px}
+.compare-table td{padding:6px 10px;border:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);vertical-align:top;line-height:1.5}
+.compare-table tr:nth-child(even) td{background:var(--color-background-secondary)}
+.flow{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:.6rem 0}
+.flow-step{background:var(--color-background-secondary);border:0.5px solid var(--color-border-secondary);border-radius:6px;padding:4px 10px;font-size:12.5px;color:var(--color-text-primary);white-space:nowrap}
+.flow-arr{color:var(--color-text-tertiary);font-size:14px}
+.num{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;font-size:11px;font-weight:500;flex-shrink:0;margin-right:6px}
+.num-r{background:#FEE2E2;color:#7F1D1D}
+.num-b{background:#DBEAFE;color:#1E3A8A}
+.num-p{background:#EDE9FE;color:#4C1D95}
+ul.pts{list-style:none;padding:0}
+ul.pts li{padding:3px 0 3px 18px;position:relative;font-size:13.5px;color:var(--color-text-secondary);line-height:1.6}
+ul.pts li::before{content:"•";position:absolute;left:4px;color:var(--color-text-tertiary)}
+ul.pts li strong{color:var(--color-text-primary)}
+.section-head{font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;flex-shrink:0}
+</style>
+
+<div class="page">
+
+<div class="tabs">
+  <button class="tab t0 active" onclick="showTab(0)"><i class="ti ti-heart-broken" aria-hidden="true"></i> Arterial Occlusions</button>
+  <button class="tab t1" onclick="showTab(1)"><i class="ti ti-droplet" aria-hidden="true"></i> Venous Occlusions</button>
+  <button class="tab t2" onclick="showTab(2)"><i class="ti ti-baby-carriage" aria-hidden="true"></i> ROP</button>
+</div>
+
+<!-- ══════════ TAB 0 — ARTERIAL ══════════ -->
+<div class="section active" id="sec0">
+<div class="section-head"><span class="dot" style="background:#EF4444"></span>Retinal Arterial Occlusion — hard points</div>
+
+<!-- Card 1: CRAO vs BRAO -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#FEF2F2"><i class="ti ti-eye-off" style="color:#B91C1C;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">CRAO vs BRAO — key differences</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th>Feature</th><th>CRAO</th><th>BRAO</th></tr>
+      <tr><td>Frequency</td><td>57% of RAO</td><td>38% of RAO</td></tr>
+      <tr><td>Visual loss</td><td>Sudden, profound, painless — whole field</td><td>Sudden, painless — <strong>sectoral</strong> field loss</td></tr>
+      <tr><td>Vessels affected</td><td>All retinal branches</td><td>One distal branch (usually <strong>temporal</strong>)</td></tr>
+      <tr><td>RAPD</td><td><span class="tag tag-r">Present</span></td><td><span class="tag tag-y">Often present</span></td></tr>
+      <tr><td>Fundus</td><td>Yellow-white retina + Cherry Red Spot</td><td>Cloudy white sector + Cattle-trucking</td></tr>
+      <tr><td>Follow-up</td><td>3-4 wks × 2 monthly → detect NVI/rubeosis</td><td>3 months → detect retinal NVE</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Card 2: Cherry Red Spot explanation -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#FEF2F2"><i class="ti ti-circle-dot" style="color:#B91C1C;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">Why Cherry Red Spot? — the mechanism</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="flow">
+      <div class="flow-step">CRA occlusion</div><div class="flow-arr">→</div>
+      <div class="flow-step">Inner retina becomes oedematous & white</div><div class="flow-arr">→</div>
+      <div class="flow-step">Fovea has NO inner retinal layers</div><div class="flow-arr">→</div>
+      <div class="flow-step">Fovea stays red (choroid shows through)</div>
+    </div>
+    <div class="alert info" style="margin-top:.8rem">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>The fovea is avascular and thin — the underlying red choroid is visible through it. The surrounding white oedema makes it look like a <strong>cherry red spot</strong>. This sign disappears after 4-6 weeks as the retina atrophies.</span>
+    </div>
+    <div class="divider"></div>
+    <ul class="pts">
+      <li><strong>Late signs of CRAO:</strong> Optic atrophy + vessel narrowing/sheathing + RPE changes</li>
+      <li><strong>Cattle-trucking / box-carring:</strong> Segmentation of blood column in arterioles — a dynamic sign seen early</li>
+      <li><strong>2% of CRAO eyes:</strong> Develop Disc / Retinal Neovascularisation</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Card 3: FA findings — high-yield -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#FEF2F2"><i class="ti ti-flask" style="color:#B91C1C;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">FA findings — sensitivity vs specificity (exam favourite)</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="box">
+        <div class="box-label" style="color:#15803D">Highest Sensitivity</div>
+        <div class="box-val">Delay in A-V transit time</div>
+        <div class="box-sub">Most common FA finding — seen even with partial occlusion</div>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color:#1D4ED8">Highest Specificity</div>
+        <div class="box-val">Delay in retinal arterial filling</div>
+        <div class="box-sub">Confirms the arterial side is specifically blocked</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <ul class="pts">
+      <li><strong>OCT:</strong> Highly reflective emboli plaque within superficial nerve head</li>
+      <li><strong>ERG:</strong> Diminished "b" wave (inner retina ischaemia) with <strong>normal "a" wave</strong> (photoreceptors intact — outer retina OK)</li>
+      <li>Selective "b" wave reduction = classic ERG of CRA occlusion — distinguishes from RD where both waves reduced</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Card 4: Cilioretinal artery -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#FEF2F2"><i class="ti ti-artboard" style="color:#B91C1C;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">Cilioretinal artery — why it matters in CRAO</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="box"><div class="box-label">Present in</div><div class="box-val">~30% of eyes</div></div>
+      <div class="box"><div class="box-label">Origin</div><div class="box-val">Posterior ciliary circulation (NOT the CRA)</div></div>
+      <div class="box"><div class="box-label">FA timing</div><div class="box-val">Fills 1-2 sec BEFORE retinal arteries</div></div>
+    </div>
+    <div class="alert success" style="margin-top:.8rem">
+      <i class="ti ti-check" aria-hidden="true"></i>
+      <span>When CRAO occurs AND a cilioretinal artery is patent → <strong>central vision is preserved</strong>. The macular region stays perfused by the ciliary circulation. This gives MUCH better visual prognosis. Isolated cilioretinal artery occlusion can co-occur with CRVO.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 5: Emergency treatment -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#FEF2F2"><i class="ti ti-urgent" style="color:#B91C1C;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">CRAO treatment — emergency steps to memorise</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="alert danger">
+      <i class="ti ti-alert-triangle" aria-hidden="true"></i>
+      <span>Effective only within <strong>24 hours</strong> of onset. Goal = dislodge embolus distally + re-establish retinal perfusion before infarction is irreversible.</span>
+    </div>
+    <div class="divider"></div>
+    <div class="row three">
+      <div class="box"><div class="box-label">Ocular</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Supine posture</li>
+          <li>Ocular massage</li>
+          <li>AC paracentesis</li>
+          <li>Topical: apraclonidine + timolol</li>
+          <li>IV Acetazolamide 500mg</li>
+        </ul>
+      </div>
+      <div class="box"><div class="box-label">Vasodilation</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Sublingual isosorbide dinitrate</li>
+          <li>Rebreathing / Carbogen (CO2 vasodilates)</li>
+          <li>Hyperosmotic agents (Mannitol, Glycerol)</li>
+          <li>Nd:YAG laser embolysis (selected)</li>
+        </ul>
+      </div>
+      <div class="box"><div class="box-label">Systemic</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Stop smoking</li>
+          <li>Anti-platelet therapy</li>
+          <li>Warfarin if AF</li>
+          <li>Carotid endarterectomy if >70% stenosis</li>
+          <li>Rule out GCA (ESR, CRP)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end sec0 -->
+
+<!-- ══════════ TAB 1 — VENOUS ══════════ -->
+<div class="section" id="sec1">
+<div class="section-head"><span class="dot" style="background:#3B82F6"></span>Retinal Venous Occlusion — hard points</div>
+
+<!-- Card 1: CRVO types comparison -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#EFF6FF"><i class="ti ti-arrows-diff" style="color:#1D4ED8;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">Non-ischaemic vs Ischaemic CRVO — full comparison</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th>Feature</th><th>Non-Ischaemic (75%)</th><th>Ischaemic (25%)</th></tr>
+      <tr><td>Visual loss</td><td>Mild-moderate, painless</td><td>Severe (CF or worse), usually painless</td></tr>
+      <tr><td>RAPD</td><td>Absent or mild</td><td><span class="tag tag-r">Present</span></td></tr>
+      <tr><td>Haemorrhages</td><td>Flame-shaped at periphery</td><td>Severe, mostly at posterior pole</td></tr>
+      <tr><td>CWS</td><td>Present</td><td>Prominent</td></tr>
+      <tr><td>Disc swelling</td><td>Mild</td><td>Moderate-severe</td></tr>
+      <tr><td>FA non-perfusion</td><td>&lt;10 disc areas</td><td><span class="tag tag-r">≥10 disc areas</span></td></tr>
+      <tr><td>Main complication</td><td>50% regain some vision</td><td><span class="tag tag-r">100-day NVG</span></td></tr>
+      <tr><td>Conversion risk</td><td colspan="2">15% convert to ischaemic by 4 months; 34% by 3 years</td></tr>
+    </table>
+    <div class="alert" style="margin-top:.8rem">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>Non-ischaemic CRVO can silently convert → recheck FA at every visit. The CVOS study defined ischaemic threshold as <strong>≥10 disc areas</strong> of capillary non-perfusion.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2: 100-day glaucoma -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#EFF6FF"><i class="ti ti-clock-alert" style="color:#1D4ED8;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">100-day glaucoma — mechanism + management</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="flow">
+      <div class="flow-step">Ischaemic CRVO</div><div class="flow-arr">→</div>
+      <div class="flow-step">Massive VEGF release</div><div class="flow-arr">→</div>
+      <div class="flow-step">NVI (iris neovascularisation)</div><div class="flow-arr">→</div>
+      <div class="flow-step">ANV (angle neovascularisation)</div><div class="flow-arr">→</div>
+      <div class="flow-step">NVG (~100 days)</div>
+    </div>
+    <div class="row" style="margin-top:.8rem">
+      <div class="box">
+        <div class="box-label" style="color:#7F1D1D">What CVOS study says</div>
+        <div class="box-sub" style="font-size:13px;color:var(--color-text-primary);margin-top:4px">Give PRP <strong>AFTER</strong> NVI/ANV develops — NOT prophylactically. Anti-VEGF then PRP 1500-3000 burns.</div>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color:#1D4ED8">Why NOT prophylactic PRP?</div>
+        <div class="box-sub" style="font-size:13px;color:var(--color-text-primary);margin-top:4px">CVOS showed prophylactic PRP did not reduce NVI incidence — only treat when neovascularisation appears.</div>
+      </div>
+    </div>
+    <div class="alert danger" style="margin-top:.7rem">
+      <i class="ti ti-alert-circle" aria-hidden="true"></i>
+      <span><strong>Key exam point:</strong> Follow ischaemic CRVO monthly for anterior segment NVI — at 3 months initially. NVG = poor prognosis, requires urgent anti-VEGF + PRP.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3: BRVO pathogenesis + AV crossing -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#EFF6FF"><i class="ti ti-git-fork" style="color:#1D4ED8;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">BRVO — AV crossing anatomy + pathogenesis</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <ul class="pts">
+      <li>Artery and vein share a <strong>common adventitial sheath</strong> at the crossing</li>
+      <li>In <strong>99% of BRVO</strong>, the artery lies ANTERIOR (in front of) the affected vein</li>
+      <li>Arteriosclerotic artery compresses the vein → turbulent flow → endothelial damage → thrombus</li>
+      <li><strong>&gt;50% of BRVO</strong> occur in the <strong>superotemporal</strong> quadrant</li>
+    </ul>
+    <div class="divider"></div>
+    <div class="flow">
+      <div class="flow-step">AV compression</div><div class="flow-arr">→</div>
+      <div class="flow-step">Venous obstruction</div><div class="flow-arr">→</div>
+      <div class="flow-step">↑ Venous pressure</div><div class="flow-arr">→</div>
+      <div class="flow-step">CMO + retinal ischaemia</div><div class="flow-arr">→</div>
+      <div class="flow-step">Possible NVE/NVI (8-10%)</div>
+    </div>
+    <div class="alert info" style="margin-top:.8rem">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>NVI + NVG are MUCH less common in BRVO than CRVO (2-3% at 3 years vs 100-day in ischaemic CRVO). Retinal NVE occurs in ~8%.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4: Treatment comparison -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#EFF6FF"><i class="ti ti-pill" style="color:#1D4ED8;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">RVO treatment — what, when, and evidence</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th>Treatment</th><th>Indication</th><th>Key evidence / note</th></tr>
+      <tr><td><strong>Anti-VEGF (Ranibizumab)</strong></td><td>CMO in CRVO/BRVO — VA worse than 6/9</td><td>Showed significant visual benefit (CRUISE/BRAVO trials)</td></tr>
+      <tr><td><strong>Intravitreal Dexamethasone implant</strong></td><td>CMO — all RVO types</td><td>Ozurdex — 6-month effect, watch for IOP rise</td></tr>
+      <tr><td><strong>Intravitreal Triamcinolone</strong></td><td>CMO</td><td>SCORE study: 25% improved ≥3 lines vs 7% control</td></tr>
+      <tr><td><strong>Grid Laser (CRVO)</strong></td><td>CMO in CRVO</td><td>CVOS: reduced oedema 31% at 1yr — did NOT improve VA → not first-line alone</td></tr>
+      <tr><td><strong>Sector PRP (BRVO)</strong></td><td>NVE/NVI in BRVO</td><td>400-500μm burns × 0.05sec, 1 burn-width spacing</td></tr>
+      <tr><td><strong>PRP (CRVO)</strong></td><td>NVI/ANV in ischaemic CRVO</td><td>1500-3000 burns — given AFTER NVI develops</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Card 5: Hemi-RVO + Combined -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#EFF6FF"><i class="ti ti-topology-complex" style="color:#1D4ED8;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">Hemi-RVO and Combined CRA+CRV occlusion</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="box">
+        <div class="box-label">Hemi-RVO</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Variant of CRVO (not BRVO)</li>
+          <li>Affects superior or inferior hemisphere</li>
+          <li>Can be ischaemic or non-ischaemic</li>
+          <li>NVD more common than BRVO</li>
+          <li>Ischaemic HRVO → manage as ischaemic CRVO</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color:#7F1D1D">Combined CRA+CRV Occlusion</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Causes similar to CRAO</li>
+          <li>Retrobulbar injection = 1/4 of cases</li>
+          <li>Features of BOTH entities</li>
+          <li><strong>80% develop Rubeosis + NVG</strong></li>
+          <li>Generally POOR visual prognosis</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end sec1 -->
+
+<!-- ══════════ TAB 2 — ROP ══════════ -->
+<div class="section" id="sec2">
+<div class="section-head"><span class="dot" style="background:#8B5CF6"></span>Retinopathy of Prematurity — hard points</div>
+
+<!-- Card 1: Pathophysiology -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#F5F3FF"><i class="ti ti-baby-carriage" style="color:#6D28D9;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">ROP pathophysiology — two-phase model</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="box" style="border-color:#C4B5FD">
+        <div class="box-label" style="color:#4C1D95">Phase 1 — Vaso-obliteration</div>
+        <div class="box-sub" style="font-size:13px;color:var(--color-text-primary);margin-top:4px">Premature birth → high O2 exposure → retinal vessels constrict and obliterate → avascular retina develops</div>
+      </div>
+      <div class="box" style="border-color:#C4B5FD">
+        <div class="box-label" style="color:#4C1D95">Phase 2 — Neovascularisation</div>
+        <div class="box-sub" style="font-size:13px;color:var(--color-text-primary);margin-top:4px">Avascular retina → ischaemia → VEGF overproduction → abnormal neovascularisation INTO vitreous → fibrovascular proliferation → RD</div>
+      </div>
+    </div>
+    <div class="divider"></div>
+    <div class="row three">
+      <div class="box"><div class="box-label">GA threshold</div><div class="box-val">&lt;32 weeks</div><div class="box-sub">Screen all; highest risk &lt;28 wks</div></div>
+      <div class="box"><div class="box-label">Birth weight</div><div class="box-val">&lt;1500 g</div><div class="box-sub">Highest risk &lt;1250 g</div></div>
+      <div class="box"><div class="box-label">Key trigger</div><div class="box-val">Supplemental O2</div><div class="box-sub">High concentration or prolonged duration</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 2: Zones -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#F5F3FF"><i class="ti ti-circle-dotted" style="color:#6D28D9;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">ROP Zones — definitions and clinical importance</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th>Zone</th><th>Definition</th><th>Risk level</th></tr>
+      <tr><td><strong>Zone I</strong></td><td>Circle centred on disc, radius = <strong>2× disc-to-fovea distance</strong> (most posterior)</td><td><span class="tag tag-r">Highest — worst prognosis</span></td></tr>
+      <tr><td><strong>Zone II</strong></td><td>Annulus from Zone I → equator nasally / circle tangential to nasal ora serrata</td><td><span class="tag tag-y">Intermediate</span></td></tr>
+      <tr><td><strong>Zone III</strong></td><td>Residual peripheral crescent temporal to Zone II</td><td><span class="tag tag-g">Lowest risk</span></td></tr>
+    </table>
+    <div class="alert info" style="margin-top:.7rem">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span><strong>Zone I disease</strong> — any stage + Plus = Type 1 ROP requiring immediate treatment. More aggressive, more likely to progress to Stage 4-5.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 3: Stages -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#F5F3FF"><i class="ti ti-stairs" style="color:#6D28D9;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">ROP Stages 1–5 — definitions in one place</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th>Stage</th><th>Finding</th><th>Key detail</th></tr>
+      <tr><td><span class="tag tag-g">1</span></td><td>Demarcation line</td><td>Flat white line between vascular &amp; avascular retina</td></tr>
+      <tr><td><span class="tag tag-y">2</span></td><td>Ridge</td><td>Elevated white/pink ridge — volume above retinal surface</td></tr>
+      <tr><td><span class="tag tag-o">3</span></td><td>Ridge + Extraretinal proliferation</td><td>Neovascularisation grows INTO the vitreous — can be mild, moderate, severe</td></tr>
+      <tr><td><span class="tag tag-r">4A</span></td><td>Partial RD — extrafoveal</td><td>Tractional or combined T-R detachment, fovea spared</td></tr>
+      <tr><td><span class="tag tag-r">4B</span></td><td>Partial RD — foveal</td><td>Fovea involved — significant visual impairment</td></tr>
+      <tr><td><span class="tag tag-r">5</span></td><td>Total RD</td><td>Funnel-shaped (open or closed) — very poor prognosis even with surgery</td></tr>
+    </table>
+    <div class="alert" style="margin-top:.7rem">
+      <i class="ti ti-info-circle" aria-hidden="true"></i>
+      <span>Regression can occur at any stage (especially Stage 1-2). Cicatricial changes after regression: macular ectopia, straightening of vessels, dragged disc, vitreous membranes.</span>
+    </div>
+  </div>
+</div>
+
+<!-- Card 4: Plus Disease + Type 1/2 -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#F5F3FF"><i class="ti ti-plus" style="color:#6D28D9;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">Plus Disease — definition, importance, and Type 1 vs Type 2 ROP</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="box" style="border-color:#C4B5FD">
+        <div class="box-label" style="color:#4C1D95">Plus Disease = active, aggressive disease</div>
+        <ul class="pts" style="margin-top:4px">
+          <li><strong>Posterior pole arteriolar tortuosity</strong></li>
+          <li><strong>Venous dilatation</strong></li>
+          <li>Must be present in <strong>≥2 quadrants</strong></li>
+          <li>"Pre-Plus" = borderline changes (not quite Plus)</li>
+          <li>Indicates high VEGF and rapid progression risk</li>
+        </ul>
+      </div>
+      <div class="box">
+        <div class="box-label" style="color:#7F1D1D">Type 1 ROP → TREAT</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Zone I — <strong>any stage + Plus</strong></li>
+          <li>Zone I — Stage 3 (with or without Plus)</li>
+          <li>Zone II — Stage 2 or 3 <strong>+ Plus</strong></li>
+        </ul>
+        <div class="divider"></div>
+        <div class="box-label" style="color:#B45309;margin-top:8px">Type 2 ROP → Watch closely</div>
+        <ul class="pts" style="margin-top:4px">
+          <li>Zone I — Stage 1 or 2, no Plus</li>
+          <li>Zone II — Stage 3, no Plus</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Card 5: Treatment -->
+<div class="card">
+  <div class="card-head" onclick="toggle(this)">
+    <div class="card-icon" style="background:#F5F3FF"><i class="ti ti-laser" style="color:#6D28D9;font-size:16px" aria-hidden="true"></i></div>
+    <span class="card-title">ROP treatment — laser vs anti-VEGF + surgery</span>
+    <i class="ti ti-chevron-down chevron open" aria-hidden="true"></i>
+  </div>
+  <div class="card-body">
+    <table class="compare-table">
+      <tr><th></th><th>Laser Ablation</th><th>Intravitreal Anti-VEGF (Bevacizumab / Ranibizumab)</th></tr>
+      <tr><td>Target</td><td>Avascular peripheral retina</td><td>Suppresses VEGF-driven neovascularisation</td></tr>
+      <tr><td>Advantage</td><td>Standard of care, permanent effect</td><td>Better for Zone I / posterior disease, office-based</td></tr>
+      <tr><td>Disadvantage</td><td>Destroys peripheral retina permanently, difficult in Zone I</td><td>Risk of recurrence — requires close follow-up; systemic absorption</td></tr>
+      <tr><td>Best for</td><td>Zone II-III disease</td><td>Zone I aggressive disease, AP-ROP</td></tr>
+    </table>
+    <div class="divider"></div>
+    <ul class="pts">
+      <li><strong>Stage 4-5:</strong> Vitreoretinal surgery — scleral buckling (Stage 4A/4B) or vitrectomy (Stage 5)</li>
+      <li><strong>AP-ROP</strong> (Aggressive Posterior ROP): rapidly progressive, Zone I or posterior Zone II, Plus disease — treat urgently</li>
+      <li><strong>Treatment window:</strong> 72 hours is ideal; maximum benefit within 2 weeks of diagnosis</li>
+    </ul>
+  </div>
+</div>
+
+</div><!-- end sec2 -->
+
+</div>
+
+<script>
+function showTab(n){
+  document.querySelectorAll('.section').forEach((s,i)=>s.classList.toggle('active',i===n));
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',i===n));
+}
+function toggle(head){
+  const body=head.parentElement.querySelector('.card-body');
+  const ch=head.querySelector('.chevron');
+  const hidden=body.classList.toggle('hidden');
+  if(ch)ch.classList.toggle('open',!hidden);
+}
+</script>
