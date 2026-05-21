@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ophthalmology Written Exam — Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0d1117; --surface:#161b22; --surface2:#1c2230; --border:#30363d;
+  --accent:#c9a84c; --accent2:#e8c87a; --text:#e6edf3; --muted:#8b949e;
+  --blue:#58a6ff; --red:#e05c5c;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Source Serif 4',Georgia,serif;font-size:16px;line-height:1.7;}
+.site-header{background:linear-gradient(135deg,#0d1117 0%,#1a1f2e 50%,#0d1117 100%);border-bottom:2px solid var(--accent);padding:3rem 2rem 2.5rem;text-align:center;position:relative;overflow:hidden;}
+.site-header::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(201,168,76,0.12) 0%,transparent 70%);pointer-events:none;}
+.site-header h1{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,5vw,3rem);font-weight:900;color:var(--accent2);line-height:1.2;position:relative;}
+.site-header p{color:var(--muted);font-style:italic;margin-top:.6rem;position:relative;}
+.toc{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:2rem auto;max-width:900px;padding:1.5rem 2rem;}
+.toc h2{font-family:'Playfair Display',serif;color:var(--accent);font-size:1rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:.06em;}
+.toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:.3rem;}
+.toc a{color:var(--blue);text-decoration:none;font-size:.88rem;padding:.25rem .5rem;border-radius:5px;display:block;transition:background .2s,color .2s;}
+.toc a:hover{background:var(--surface2);color:var(--accent2);}
+.search-bar{margin:1.5rem auto;max-width:900px;padding:0 1.5rem;}
+.search-bar input{width:100%;padding:.8rem 1.2rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Source Serif 4',serif;font-size:.95rem;outline:none;transition:border-color .2s;}
+.search-bar input:focus{border-color:var(--accent);}
+.search-bar input::placeholder{color:var(--muted);}
+.main{max-width:900px;margin:0 auto;padding:0 1.5rem 4rem;}
+.chapter{margin-bottom:2.5rem;border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);}
+.chapter-header{padding:1.2rem 1.8rem;display:flex;align-items:center;gap:1rem;cursor:pointer;user-select:none;border-bottom:1px solid var(--border);background:var(--surface2);transition:background .2s;}
+.chapter-header:hover{background:#222a3a;}
+.chapter-icon{font-size:1.5rem;min-width:2rem;text-align:center;}
+.chapter-header h2{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--accent2);flex:1;}
+.chapter-toggle{color:var(--muted);font-size:1.1rem;transition:transform .3s;}
+.chapter.open .chapter-toggle{transform:rotate(180deg);}
+.chapter-body{display:none;padding:1.5rem 1.8rem;}
+.chapter.open .chapter-body{display:block;}
+.qa-item{margin-bottom:1.8rem;padding-bottom:1.8rem;border-bottom:1px solid var(--border);}
+.qa-item:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.q-label{display:flex;align-items:flex-start;gap:.7rem;margin-bottom:.6rem;}
+.q-num{background:var(--accent);color:#000;font-family:'Playfair Display',serif;font-weight:700;font-size:.75rem;padding:.15em .55em;border-radius:4px;min-width:2rem;text-align:center;margin-top:.2rem;flex-shrink:0;}
+.q-text{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;color:var(--text);line-height:1.4;}
+.vip{color:var(--accent);font-size:.7rem;margin-left:.4em;font-weight:700;vertical-align:super;}
+.answer{background:var(--bg);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1rem 1.2rem;margin-top:.5rem;font-size:.95rem;}
+.answer h4{font-family:'Playfair Display',serif;color:var(--accent2);font-size:.88rem;font-weight:700;margin:.8rem 0 .3rem;text-transform:uppercase;letter-spacing:.06em;}
+.answer h4:first-child{margin-top:0;}
+.answer ul,.answer ol{padding-left:1.4rem;margin:.3rem 0;}
+.answer li{margin:.2rem 0;}
+.answer p{margin:.3rem 0;}
+.answer strong{color:var(--accent2);}
+.compare-table{width:100%;border-collapse:collapse;margin:.6rem 0;font-size:.85rem;}
+.compare-table th{background:var(--surface2);color:var(--accent2);padding:.5rem .7rem;border:1px solid var(--border);font-family:'Playfair Display',serif;text-align:left;}
+.compare-table td{padding:.4rem .7rem;border:1px solid var(--border);vertical-align:top;}
+.compare-table tr:nth-child(even) td{background:#111620;}
+footer{text-align:center;padding:2rem;color:var(--muted);font-size:.85rem;border-top:1px solid var(--border);}
+@media(max-width:600px){.chapter-body{padding:1rem;}.compare-table{font-size:.76rem;}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <h1>👁 Ophthalmology Written Exam<br>Complete Question Bank</h1>
+  <p>All chapters · Categorised · Model answers · <span style="color:var(--accent)">★ VIP</span> questions highlighted</p>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="searchInput" placeholder="🔍  Search any topic, condition or keyword…" oninput="filterContent()">
+</div>
+
+<nav class="toc">
+  <h2>Jump to chapter</h2>
+  <div class="toc-grid">
+    <a href="#lid">🫦 Eyelid</a>
+    <a href="#lacrimal">💧 Lacrimal System</a>
+    <a href="#orbit">🔭 Orbit / Proptosis</a>
+    <a href="#conj">🔴 Conjunctiva</a>
+    <a href="#cornea">🔬 Cornea</a>
+    <a href="#uvea">🌀 Uvea / Iridocyclitis</a>
+    <a href="#lens">💎 Crystalline Lens</a>
+    <a href="#glaucoma">⚡ Glaucoma</a>
+    <a href="#retina">🌐 Retina</a>
+    <a href="#strab">👀 Strabismus</a>
+    <a href="#neuro">🧠 Neuro-Ophthalmology</a>
+    <a href="#optic">🔍 Optic Nerve</a>
+    <a href="#trauma">🆘 Eye Injuries</a>
+  </div>
+</nav>
+
+<main class="main" id="mainContent">
+<!-- EYELID -->
+<section class="chapter open" id="lid">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🫦</span><h2>Eyelid</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Microscopic anatomy of the eyelid <span class="vip">VIP★</span></span></div>
+<div class="answer">
+<h4>Layers (anterior → posterior)</h4>
+<ul>
+<li><strong>Skin</strong> — thinnest in body, no subcutaneous fat</li>
+<li><strong>Subcutaneous areolar tissue</strong> — loose, allows rapid oedema</li>
+<li><strong>Muscle layer</strong> — Orbicularis oculi (closure, CN VII)</li>
+<li><strong>Submuscular areolar tissue</strong></li>
+<li><strong>Fibrous layer</strong> — Tarsal plate + orbital septum; contains Meibomian glands</li>
+<li><strong>Smooth muscle</strong> — Müller's muscle (sympathetic, 2 mm lift)</li>
+<li><strong>Conjunctiva</strong> — posterior-most, palpebral portion</li>
+</ul>
+<h4>Special glands</h4>
+<ul>
+<li><strong>Meibomian glands</strong> — sebaceous, in tarsal plate → lipid layer of tear film</li>
+<li><strong>Glands of Zeis</strong> — modified sebaceous at lash follicles</li>
+<li><strong>Glands of Moll</strong> — modified sweat glands at lid margin</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Classification of ptosis</span></div>
+<div class="answer">
+<ul>
+<li><strong>Neurogenic</strong> — 3rd nerve palsy (complete + dilated pupil), Horner syndrome (partial + miosis)</li>
+<li><strong>Myogenic</strong> — Myasthenia gravis (fatigable), CPEO, myotonic dystrophy</li>
+<li><strong>Aponeurotic</strong> — Senile/involutional (most common in adults), post-surgical, post-traumatic</li>
+<li><strong>Mechanical</strong> — lid oedema, tumour, dermatochalasis</li>
+<li><strong>Congenital</strong> — levator aponeurosis dysgenesis (most common overall)</li>
+<li><strong>Pseudoptosis</strong> — phthisis bulbi, small globe, hypotropia</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Causes of ptosis <span class="vip">★</span></span></div>
+<div class="answer">
+<p>Based on the classification above — key causes to memorise:</p>
+<ul>
+<li>Congenital levator dystrophy</li>
+<li>Involutional/aponeurotic (most common in adults)</li>
+<li>Myasthenia gravis — fatigable, variable, worse end of day, bilateral, Tensilon test +ve</li>
+<li>3rd nerve palsy — complete ptosis + dilated pupil + EOM palsy (eye down &amp; out)</li>
+<li>Horner syndrome — partial ptosis (2 mm) + miosis + anhidrosis + enophthalmos</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Causes (types) of blepharitis <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Anterior blepharitis</h4>
+<ul>
+<li><strong>Staphylococcal</strong> — hard collarette scales, ulcers at lash bases, madarosis</li>
+<li><strong>Seborrhoeic</strong> — soft greasy scales, associated seborrhoeic dermatitis</li>
+</ul>
+<h4>Posterior blepharitis (MGD)</h4>
+<ul>
+<li>Meibomian gland dysfunction → inspissated secretions → lipid-deficient tears → dry eye</li>
+<li>Rosacea-associated (most common underlying cause)</li>
+</ul>
+<h4>Management</h4>
+<p>Lid hygiene, warm compresses, topical antibiotics (chloramphenicol), oral doxycycline for MGD</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Fate of chalazion <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Spontaneous resolution</strong> (common in children, weeks–months)</li>
+<li><strong>Persistence</strong> as hard painless nodule (chronic lipogranuloma of Meibomian gland)</li>
+<li><strong>Secondary infection</strong> → internal hordeolum (acute, painful, pointing inward)</li>
+<li><strong>Skin breakdown</strong> → external pointing + granuloma polyposum</li>
+<li><strong>Recurrence</strong> at same or different site</li>
+<li><strong>Sebaceous cell carcinoma</strong> — if recurrent/atypical → always biopsy!</li>
+</ul>
+<p><em>Treatment: Hot compresses first → if &gt;4 weeks → Incision &amp; Curettage (I&amp;C)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Disorders of lashes</span></div>
+<div class="answer">
+<ul>
+<li><strong>Trichiasis</strong> — normal follicle position but lash grows inward → corneal abrasion (trachoma, blepharitis)</li>
+<li><strong>Distichiasis</strong> — extra row of lashes from Meibomian orifices (congenital or acquired e.g. SJS)</li>
+<li><strong>Madarosis</strong> — loss of lashes (leprosy, alopecia, SLE, severe blepharitis)</li>
+<li><strong>Poliosis</strong> — white lashes (VKH, sympathetic ophthalmia, vitiligo)</li>
+<li><strong>Trichomegaly</strong> — abnormally long lashes (HIV, cyclosporine, bimatoprost)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">DD of lagophthalmos (incomplete lid closure)</span></div>
+<div class="answer">
+<ul>
+<li><strong>7th nerve (facial) palsy</strong> — Bell's palsy, parotid tumour, mastoiditis (commonest)</li>
+<li><strong>Proptosis/exophthalmos</strong> — mechanical inability to close (thyroid eye disease)</li>
+<li><strong>Lid scarring</strong> — post-chemical burn, trachoma, pemphigoid</li>
+<li><strong>Post-blepharoplasty</strong> — over-resection of skin</li>
+<li><strong>Nocturnal lagophthalmos</strong> — incomplete closure during sleep</li>
+<li><strong>Symblepharon</strong></li>
+</ul>
+<p><em>Consequence: exposure keratopathy → ulceration. Rx: lubricants, lid taping, tarsorrhaphy</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">DD of bilateral ptosis</span></div>
+<div class="answer">
+<ul>
+<li>Myasthenia gravis (most important to exclude)</li>
+<li>Congenital bilateral ptosis</li>
+<li>CPEO (chronic progressive external ophthalmoplegia)</li>
+<li>Myotonic dystrophy</li>
+<li>Blepharophimosis syndrome</li>
+<li>Bilateral involutional/aponeurotic ptosis</li>
+<li>Bilateral dermatochalasis (pseudoptosis)</li>
+<li>Bilateral 3rd nerve palsies (rare)</li>
+</ul>
+</div></div>
+
+</div></section>
+
+<!-- LACRIMAL -->
+<section class="chapter" id="lacrimal">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">💧</span><h2>Lacrimal System</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Components of the lacrimal system</span></div>
+<div class="answer">
+<h4>Secretory apparatus</h4>
+<ul>
+<li><strong>Main lacrimal gland</strong> — in lacrimal fossa, superotemporal orbit; secretes reflex tears</li>
+<li><strong>Accessory glands of Krause &amp; Wolfring</strong> — in fornices; basic/basal secretors</li>
+<li><strong>Goblet cells</strong> (conjunctiva) — mucin layer</li>
+<li><strong>Meibomian glands</strong> — lipid/oily layer (prevents evaporation)</li>
+</ul>
+<h4>Drainage (nasolacrimal apparatus)</h4>
+<ol>
+<li>Lacrimal puncta (upper &amp; lower) → canaliculi → common canaliculus → Lacrimal sac → Nasolacrimal duct → Inferior meatus of nose</li>
+</ol>
+<p><em>Valve of Hasner — at NLD opening; failure to open at birth → CNLDO</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">DD of epiphora (watering eye) <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>A — Hypersecretion (increased tear production)</h4>
+<ul>
+<li>Reflex: corneal FB, trichiasis, blepharitis, conjunctivitis, uveitis, dry eye (paradoxical)</li>
+<li>Emotional</li>
+<li>Crocodile tears (aberrant 7th nerve regeneration)</li>
+</ul>
+<h4>B — Outflow obstruction (lacrimal drainage failure)</h4>
+<ul>
+<li>Punctal ectropion / stenosis / atresia</li>
+<li>Canalicular obstruction (HSV, drugs: 5-FU, docetaxel; trauma)</li>
+<li>Dacryocystitis / Mucocoele</li>
+<li>CNLDO (congenital — valve of Hasner failure)</li>
+<li>NLD block (adult — idiopathic, rhinitis, sinus disease, trauma)</li>
+</ul>
+<p><em>Investigations: dye disappearance test, syringing &amp; probing, dacryocystography (DCG)</em></p>
+</div></div>
+
+</div></section>
+<!-- ORBIT -->
+<section class="chapter" id="orbit">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🔭</span><h2>Orbit / Proptosis</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Causes of proptosis</span></div>
+<div class="answer">
+<h4>Inflammatory</h4>
+<ul><li>Orbital cellulitis, orbital pseudotumour, thyroid eye disease (Graves')</li></ul>
+<h4>Vascular</h4>
+<ul><li>Carotid-cavernous fistula (pulsatile), orbital varix (intermittent), capillary/cavernous haemangioma</li></ul>
+<h4>Neoplastic</h4>
+<ul><li>Primary: dermoid cyst, lacrimal gland tumour, optic glioma, meningioma</li>
+<li>Secondary: metastases (breast, lung), direct extension from sinuses</li></ul>
+<h4>Endocrine</h4>
+<ul><li>Thyroid ophthalmopathy — commonest cause of bilateral proptosis in adults</li></ul>
+<h4>Traumatic</h4>
+<ul><li>Retrobulbar haemorrhage, orbital emphysema</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Classification of proptosis</span></div>
+<div class="answer">
+<ul>
+<li><strong>By side:</strong> Unilateral / Bilateral</li>
+<li><strong>By onset:</strong> Acute / Chronic / Intermittent</li>
+<li><strong>By direction:</strong> Axial (retrobulbar) / Non-axial (displaced sideways)</li>
+<li><strong>By pulsation:</strong> Pulsatile (CCF, encephalocele) / Non-pulsatile</li>
+<li><strong>By reducibility:</strong> Reducible (varix, intermittent) / Irreducible</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Clinical picture of dysthyroid (Graves') ophthalmopathy</span></div>
+<div class="answer">
+<ul>
+<li><strong>Lid signs:</strong> Lid retraction (Dalrymple), lid lag on downgaze (von Graefe), stare</li>
+<li><strong>Soft tissue:</strong> Periorbital oedema, chemosis, conjunctival injection</li>
+<li><strong>Proptosis:</strong> Bilateral, axial, non-pulsatile, non-reducible</li>
+<li><strong>EOM restriction:</strong> Inferior rectus most often → hypotropia, vertical diplopia</li>
+<li><strong>Cornea:</strong> Exposure keratopathy (lagophthalmos)</li>
+<li><strong>Optic nerve:</strong> Compressive optic neuropathy at orbital apex → visual loss</li>
+</ul>
+<p><em>NO Exophthalmos (note: proptosis and exophthalmos differ; exophthalmos = bilateral, endocrine)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Causes of enophthalmos <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li>Orbital blow-out fracture (floor/medial wall) — increased orbital volume</li>
+<li>Phthisis bulbi (shrunken, atrophic eye)</li>
+<li>Scirrhous breast cancer metastasis (fibrosis contracts orbit)</li>
+<li>Dehydration / cachexia (orbital fat loss)</li>
+<li>Post-orbital fat necrosis</li>
+<li>Horner syndrome (apparent enophthalmos — ptosis + miosis)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">DD of acute proptosis <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Acute inflammatory</h4>
+<ul>
+<li><strong>Orbital cellulitis</strong> — red, hot, painful, fever, restricted EOM, chemosis, visual threat</li>
+<li>Cavernous sinus thrombosis (bilateral, septic, very ill)</li>
+</ul>
+<h4>Acute traumatic</h4>
+<ul>
+<li><strong>Retrobulbar haemorrhage</strong> — ocular emergency → lateral canthotomy</li>
+<li>Orbital emphysema (crackling on palpation)</li>
+</ul>
+<h4>Acute vascular</h4>
+<ul>
+<li>Ruptured orbital varix (worsens with Valsalva)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">DD of painful proptosis</span></div>
+<div class="answer">
+<ul>
+<li>Orbital cellulitis</li>
+<li>Orbital pseudotumour (responds dramatically to steroids)</li>
+<li>Carotid-cavernous fistula (bruit, dilated episcleral veins)</li>
+<li>Retrobulbar haemorrhage</li>
+<li>Infected mucocoele</li>
+<li>Posterior scleritis</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">DD of bilateral proptosis</span></div>
+<div class="answer">
+<ul>
+<li>Thyroid eye disease (Graves') — commonest</li>
+<li>Lymphoma</li>
+<li>Bilateral orbital metastases</li>
+<li>Bilateral orbital cellulitis / cavernous sinus thrombosis</li>
+<li>Craniosynostosis (shallow orbits)</li>
+<li>Bilateral orbital pseudotumour</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">DD of pulsatile proptosis</span></div>
+<div class="answer">
+<ul>
+<li><strong>Carotid-cavernous fistula (CCF)</strong> — pulsatile, bruit audible, chemosis, dilated episcleral veins (commonest)</li>
+<li><strong>Encephalocele</strong> — bone defect posteriorly, soft, compressible, brain herniation (no bruit)</li>
+<li>AV malformation of orbit</li>
+<li>Aneurysm of ophthalmic artery</li>
+</ul>
+</div></div>
+
+</div></section>
+
+<!-- CONJUNCTIVA -->
+<section class="chapter" id="conj">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🔴</span><h2>Conjunctiva</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Classification of conjunctivitis</span></div>
+<div class="answer">
+<ul>
+<li><strong>Infective:</strong> Bacterial, Viral (adenovirus, HSV, EKC), Chlamydial (trachoma, inclusion conj.)</li>
+<li><strong>Allergic:</strong> SAC, PAC, VKC, AKC, GPC</li>
+<li><strong>Autoimmune:</strong> Ocular cicatricial pemphigoid, Stevens-Johnson syndrome</li>
+<li><strong>Toxic/Chemical</strong></li>
+<li><strong>Neonatal:</strong> Ophthalmia neonatorum</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Trachoma — CP, Complications, Treatment <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>MacCallan Classification</h4>
+<ul>
+<li><strong>Stage I:</strong> Early follicular hypertrophy (upper tarsal)</li>
+<li><strong>Stage IIa:</strong> Mature follicles (immature scarring)</li>
+<li><strong>Stage IIb:</strong> Follicles + papillae</li>
+<li><strong>Stage III:</strong> Follicles + scarring (Herbert's pits at limbus)</li>
+<li><strong>Stage IV:</strong> Healed (Arlt's line scar, no active inflammation)</li>
+</ul>
+<h4>Clinical picture</h4>
+<ul><li>Mucopurulent discharge, upper lid follicles, superior pannus, Herbert's pits</li></ul>
+<h4>Complications</h4>
+<ul>
+<li>Entropion → trichiasis → corneal ulcer → leucoma → blindness</li>
+<li>Dry eye (goblet cell destruction), symblepharon, ptosis, dacryocystitis</li>
+</ul>
+<h4>Treatment</h4>
+<ul>
+<li><strong>Medical:</strong> Azithromycin 1 g single oral dose OR Tetracycline eye ointment × 6 weeks</li>
+<li><strong>Surgical:</strong> Bilamellar tarsal rotation (BLTR) for trichiasis/entropion</li>
+<li><strong>WHO SAFE strategy:</strong> Surgery, Antibiotics, Facial cleanliness, Environmental improvement</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">DD of serpiginous corneal ulcer</span></div>
+<div class="answer">
+<ul>
+<li><strong>Streptococcus pneumoniae</strong> (80%) — typical serpiginous (creeping) hypopyon ulcer</li>
+<li>Moraxella liquefaciens (elderly, alcoholics)</li>
+<li>Staphylococcal keratitis</li>
+<li>Other Gram-positive cocci (atypical)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">DD of pannus <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Trachoma</strong> — superior pannus (most common)</li>
+<li>VKC (vernal keratoconjunctivitis)</li>
+<li>Phlyctenular keratoconjunctivitis</li>
+<li>Rosacea keratitis</li>
+<li>Superior limbic keratoconjunctivitis (SLK)</li>
+<li>Contact lens-related (contact lens-induced superior limbic keratoconjunctivitis)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">DD of follicular conjunctivitis</span></div>
+<div class="answer">
+<ul>
+<li>Viral conjunctivitis (adenovirus — most common)</li>
+<li>Chlamydial (trachoma, inclusion conjunctivitis)</li>
+<li>Molluscum contagiosum lid lesion</li>
+<li>Toxic/drug-induced (pilocarpine, neomycin, idoxuridine)</li>
+<li>Parinaud's oculoglandular syndrome</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">DD of papillae</span></div>
+<div class="answer">
+<ul>
+<li>VKC — giant cobblestone papillae (upper tarsal plate)</li>
+<li>GPC — giant papillary conjunctivitis (contact lens users)</li>
+<li>Bacterial conjunctivitis</li>
+<li>Allergic conjunctivitis (seasonal)</li>
+<li>Trachoma stage II</li>
+</ul>
+<p><em>Papillae = vascularised (central vessel); Follicles = avascular (lymphoid, no central vessel)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">DD of red eye <span class="vip">VIP★</span></span></div>
+<div class="answer">
+<table class="compare-table">
+<tr><th>Feature</th><th>Conjunctivitis</th><th>Iridocyclitis</th><th>Acute Glaucoma</th><th>Corneal Ulcer</th></tr>
+<tr><td>Pain</td><td>Gritty, mild</td><td>Deep aching</td><td>Severe + vomiting</td><td>Severe</td></tr>
+<tr><td>Vision</td><td>Normal</td><td>Blurred</td><td>Greatly reduced</td><td>Reduced</td></tr>
+<tr><td>Injection</td><td>Conjunctival</td><td>Ciliary</td><td>Ciliary + conj.</td><td>Ciliary</td></tr>
+<tr><td>Cornea</td><td>Clear</td><td>KPs, haze</td><td>Steamy/hazy</td><td>Ulcer visible</td></tr>
+<tr><td>Pupil</td><td>Normal</td><td>Small, irregular</td><td>Mid-dilated, fixed</td><td>Small (miosis)</td></tr>
+<tr><td>IOP</td><td>Normal</td><td>Low/normal</td><td>Very high (&gt;40)</td><td>Normal/low</td></tr>
+<tr><td>Discharge</td><td>Copious</td><td>None/watery</td><td>None</td><td>Purulent</td></tr>
+</table>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">DD of dry eye <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Aqueous-deficient dry eye</h4>
+<ul>
+<li>Sjögren syndrome (primary / secondary — RA, SLE)</li>
+<li>Non-Sjögren: aging, lacrimal gland destruction (sarcoid, lymphoma, radiation)</li>
+</ul>
+<h4>Evaporative dry eye</h4>
+<ul>
+<li>Meibomian gland dysfunction (most common cause overall)</li>
+<li>Lagophthalmos, blink abnormality, contact lenses</li>
+</ul>
+<h4>Mucin-deficiency</h4>
+<ul><li>Chemical burn, SJS, vitamin A deficiency, trachoma</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">9</span><span class="q-text">DD of ocular discharge</span></div>
+<div class="answer">
+<ul>
+<li><strong>Purulent</strong> — bacterial conjunctivitis (Staph, Strep, Gonococcus)</li>
+<li><strong>Mucopurulent</strong> — chlamydial, bacterial</li>
+<li><strong>Watery/serous</strong> — viral, allergic</li>
+<li><strong>Mucoid (stringy)</strong> — VKC, dry eye</li>
+<li><strong>Bloody</strong> — gonococcal, trauma, haemorrhagic conjunctivitis (enterovirus 70)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">10</span><span class="q-text">Gross and minute anatomy of conjunctiva</span></div>
+<div class="answer">
+<h4>Gross anatomy</h4>
+<p>Palpebral (lines lids) → Fornices (superior &amp; inferior) → Bulbar (covers sclera to limbus)</p>
+<h4>Microscopic layers</h4>
+<ul>
+<li>Epithelium — stratified columnar with goblet cells (mucin secretors), more in fornix</li>
+<li>Substantia propria — Adenoid layer (lymphoid follicles) + Fibrous layer (vessels, nerves)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">11</span><span class="q-text">Membranous conjunctivitis <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>True membrane (bleeds when removed — necrotic epithelium)</h4>
+<ul>
+<li>Diphtheria (Corynebacterium diphtheriae)</li>
+<li>Stevens-Johnson syndrome</li>
+<li>β-haemolytic Streptococcus</li>
+</ul>
+<h4>Pseudomembrane (peels off cleanly without bleeding)</h4>
+<ul>
+<li>Adenoviral (EKC)</li>
+<li>Vernal keratoconjunctivitis</li>
+<li>Ligneous conjunctivitis</li>
+</ul>
+</div></div>
+
+</div></section>
+<!-- CORNEA -->
+<section class="chapter" id="cornea">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🔬</span><h2>Cornea</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Layers of cornea <span class="vip">★</span></span></div>
+<div class="answer">
+<ol>
+<li><strong>Epithelium</strong> — 5 layers, stratified squamous non-keratinised; regenerates from limbal stem cells</li>
+<li><strong>Bowman's membrane</strong> — modified stroma; <em>cannot regenerate</em> (leaves scar)</li>
+<li><strong>Stroma</strong> — 90% of thickness; regular collagen type I lamellae → transparency</li>
+<li><strong>Descemet's membrane</strong> — tough basement membrane of endothelium; can bulge out (descemetocele)</li>
+<li><strong>Endothelium</strong> — single layer of hexagonal cells; Na/K pump keeps cornea dehydrated; <em>cannot regenerate</em></li>
+</ol>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Classification of corneal conditions</span></div>
+<div class="answer">
+<ul>
+<li><strong>Congenital:</strong> megalocornea, microcornea, sclerocornea</li>
+<li><strong>Inflammatory:</strong> keratitis (bacterial, viral, fungal, protozoal, interstitial)</li>
+<li><strong>Degenerative:</strong> keratoconus, band keratopathy, Arcus senilis</li>
+<li><strong>Dystrophies:</strong> anterior, stromal, posterior</li>
+<li><strong>Trauma:</strong> abrasion, laceration, chemical burn</li>
+<li><strong>Opacities:</strong> nebula, macula, leucoma, leucoma adherent</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Bacterial corneal ulcer — PF, CP, Complications, Treatment <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Predisposing factors</h4>
+<ul>
+<li>Low immunity: DM, old age, malnutrition</li>
+<li>Loss of corneal sensation (5th nerve lesion, HSV)</li>
+<li>Dry eye, lagophthalmos</li>
+<li>Loss of intact corneal epithelium</li>
+</ul>
+<h4>Causative organisms</h4>
+<ul>
+<li>Bacterial: Pseudomonas (contact lens), Pneumococcus, Staph, Strep, Gonorrhoea</li>
+<li>Viral: HSV; Fungal: Aspergillus; Protozoal: Acanthamoeba</li>
+</ul>
+<h4>Clinical picture</h4>
+<p><strong>Symptoms:</strong> Pain, blepharospasm, photophobia, profuse lacrimation, poor vision</p>
+<p><strong>Signs:</strong> Lid oedema, conjunctival + ciliary injection, grey ulcer (loss of lustre), AC flare, hypopyon, muddy lens, miotic pupil</p>
+<h4>Complications</h4>
+<p><strong>Non-perforating:</strong> 2° iridocyclitis, 2° glaucoma, descemetocele, corneal opacities, keratectasia</p>
+<p><strong>Perforating:</strong> Leucoma adherent, anterior staphyloma, infections, ant. polar cataract, hypotony</p>
+<p><strong>Other:</strong> Complicated cataract, endophthalmitis</p>
+<h4>Treatment</h4>
+<p><strong>Local:</strong> Atropine 1% (cycloplegia) + Broad-spectrum AB (ciprofloxacin monotherapy OR fortified drops dual therapy) + Hot fomentation (no bandage in conjunctivitis)</p>
+<p><strong>General:</strong> Bed rest, avoid straining, systemic AB, Vitamins A &amp; C</p>
+<p><strong>Surgical:</strong> Cauterisation, conjunctival flap, paracentesis, therapeutic keratoplasty, tarsorrhaphy</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Causes of neurotrophic keratitis</span></div>
+<div class="answer">
+<ul>
+<li>Herpes simplex keratitis (most common)</li>
+<li>Herpes zoster ophthalmicus</li>
+<li>5th nerve lesion — tumours, trigeminal neuralgia surgery</li>
+<li>Leprosy, diabetes mellitus</li>
+<li>Riley-Day syndrome (familial dysautonomia)</li>
+<li>Chemical burns, contact lens overuse</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Causes of interstitial keratitis</span></div>
+<div class="answer">
+<ul>
+<li><strong>Syphilis</strong> — congenital (salmon patch, ghost vessels); commonest cause</li>
+<li>Tuberculosis</li>
+<li>Herpes simplex (disciform keratitis)</li>
+<li>Herpes zoster</li>
+<li>Leprosy, brucellosis, onchocerciasis</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Corneal dystrophies</span></div>
+<div class="answer">
+<ul>
+<li><strong>Anterior:</strong> Meesmann (epithelial), Reis-Bückler (Bowman's)</li>
+<li><strong>Stromal:</strong> Lattice (most common stromal), Granular, Macular</li>
+<li><strong>Posterior:</strong> Fuchs endothelial dystrophy (most common overall), PPMD, CHED</li>
+</ul>
+<p><em>All: bilateral, hereditary, progressive, avascular</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">Corneal opacities</span></div>
+<div class="answer">
+<ul>
+<li><strong>Nebula</strong> — faint; only seen with focal illumination at slit lamp</li>
+<li><strong>Macula</strong> — denser; visible with oblique illumination</li>
+<li><strong>Leucoma</strong> — dense white; visible in daylight, blocks vision</li>
+<li><strong>Leucoma adherent</strong> — leucoma with adherent prolapsed iris</li>
+<li><strong>Anterior staphyloma</strong> — ectatic (thinned) leucoma lined by uveal tissue; iris prolapsed</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">DD of photophobia</span></div>
+<div class="answer">
+<ul>
+<li>Corneal conditions: abrasion, ulcer, FB, keratitis</li>
+<li>Uveitis / iridocyclitis</li>
+<li>Acute angle-closure glaucoma</li>
+<li>Meningitis</li>
+<li>Congenital glaucoma (buphthalmos) + photophobia + epiphora triad</li>
+<li>Albinism (congenital)</li>
+<li>Migraine aura</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">9</span><span class="q-text">Causes of corneal transparency <span class="vip">★</span></span></div>
+<div class="answer">
+<h4>Epithelium</h4>
+<ul><li>Non-keratinised</li><li>Covered by smooth tear film</li></ul>
+<h4>Stroma</h4>
+<ul>
+<li>Regular arrangement of collagen bundles (lattice/destructive interference theory)</li>
+<li>Non-myelinated nerves</li>
+<li>Avascular, no lymphatics</li>
+</ul>
+<h4>Endothelium</h4>
+<ul><li>Endothelial pump maintains dehydration (cornea ~78% water)</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">10</span><span class="q-text">Causes of corneal ulcer (overview)</span></div>
+<div class="answer">
+<p>See Q3 for PF and organisms. Summary: bacterial (Pseudomonas, Pneumococcus), viral (HSV), fungal (Aspergillus), protozoal (Acanthamoeba). Source: contact lens, conjunctivitis, blepharitis, dacryocystitis.</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">11</span><span class="q-text">Types of viral corneal ulcers</span></div>
+<div class="answer">
+<h4>Herpes Simplex virus (HSV)</h4>
+<ul>
+<li>Dendritic ulcer — branching with <strong>terminal end bulbs</strong> (pathognomonic for HSV)</li>
+<li>Disciform keratitis — central disc-shaped stromal oedema (immune mediated)</li>
+</ul>
+<h4>Herpes Zoster (VZV)</h4>
+<ul>
+<li>Pseudo-dendritic ulcer — <strong>without</strong> terminal buds</li>
+<li>Crusting/coarse mucus plaques</li>
+<li>Neurotrophic ulcer</li>
+</ul>
+<h4>Others</h4>
+<ul><li>Limbal ulcer, trophic ulcer</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">12</span><span class="q-text">Treatment of Acanthamoeba corneal ulcer</span></div>
+<div class="answer">
+<ul>
+<li>Topical <strong>Brolene (propamidine isethionate)</strong> + <strong>Neomycin</strong></li>
+<li>Cycloplegics</li>
+<li>Therapeutic keratoplasty in resistant cases</li>
+</ul>
+<p><em>Prevention: avoid tap water with contact lenses, use proper lens solutions</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">13</span><span class="q-text">Complications of corneal ulcer <span class="vip">VIP★</span></span></div>
+<div class="answer">
+<h4>A — Non-perforating</h4>
+<ul>
+<li>Secondary iridocyclitis</li>
+<li>Secondary glaucoma</li>
+<li>Descemetocele</li>
+<li>Corneal opacities (nebula → macula → leucoma)</li>
+<li>Keratectasia</li>
+</ul>
+<h4>B — Perforating</h4>
+<ul>
+<li>Leucoma adherent (iris plugs perforation)</li>
+<li>Anterior staphyloma</li>
+<li>Infections (endophthalmitis)</li>
+<li>Anterior polar cataract</li>
+<li>Hypotony</li>
+</ul>
+<h4>C — Other</h4>
+<ul><li>Complicated cataract, endophthalmitis</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">14</span><span class="q-text">Hypopyon corneal ulcer — CP, complications, treatment</span></div>
+<div class="answer">
+<p><strong>Hypopyon</strong> = sterile pus layering in inferior AC (due to toxins from organisms)</p>
+<h4>Typical cause</h4>
+<p>Streptococcus pneumoniae → serpiginous (creeping) ulcer</p>
+<h4>Features</h4>
+<ul><li>Creeping ulcer edge, grey necrotic floor, hypopyon, severe pain, ciliary injection</li></ul>
+<h4>Treatment</h4>
+<p>Same as bacterial corneal ulcer (Q3). Hypopyon resolves with treatment of underlying ulcer.</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">15</span><span class="q-text">Dendritic corneal ulcer — CP &amp; treatment</span></div>
+<div class="answer">
+<h4>Clinical picture</h4>
+<ul>
+<li>FB sensation, watering, photophobia, reduced vision</li>
+<li>Branching dendritic ulcer with <strong>terminal end bulbs</strong></li>
+<li>Stains with fluorescein (green), rose bengal (red margins)</li>
+<li>Reduced corneal sensation</li>
+</ul>
+<h4>Treatment</h4>
+<ul>
+<li>Topical <strong>Acyclovir 3%</strong> ointment 5×/day × 14 days OR Ganciclovir gel</li>
+<li>Cycloplegic; <strong>Avoid topical steroids</strong> (worsen HSV)</li>
+<li>Surgical: debridement, therapeutic keratoplasty for non-healing/recurrent</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">16</span><span class="q-text">Keratoconus — CP &amp; treatment</span></div>
+<div class="answer">
+<h4>Clinical picture</h4>
+<ul>
+<li>Progressive central corneal ectasia → irregular myopic astigmatism → poor VA</li>
+<li>Munson sign (V-shaped lower lid deformity on downgaze)</li>
+<li>Fleischer ring (iron deposits at cone base — Kayser-Fleischer-like)</li>
+<li>Vogt striae (vertical stress lines in deep stroma)</li>
+<li>Acute hydrops (sudden stromal oedema from Descemet's rupture)</li>
+</ul>
+<h4>Treatment (stepwise)</h4>
+<ul>
+<li>Spectacles → Rigid gas-permeable (RGP) contact lenses → INTACS → Corneal collagen cross-linking (CXL) — halts progression → Keratoplasty (DALK or PK)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">17</span><span class="q-text">Causes of serpiginous corneal ulcer <span class="vip">VIP</span></span></div>
+<div class="answer">
+<p>See Q14 above. <strong>Pneumococcal (Streptococcus pneumoniae)</strong> is the classical causative organism in 80% of cases (typical/serpiginous pattern). Atypical: Staph, Strep, Moraxella.</p>
+</div></div>
+
+</div></section>
+<!-- UVEA -->
+<section class="chapter" id="uvea">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🌀</span><h2>Uvea / Iridocyclitis</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Anatomy of the uvea <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Three parts</h4>
+<ul>
+<li><strong>Iris</strong> — anterior; sphincter pupillae (parasympathetic, CN III) + dilator pupillae (sympathetic)</li>
+<li><strong>Ciliary body</strong> — pars plana (flat) + pars plicata (ciliary processes → aqueous production; ciliary muscle → accommodation)</li>
+<li><strong>Choroid</strong> — highly vascular; nourishes outer retinal layers; lies between RPE and sclera</li>
+</ul>
+<h4>Blood supply</h4>
+<p>Long &amp; short posterior ciliary arteries + anterior ciliary arteries (all from ophthalmic artery)</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Acute iridocyclitis — Causes, Complications, Treatment <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Causes</h4>
+<ul>
+<li>Idiopathic (most common)</li>
+<li>HLA-B27: ankylosing spondylitis, reactive arthritis, psoriatic arthritis, IBD</li>
+<li>Infectious: HSV, CMV, Toxoplasma, syphilis, TB, leprosy, Lyme</li>
+<li>Trauma, post-surgical</li>
+<li>Sarcoidosis</li>
+</ul>
+<h4>Clinical picture</h4>
+<p><strong>Symptoms:</strong> Pain, photophobia, lacrimation, blurred vision</p>
+<p><strong>Signs:</strong> Ciliary injection, KPs (keratic precipitates on endothelium), AC flare &amp; cells, miosis, posterior synechiae, low IOP</p>
+<h4>Complications</h4>
+<ul>
+<li>Posterior synechiae → seclusio / occlusio pupillae → iris bombé → secondary glaucoma</li>
+<li>Complicated cataract (posterior subcapsular)</li>
+<li>Band keratopathy (calcium in Bowman's)</li>
+<li>Phthisis bulbi (end-stage)</li>
+</ul>
+<h4>Treatment</h4>
+<ul>
+<li><strong>Cycloplegics</strong> (atropine 1%) — break/prevent synechiae, relieve ciliary spasm</li>
+<li><strong>Topical steroids</strong> (prednisolone acetate) — reduce inflammation</li>
+<li>Treat underlying cause</li>
+<li>Systemic immunosuppressants in refractory/systemic disease</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Types of iridectomy</span></div>
+<div class="answer">
+<ul>
+<li><strong>Peripheral iridectomy</strong> — breaks pupil block; used in AACG, iris bombé</li>
+<li><strong>Sector iridectomy</strong> — larger sector; old cataract technique, iris tumour</li>
+<li><strong>Optical iridectomy</strong> — central; improves vision by bypassing corneal opacity</li>
+<li><strong>Total iridectomy</strong> — entire iris; melanoma</li>
+<li><strong>Therapeutic iridectomy</strong> — prevents/treats iris bombé (occlusio pupillae)</li>
+<li><strong>Laser peripheral iridotomy (LPI)</strong> — non-surgical equivalent; preferred method</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Causes of haemorrhagic iridocyclitis / DD of hyphema <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Haemorrhagic iridocyclitis causes</h4>
+<ul>
+<li>Rubeosis iridis (NVI from DM, CRVO, CRAO)</li>
+<li>Fuchs heterochromic iridocyclitis</li>
+<li>Trauma</li>
+</ul>
+<h4>DD of hyphema</h4>
+<ul>
+<li>Blunt trauma (most common)</li>
+<li>Post-surgical (cataract, glaucoma)</li>
+<li>Rubeosis iridis</li>
+<li>Fuchs heterochromic iridocyclitis</li>
+<li>Haemophilia / bleeding disorders / anticoagulants</li>
+<li>Juvenile xanthogranuloma (children)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">DD of atrophia bulbi</span></div>
+<div class="answer">
+<ul>
+<li>End-stage untreated glaucoma</li>
+<li>Severe penetrating/perforating trauma</li>
+<li>Chronic severe uveitis</li>
+<li>Endophthalmitis</li>
+<li>Long-standing retinal detachment</li>
+<li>Radiation injury</li>
+</ul>
+<p><em>Phthisis bulbi = shrunken, calcified, non-functional, soft eye with low IOP</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Uveitis classification</span></div>
+<div class="answer">
+<ul>
+<li><strong>Anatomical (SUN Working Group):</strong> Anterior (iritis, iridocyclitis) / Intermediate (pars planitis) / Posterior (choroiditis, retinitis, vasculitis) / Panuveitis</li>
+<li><strong>Onset:</strong> Acute / Chronic / Recurrent</li>
+<li><strong>Morphology:</strong> Granulomatous (mutton-fat KPs, Busacca &amp; Koeppe nodules) / Non-granulomatous (fine KPs)</li>
+<li><strong>Aetiology:</strong> Infectious / Non-infectious / Masquerade syndrome</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">Treatment of hyphema</span></div>
+<div class="answer">
+<ul>
+<li>Bed rest + head elevation 30–45°</li>
+<li>Fox shield (no pressure patching)</li>
+<li>Topical steroid + cycloplegic</li>
+<li>Anti-fibrinolytic — tranexamic acid or aminocaproic acid (prevents rebleed)</li>
+<li>Monitor IOP; if elevated → anti-glaucoma drops (avoid pilocarpine)</li>
+<li>Surgical washout if: total hyphema, raised IOP uncontrolled, corneal blood staining</li>
+<li>Avoid aspirin/NSAIDs</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">Treatment of hyphema (from trauma chapter overlap)</span></div>
+<div class="answer"><p>See above (Q7). Identical management principles apply for traumatic hyphema.</p></div>
+</div>
+
+</div></section>
+
+<!-- LENS -->
+<section class="chapter" id="lens">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">💎</span><h2>Crystalline Lens</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Causes (types) of cataract</span></div>
+<div class="answer">
+<ul>
+<li><strong>Age-related (senile)</strong> — most common; nuclear, cortical, posterior subcapsular</li>
+<li><strong>Congenital</strong> — TORCH infections, rubella (pearly nuclear), galactosaemia, Lowe syndrome</li>
+<li><strong>Traumatic</strong> — blunt (Vossius ring, rosette cataract) or perforating</li>
+<li><strong>Complicated</strong> — intraocular disease: uveitis, glaucoma, RP, high myopia (PSC)</li>
+<li><strong>Metabolic</strong> — DM (snowflake), hypocalcaemia, Wilson's disease (sunflower)</li>
+<li><strong>Drug-induced</strong> — corticosteroids (PSC), chlorpromazine (anterior capsule), amiodarone</li>
+<li><strong>Radiation</strong> — X-ray, IR, UV (glass-blower)</li>
+<li><strong>Electric shock</strong></li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Layers of lens <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ol>
+<li><strong>Lens capsule</strong> — elastic basement membrane; thickest anteriorly at equator</li>
+<li><strong>Anterior subcapsular epithelium</strong> — metabolically active; source of new fibres</li>
+<li><strong>Cortex</strong> — recently formed fibres; more hydrated</li>
+<li><strong>Nucleus</strong> — oldest fibres; harder and yellower with age</li>
+</ol>
+<p><em>No posterior subcapsular epithelium. Avascular — nourished by aqueous humor.</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">DD of leucocoria (white pupil reflex)</span></div>
+<div class="answer">
+<ul>
+<li>Cataract (congenital or acquired)</li>
+<li><strong>Retinoblastoma</strong> — most important to exclude in children!</li>
+<li>PHPV (persistent hyperplastic primary vitreous)</li>
+<li>ROP (retinopathy of prematurity)</li>
+<li>Coats disease</li>
+<li>Toxocara endophthalmitis</li>
+<li>Retinal detachment</li>
+<li>Endophthalmitis</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Types of lens extraction</span></div>
+<div class="answer">
+<ul>
+<li><strong>ICCE</strong> — Intracapsular; entire lens + capsule removed; historical; AC IOL or aphakic glasses</li>
+<li><strong>ECCE</strong> — Extracapsular; nucleus expressed, cortex aspirated, posterior capsule left; PC IOL</li>
+<li><strong>Phacoemulsification</strong> — ultrasound fragmentation + aspiration; 2.75 mm incision; gold standard</li>
+<li><strong>Manual SICS</strong> — small incision; no phaco machine; used in resource-limited settings</li>
+<li><strong>FLACS</strong> — femtosecond laser-assisted; precise capsulotomy</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Causes of complicated cataract <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li>Chronic uveitis (anterior or posterior) — most common cause</li>
+<li>Retinitis pigmentosa (PSC)</li>
+<li>High myopia (nuclear)</li>
+<li>Glaucoma</li>
+<li>Intraocular tumours</li>
+<li>Long-standing retinal detachment</li>
+<li>Essential iris atrophy</li>
+</ul>
+<p><em>Typical appearance: posterior subcapsular cataract (PSC)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Causes of unilateral cataract</span></div>
+<div class="answer">
+<ul>
+<li>Trauma — most common cause of unilateral cataract</li>
+<li>Unilateral uveitis</li>
+<li>Unilateral high myopia</li>
+<li>PHPV</li>
+<li>Unilateral intraocular tumour</li>
+<li>Silicone oil (post retinal detachment surgery)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">DD of night blindness (nyctalopia)</span></div>
+<div class="answer">
+<ul>
+<li>Retinitis pigmentosa (most common)</li>
+<li>Vitamin A deficiency</li>
+<li>Congenital stationary night blindness (CSNB)</li>
+<li>Choroideraemia</li>
+<li>Gyrate atrophy</li>
+<li>Advanced glaucoma</li>
+<li>Pathological myopia</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">DD of day blindness (hemeralopia)</span></div>
+<div class="answer">
+<ul>
+<li>Cone dystrophy / achromatopsia (rods intact, no cones)</li>
+<li>Central corneal opacity</li>
+<li>Dense nuclear cataract (better in dim light as pupil dilates around opacity)</li>
+<li>Macular disease (cone-rich area)</li>
+<li>Albinism</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">9</span><span class="q-text">Abnormalities of anterior chamber</span></div>
+<div class="answer">
+<ul>
+<li><strong>Hyphaema</strong> — blood in AC (layer inferiorly)</li>
+<li><strong>Hypopyon</strong> — pus/WBCs in AC</li>
+<li><strong>AC flare &amp; cells</strong> — protein + WBCs in uveitis</li>
+<li><strong>Shallow AC</strong> — AACG, post-op wound leak, iris bombé</li>
+<li><strong>Deep AC</strong> — aphakia, high myopia</li>
+<li><strong>Angle recession</strong> — traumatic, risk of late glaucoma</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">10</span><span class="q-text">Glaucomas in lens disease (lenticular causes of 2° glaucoma) <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Phacomorphic</strong> — intumescent (swollen) lens → pupil block → AACG</li>
+<li><strong>Phacolytic</strong> — hypermature lens leaks proteins → macrophage TM blockage → OAG type</li>
+<li><strong>Phacoanaphylactic</strong> — immune response to lens proteins post-trauma/surgery</li>
+<li><strong>Lens particle glaucoma</strong> — retained cortex post-surgery blocks TM</li>
+<li><strong>Subluxation/dislocation</strong> — pupil block or direct TM obstruction</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">11</span><span class="q-text">Effect of blunt/perforating trauma on lens <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Blunt trauma</h4>
+<ul>
+<li>Vossius ring (iris pigment stamped on anterior lens capsule)</li>
+<li>Rosette/stellate cataract (posterior subcapsular)</li>
+<li>Subluxation or dislocation</li>
+</ul>
+<h4>Perforating trauma</h4>
+<ul>
+<li>Traumatic cataract (rapid, after capsule rupture → aqueous entry)</li>
+<li>Dislocation into AC or vitreous</li>
+<li>Risk of sympathetic ophthalmia</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">12</span><span class="q-text">Lens subluxation and dislocation</span></div>
+<div class="answer">
+<h4>Causes</h4>
+<ul>
+<li><strong>Marfan syndrome</strong> — upward &amp; temporal (most classic)</li>
+<li><strong>Homocystinuria</strong> — downward &amp; nasal</li>
+<li>Weill-Marchesani, hyperlysinaemia</li>
+<li>Blunt trauma</li>
+</ul>
+<h4>Complications</h4>
+<ul><li>Glaucoma, cataract, uveitis, diplopia (monocular), retinal detachment</li></ul>
+</div></div>
+
+</div></section>
+<!-- GLAUCOMA -->
+<section class="chapter" id="glaucoma">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">⚡</span><h2>Glaucoma</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Angle structures <span class="vip">VIP</span></span></div>
+<div class="answer">
+<p>From anterior → posterior (as seen on gonioscopy):</p>
+<ol>
+<li><strong>Schwalbe's line</strong> — peripheral end of Descemet's membrane</li>
+<li><strong>Trabecular meshwork (TM)</strong> — uveal, corneoscleral, and juxtacanalicular layers</li>
+<li><strong>Schlemm's canal</strong> — collects aqueous → collector channels → episcleral veins</li>
+<li><strong>Scleral spur</strong> — attachment of longitudinal ciliary muscle fibres</li>
+<li><strong>Ciliary body band</strong></li>
+<li><strong>Iris root</strong></li>
+</ol>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Acute congestive glaucoma (AACG) <span class="vip">VIP★</span></span></div>
+<div class="answer">
+<h4>Predisposing factors</h4>
+<ul><li>Hypermetropia (small eye, shallow AC, narrow angle), female, elderly, Asian, family history</li></ul>
+<h4>Precipitating factors</h4>
+<ul><li>Dim light (mydriasis), emotional stress, mydriatic drops, anticholinergics, general anaesthesia</li></ul>
+<h4>Clinical picture</h4>
+<p><strong>Symptoms:</strong> Severe unilateral pain, headache, nausea/vomiting, coloured halos (corneal oedema), rapidly falling vision</p>
+<p><strong>Signs:</strong> Ciliary + conjunctival injection, steamy oedematous cornea, mid-dilated fixed oval pupil (~6 mm), very high IOP (&gt;40 mmHg), shallow AC, closed angle on gonioscopy</p>
+<h4>Treatment (emergency)</h4>
+<ul>
+<li>IV acetazolamide (Diamox) 500 mg stat</li>
+<li>IV mannitol 20% (1 g/kg)</li>
+<li>Topical timolol 0.5% + pilocarpine 2–4%</li>
+<li>Analgesics, antiemetics</li>
+<li>Definitive: Laser peripheral iridotomy (LPI) or surgical PI when cornea clears</li>
+<li>Fellow eye: prophylactic LPI</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Treatment of open-angle glaucoma (OAG)</span></div>
+<div class="answer">
+<h4>Medical (stepwise)</h4>
+<ul>
+<li>Prostaglandin analogue (latanoprost 0.005%) — 1st line; increases uveoscleral outflow</li>
+<li>Beta-blockers (timolol) — decrease aqueous production</li>
+<li>Alpha-2 agonists (brimonidine)</li>
+<li>Carbonic anhydrase inhibitors (dorzolamide, brinzolamide; systemic: acetazolamide)</li>
+</ul>
+<h4>Laser</h4>
+<ul><li>SLT (selective laser trabeculoplasty) — increases TM outflow</li></ul>
+<h4>Surgery</h4>
+<ul>
+<li>Trabeculectomy (guarded filtration procedure) ± Mitomycin C</li>
+<li>Tube/shunt (Ahmed/Baerveldt valve) — refractory glaucoma</li>
+<li>MIGS (minimally invasive glaucoma surgery)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Causes of secondary ACG (SACG) &amp; secondary OAG (SOAG)</span></div>
+<div class="answer">
+<h4>Secondary ACG</h4>
+<ul>
+<li>Iris bombé (posterior synechiae → pupil block) → peripheral anterior synechiae</li>
+<li>Rubeosis iridis / Neovascular glaucoma</li>
+<li>Phacomorphic glaucoma (intumescent lens)</li>
+<li>Aqueous misdirection (malignant glaucoma)</li>
+</ul>
+<h4>Secondary OAG</h4>
+<ul>
+<li>Pseudoexfoliation syndrome (most common secondary OAG)</li>
+<li>Pigment dispersion syndrome</li>
+<li>Phacolytic</li>
+<li>Steroid-induced</li>
+<li>Uveitic glaucoma</li>
+<li>Angle recession (post-traumatic)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Causes of resistant (refractory) glaucoma</span></div>
+<div class="answer">
+<ul>
+<li>Neovascular glaucoma (rubeosis iridis — DM, CRVO, CRAO)</li>
+<li>Post-failed trabeculectomy (scarred bleb)</li>
+<li>Uveitic glaucoma</li>
+<li>Post-traumatic (angle recession)</li>
+<li>Congenital/childhood glaucoma after failed goniotomy</li>
+<li>Silicone oil-induced</li>
+<li>ICE syndrome</li>
+</ul>
+<p><em>Management: tube/shunt (Ahmed valve), cyclodestructive procedures (cyclodiode laser)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Causes of rapid diminution of vision</span></div>
+<div class="answer">
+<ul>
+<li>CRAO (central retinal artery occlusion) — painless, sudden, profound</li>
+<li>CRVO (ischaemic type)</li>
+<li>Vitreous haemorrhage</li>
+<li>Retinal detachment (macula-off)</li>
+<li>Acute angle-closure glaucoma</li>
+<li>Optic neuritis</li>
+<li>Anterior ischaemic optic neuropathy (AION)</li>
+<li>Wet AMD (sudden subfoveal haemorrhage)</li>
+<li>Retrobulbar haemorrhage</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">Visual field changes in glaucoma</span></div>
+<div class="answer">
+<ol>
+<li>Enlarged blind spot</li>
+<li>Seidel scotoma (teardrop extension of blind spot)</li>
+<li>Bjerrum (arcuate) scotoma — arcs around fixation from blind spot</li>
+<li>Roenne's nasal step (at horizontal meridian)</li>
+<li>Ring/double arcuate scotoma</li>
+<li>Central &amp; temporal islands — tunnel vision</li>
+<li>Complete field loss</li>
+</ol>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">Clinical picture of buphthalmos (congenital glaucoma)</span></div>
+<div class="answer">
+<ul>
+<li>Large cornea (&gt;13 mm in newborn), large eye (buphthalmos = ox eye)</li>
+<li>Haab's striae — horizontal breaks in Descemet's membrane</li>
+<li>Corneal oedema → photophobia, epiphora, blepharospasm (triad)</li>
+<li>High IOP, optic disc cupping</li>
+<li>Axial myopia (increased axial length)</li>
+</ul>
+<p><em>Treatment: goniotomy (first-line) or trabeculotomy, then trabeculectomy</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">9</span><span class="q-text">Lenticular causes of secondary glaucoma <span class="vip">VIP</span></span></div>
+<div class="answer">
+<p>Phacomorphic, phacolytic, phacoanaphylactic, lens particle, subluxation/dislocation — see Lens chapter Q10 for full details.</p>
+</div></div>
+
+</div></section>
+
+<!-- RETINA -->
+<section class="chapter" id="retina">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🌐</span><h2>Retina</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Layers of retina <span class="vip">VIP</span></span></div>
+<div class="answer">
+<p>10 layers (from outer/choroidal side → inner/vitreous side):</p>
+<ol>
+<li>Retinal pigment epithelium (RPE)</li>
+<li>Photoreceptor layer (outer &amp; inner segments of rods &amp; cones)</li>
+<li>External limiting membrane (zonulae adherentes)</li>
+<li>Outer nuclear layer (nuclei of photoreceptors)</li>
+<li>Outer plexiform layer (photoreceptor synapses with bipolar cells)</li>
+<li>Inner nuclear layer (bipolar, Müller, amacrine, horizontal cells)</li>
+<li>Inner plexiform layer (bipolar cells synapse with ganglion cells)</li>
+<li>Ganglion cell layer</li>
+<li>Nerve fibre layer (axons of ganglion cells → optic nerve)</li>
+<li>Internal limiting membrane</li>
+</ol>
+<p><em>Outer 4 layers nourished by choriocapillaris; inner 6 by central retinal artery</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Structures seen during fundus examination</span></div>
+<div class="answer">
+<ul>
+<li><strong>Optic disc:</strong> colour, margins, cup-to-disc ratio (normal ≤0.5), vessels</li>
+<li><strong>Blood vessels:</strong> A:V ratio (normal 2:3), crossing changes, calibre irregularity</li>
+<li><strong>Macula &amp; fovea:</strong> foveal reflex, pigmentation, exudates, haemorrhages</li>
+<li><strong>Peripheral retina:</strong> pigmentation, tears, detachment, lattice degeneration</li>
+<li><strong>Vitreous:</strong> floaters, haemorrhage, opacities</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Diabetic retinopathy — RF, stages, treatment</span></div>
+<div class="answer">
+<h4>Risk factors</h4>
+<ul><li>Duration of DM (most important), poor HbA1c control, hypertension, nephropathy, pregnancy, dyslipidaemia, anaemia</li></ul>
+<h4>ETDRS Classification</h4>
+<ul>
+<li><strong>NPDR:</strong> Mild (microaneurysms only) → Moderate → Severe (4-2-1 rule: haemorrhages in 4 quadrants OR venous beading in 2 quadrants OR IRMA in 1 quadrant)</li>
+<li><strong>PDR:</strong> NVD/NVE, vitreous haemorrhage, tractional retinal detachment</li>
+<li><strong>DMO/CSME:</strong> Clinically significant macular oedema at any stage</li>
+</ul>
+<h4>Treatment</h4>
+<ul>
+<li>Control DM, BP, lipids</li>
+<li>PRP (pan-retinal photocoagulation) — PDR, severe NPDR</li>
+<li>Anti-VEGF injections (bevacizumab, ranibizumab, aflibercept) — DMO</li>
+<li>Focal/grid laser — CSME</li>
+<li>PPV (pars plana vitrectomy) — non-clearing VH, TRD</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Classification of retinal conditions</span></div>
+<div class="answer">
+<ul>
+<li><strong>Vascular:</strong> CRAO, CRVO, branch occlusions, DR, hypertensive retinopathy</li>
+<li><strong>Degenerative:</strong> AMD (dry &amp; wet), RP, lattice degeneration, pathological myopia</li>
+<li><strong>Inflammatory:</strong> Toxoplasma, CMV retinitis, sarcoid, Birdshot</li>
+<li><strong>Detachment:</strong> Rhegmatogenous, tractional, exudative</li>
+<li><strong>Tumours:</strong> Retinoblastoma, choroidal melanoma, haemangioma, metastases</li>
+<li><strong>Hereditary dystrophies:</strong> RP, cone dystrophy, macular dystrophies (Stargardt, Best)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Hypertensive retinopathy</span></div>
+<div class="answer">
+<h4>Keith-Wagener-Barker classification</h4>
+<ul>
+<li><strong>Grade I:</strong> Mild arterial narrowing, increased A:V ratio, copper wire</li>
+<li><strong>Grade II:</strong> Arteriovenous nipping (Salus, Gunn signs), silver wire</li>
+<li><strong>Grade III:</strong> Grade II + flame haemorrhages, cotton-wool spots, hard exudates (macular star)</li>
+<li><strong>Grade IV:</strong> Grade III + disc oedema (papilloedema) — malignant hypertension, life-threatening</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">DD of RAPD (relative afferent pupillary defect)</span></div>
+<div class="answer">
+<ul>
+<li>Optic neuritis (MS, NMO)</li>
+<li>CRAO</li>
+<li>Ischaemic optic neuropathy (AION)</li>
+<li>Optic nerve trauma/compression</li>
+<li>Large/total retinal detachment</li>
+<li>Severe ischaemic CRVO</li>
+<li>Advanced glaucoma (unilateral)</li>
+<li>Optic nerve tumour/meningioma</li>
+</ul>
+<p><em>Detected by: swinging flashlight test → paradoxical dilation on affected side (Marcus Gunn pupil)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">DD of eye floaters</span></div>
+<div class="answer">
+<ul>
+<li>Posterior vitreous detachment (PVD) — Weiss ring (commonest benign cause in adults)</li>
+<li>Vitreous haemorrhage (reddish/dark floaters)</li>
+<li>Uveitis (inflammatory cells, pars planitis "snowballs")</li>
+<li>Asteroid hyalosis (calcium-lipid deposits, unilateral, no symptoms usually)</li>
+<li>Synchisis scintillans (cholesterol crystals)</li>
+<li>Retinal tear/detachment — new floaters + flashes = emergency</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">Diabetes and the eye <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Retina:</strong> Diabetic retinopathy (NPDR, PDR, DMO)</li>
+<li><strong>Lens:</strong> Early cataract (nuclear + PSC), snowflake cataract (young DM)</li>
+<li><strong>Iris:</strong> Rubeosis iridis → neovascular glaucoma</li>
+<li><strong>Cornea:</strong> Recurrent erosions, reduced sensation, delayed epithelial healing</li>
+<li><strong>Cranial nerves:</strong> 3rd, 6th nerve palsies (painful; 3rd in DM is pupil-sparing)</li>
+<li><strong>Refractive:</strong> Myopia (high sugar → swollen lens)</li>
+<li><strong>Glaucoma:</strong> Increased risk of POAG</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">9</span><span class="q-text">DD of cherry red spot</span></div>
+<div class="answer">
+<ul>
+<li><strong>CRAO</strong> — most common; white retinal oedema + cherry red at fovea (RPE/choroid showing through)</li>
+<li>Tay-Sachs disease (GM2 gangliosidosis)</li>
+<li>Niemann-Pick disease</li>
+<li>Sandhoff disease</li>
+<li>Metachromatic leukodystrophy</li>
+<li>Commotio retinae (traumatic, transient)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">10</span><span class="q-text">Causes of sudden loss of vision</span></div>
+<div class="answer">
+<ul>
+<li>CRAO — painless, sudden, profound (hand motion or less)</li>
+<li>CRVO (ischaemic type)</li>
+<li>Vitreous haemorrhage</li>
+<li>Retinal detachment (macula-off)</li>
+<li>Acute angle-closure glaucoma (painful)</li>
+<li>Optic neuritis (painful on movement)</li>
+<li>AION — painless, on waking</li>
+<li>Wet AMD sudden haemorrhage</li>
+<li>Retrobulbar haemorrhage</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">11</span><span class="q-text">Causes of gradual loss of vision</span></div>
+<div class="answer">
+<ul>
+<li>Cataract (most common cause of blindness worldwide)</li>
+<li>Glaucoma (open-angle — silent)</li>
+<li>Dry AMD</li>
+<li>Diabetic retinopathy (NPDR)</li>
+<li>Refractive error (uncorrected)</li>
+<li>Retinitis pigmentosa</li>
+<li>Optic atrophy</li>
+<li>Corneal opacity (trachoma)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">12</span><span class="q-text">Fundus picture of CRAO, CRVO, RP <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>CRAO</h4>
+<ul><li>Diffuse white (milky) retinal oedema + cherry red spot at fovea, boxcarring of arteries, pale disc eventually</li></ul>
+<h4>CRVO</h4>
+<ul><li>Disc oedema, haemorrhages in all 4 quadrants ("blood and thunder" fundus), dilated tortuous veins, cotton-wool spots, macular oedema</li></ul>
+<h4>Retinitis Pigmentosa (RP)</h4>
+<ul><li>Bone-spicule pigmentation in mid-periphery, attenuated arterioles, waxy pale disc; associated posterior subcapsular cataract</li></ul>
+</div></div>
+
+</div></section>
+<!-- STRABISMUS -->
+<section class="chapter" id="strab">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">👀</span><h2>Strabismus</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Classification of strabismus</span></div>
+<div class="answer">
+<ul>
+<li><strong>Latent (phoria):</strong> esophoria, exophoria, hyperphoria — controlled by fusion</li>
+<li><strong>Manifest (tropia):</strong> esotropia, exotropia, hypertropia — fusion broken</li>
+<li><strong>By onset:</strong> Congenital (infantile) / Acquired</li>
+<li><strong>By comitance:</strong> Comitant (equal angle all gazes) / Incomitant (paralytic — varies)</li>
+<li><strong>By direction:</strong> Horizontal / Vertical / Torsional</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Action &amp; nerve supply of extraocular muscles <span class="vip">★</span></span></div>
+<div class="answer">
+<table class="compare-table">
+<tr><th>Muscle</th><th>Primary action</th><th>Secondary</th><th>Nerve</th></tr>
+<tr><td>Medial rectus</td><td>Adduction</td><td>—</td><td>CN III</td></tr>
+<tr><td>Lateral rectus</td><td>Abduction</td><td>—</td><td>CN VI</td></tr>
+<tr><td>Superior rectus</td><td>Elevation</td><td>Intorsion, adduction</td><td>CN III</td></tr>
+<tr><td>Inferior rectus</td><td>Depression</td><td>Extorsion, adduction</td><td>CN III</td></tr>
+<tr><td>Superior oblique</td><td>Intorsion</td><td>Depression (in adduction), abduction</td><td>CN IV</td></tr>
+<tr><td>Inferior oblique</td><td>Extorsion</td><td>Elevation (in adduction), abduction</td><td>CN III</td></tr>
+</table>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Criteria of infantile esotropia</span></div>
+<div class="answer">
+<ul>
+<li>Onset before 6 months of age</li>
+<li>Large &amp; stable angle (&gt;30 PD)</li>
+<li>Equal/alternating fixation (no or minimal amblyopia)</li>
+<li>Cross-fixation (uses each eye for opposite visual field)</li>
+<li>Associated DVD (dissociated vertical deviation) in ~80%</li>
+<li>Inferior oblique overaction</li>
+<li>Latent nystagmus</li>
+</ul>
+<p><em>Treatment: correct any significant refractive error → surgery (bilateral medial rectus recession)</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">DD of amblyopia <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Strabismic</strong> — cortical suppression of deviating eye (most common)</li>
+<li><strong>Anisometropic</strong> — unequal refractive error between the two eyes</li>
+<li><strong>Ametropic</strong> — bilateral high refractive error (esp. hypermetropia)</li>
+<li><strong>Deprivation (stimulus)</strong> — congenital cataract, ptosis, corneal opacity (worst type)</li>
+<li><strong>Meridional</strong> — uncorrected astigmatism</li>
+</ul>
+<p><em>Critical period: birth–7–8 years. Treatment: correct cause + occlusion of fellow eye</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">DD of diplopia</span></div>
+<div class="answer">
+<h4>Monocular diplopia (persists with one eye covered)</h4>
+<ul><li>Uncorrected astigmatism, corneal irregularity, early cataract, lens subluxation</li></ul>
+<h4>Binocular diplopia (disappears on covering one eye)</h4>
+<ul>
+<li>CN III, IV, or VI palsy</li>
+<li>Thyroid eye disease (EOM restriction)</li>
+<li>Myasthenia gravis (variable, fatigable)</li>
+<li>Orbital blow-out fracture (inferior rectus entrapment)</li>
+<li>Decompensated phoria</li>
+<li>Internuclear ophthalmoplegia (MLF lesion)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Manifestations of 3rd, 4th, 6th nerve palsy</span></div>
+<div class="answer">
+<h4>3rd nerve (Oculomotor)</h4>
+<ul>
+<li>Complete ptosis, exotropia + hypotropia (eye down &amp; out), dilated fixed pupil</li>
+<li>DM → painful, pupil-sparing (ischaemia spares pupillary fibres on outside)</li>
+<li>Surgical → pupil-involving (compression: aneurysm/uncal herniation)</li>
+</ul>
+<h4>4th nerve (Trochlear)</h4>
+<ul>
+<li>Vertical diplopia worse on downgaze (reading)</li>
+<li>Hypertropia of affected eye</li>
+<li>Compensatory head tilt away from affected side</li>
+<li>Positive Bielschowsky head tilt test</li>
+</ul>
+<h4>6th nerve (Abducens)</h4>
+<ul>
+<li>Esotropia (medial deviation), inability to abduct</li>
+<li>Horizontal diplopia, worse looking toward affected side</li>
+<li>Compensatory head turn toward affected side</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">7</span><span class="q-text">Diagnosis of heterophoria <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Cover-uncover test</strong> — movement of eye on uncovering = phoria</li>
+<li><strong>Alternate cover test + prisms</strong> — quantifies the angle</li>
+<li><strong>Maddox rod test</strong> — dissociates eyes; patient sees line displaced from light dot</li>
+<li><strong>Maddox wing</strong> — measures near phoria</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">8</span><span class="q-text">Benefits of cover test</span></div>
+<div class="answer">
+<ul>
+<li>Detects manifest strabismus (tropia) — cover-uncover test</li>
+<li>Detects latent strabismus (phoria) — alternate cover test</li>
+<li>Identifies fixation preference and amblyopia</li>
+<li>Quantifies deviation (with prism bar)</li>
+<li>Assesses comitance (repeat in different gazes)</li>
+<li>Differentiates true strabismus from pseudostrabismus</li>
+</ul>
+</div></div>
+
+</div></section>
+
+<!-- NEURO-OPHTHALMOLOGY -->
+<section class="chapter" id="neuro">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🧠</span><h2>Neuro-Ophthalmology</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Abnormal pupillary reactions</span></div>
+<div class="answer">
+<ul>
+<li><strong>RAPD (Marcus Gunn pupil)</strong> — swinging flashlight → paradoxical dilation on affected side; afferent defect (optic nerve/retina)</li>
+<li><strong>Argyll Robertson pupil</strong> — small, irregular; accommodates but no direct/consensual light reflex; bilateral; syphilis (midbrain lesion)</li>
+<li><strong>Adie's tonic pupil</strong> — large; slow/absent light reflex; slow near response with redilation; denervation supersensitivity (dilute pilocarpine 0.1% constricts)</li>
+<li><strong>Horner syndrome</strong> — miosis + partial ptosis + anhidrosis + enophthalmos (apparent)</li>
+<li><strong>Hutchinson pupil</strong> — fixed dilated pupil from uncal herniation compressing CN III</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Causes of miosis &amp; mydriasis</span></div>
+<div class="answer">
+<h4>Miosis (small pupil)</h4>
+<ul>
+<li>Horner syndrome (unilateral)</li>
+<li>Pontine haemorrhage (bilateral, pinpoint)</li>
+<li>Argyll Robertson pupil (bilateral small)</li>
+<li>Drugs: pilocarpine, opiates, organophosphates</li>
+<li>Iridocyclitis (inflammatory miosis)</li>
+</ul>
+<h4>Mydriasis (large pupil)</h4>
+<ul>
+<li>3rd nerve palsy (dilated, fixed — surgical)</li>
+<li>Adie's tonic pupil</li>
+<li>Anticholinergics (atropine, tropicamide)</li>
+<li>Sympathomimetics (cocaine, adrenaline)</li>
+<li>AACG (mid-dilated, fixed, oval)</li>
+<li>Traumatic mydriasis (iris sphincter rupture)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">DD of RAPD</span></div>
+<div class="answer">
+<p>Causes of RAPD = causes of <strong>unilateral or significantly asymmetric afferent pathway lesion:</strong></p>
+<ul>
+<li>Optic neuritis (MS — most common in young adults)</li>
+<li>CRAO</li>
+<li>Ischaemic optic neuropathy (AION)</li>
+<li>Optic nerve trauma/compression</li>
+<li>Large/total retinal detachment</li>
+<li>Severe ischaemic CRVO</li>
+<li>Advanced unilateral glaucoma</li>
+<li>Optic nerve tumour</li>
+</ul>
+</div></div>
+
+</div></section>
+
+<!-- OPTIC NERVE -->
+<section class="chapter" id="optic">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🔍</span><h2>Optic Nerve</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Classification of optic disc/nerve conditions</span></div>
+<div class="answer">
+<ul>
+<li>Swollen disc: papilloedema, papillitis, AION, neuroretinitis</li>
+<li>Optic atrophy: primary, secondary, consecutive, glaucomatous</li>
+<li>Optic neuritis: retrobulbar, papillitis</li>
+<li>Optic neuropathy: ischaemic, compressive, toxic, hereditary (Leber's)</li>
+<li>Disc anomalies: coloboma, morning glory, drusen, hypoplasia</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">DD of optic disc swelling <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Bilateral (raised ICP = papilloedema)</h4>
+<ul>
+<li>Space-occupying lesion (tumour, abscess)</li>
+<li>Idiopathic intracranial hypertension (pseudotumour cerebri)</li>
+<li>Meningitis, encephalitis</li>
+<li>Venous sinus thrombosis</li>
+<li>Hydrocephalus</li>
+</ul>
+<h4>Unilateral causes</h4>
+<ul>
+<li>Papillitis (optic neuritis) — MS, viral</li>
+<li>AION (arteritic or non-arteritic)</li>
+<li>CRVO</li>
+<li>Neuroretinitis</li>
+<li>Orbital tumour compressing nerve</li>
+<li>Diabetic papillopathy</li>
+</ul>
+<h4>Pseudo-papilloedema</h4>
+<ul><li>Optic disc drusen, hypermetropia, myelinated nerve fibres</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Causes of optic atrophy / DD of RAPD <span class="vip">VIP</span></span></div>
+<div class="answer">
+<h4>Primary optic atrophy (no preceding swelling)</h4>
+<ul>
+<li>Toxic: methanol (most toxic!), tobacco-alcohol, ethambutol, quinine, chloramphenicol</li>
+<li>Hereditary: Leber's hereditary optic neuropathy (LHON — young males, mitochondrial), dominant optic atrophy</li>
+<li>Syphilis, demyelination (MS)</li>
+</ul>
+<h4>Secondary optic atrophy (follows disc swelling)</h4>
+<ul><li>Post-papilloedema, post-papillitis, post-AION</li></ul>
+<h4>Consecutive optic atrophy (from retinal disease)</h4>
+<ul><li>RP, CRAO, extensive chorioretinitis</li></ul>
+<h4>Glaucomatous optic atrophy</h4>
+<ul><li>Cupped disc + increased CDR + NFL defects</li></ul>
+<h4>Compressive</h4>
+<ul><li>Pituitary adenoma (bitemporal hemianopia), meningioma, optic canal fracture, thyroid eye disease</li></ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">DD of achromatopsia (colour blindness)</span></div>
+<div class="answer">
+<h4>Congenital</h4>
+<ul>
+<li>Red-green (most common; X-linked; Daltonism) — protanopia, deuteranopia</li>
+<li>Blue-yellow (tritan — autosomal dominant)</li>
+<li>Complete achromatopsia (rod monochromatism) — all colours absent, nystagmus, photophobia</li>
+</ul>
+<h4>Acquired</h4>
+<ul>
+<li>Macular disease → blue-yellow defect</li>
+<li>Optic nerve disease → red-green defect</li>
+<li>Advanced glaucoma</li>
+<li>Drugs: sildenafil (blue-yellow tinge), digoxin (yellow-green xanthopsia)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Differences between papilloedema &amp; papillitis <span class="vip">VIP</span></span></div>
+<div class="answer">
+<table class="compare-table">
+<tr><th>Feature</th><th>Papilloedema</th><th>Papillitis</th></tr>
+<tr><td>Definition</td><td>Disc swelling from raised ICP</td><td>Optic neuritis at disc</td></tr>
+<tr><td>Cause</td><td>Raised ICP (SOL, IIH, etc.)</td><td>MS, viral, demyelination</td></tr>
+<tr><td>Laterality</td><td>Bilateral</td><td>Usually unilateral</td></tr>
+<tr><td>Vision</td><td>Normal until late</td><td>Acutely and markedly reduced</td></tr>
+<tr><td>Pain</td><td>Headache (from raised ICP)</td><td>Pain on eye movement</td></tr>
+<tr><td>Pupils</td><td>Normal (bilateral)</td><td>RAPD on affected side</td></tr>
+<tr><td>Colour vision</td><td>Normal</td><td>Reduced (red-green defect)</td></tr>
+<tr><td>Visual field</td><td>Enlarged blind spot</td><td>Centrocaecal scotoma</td></tr>
+<tr><td>Prognosis</td><td>Depends on cause of raised ICP</td><td>Usually recovers in 6–8 weeks</td></tr>
+</table>
+</div></div>
+
+</div></section>
+
+<!-- TRAUMA -->
+<section class="chapter" id="trauma">
+<div class="chapter-header" onclick="toggleChapter(this)"><span class="chapter-icon">🆘</span><h2>Eye Injuries / Trauma</h2><span class="chapter-toggle">▼</span></div>
+<div class="chapter-body">
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">1</span><span class="q-text">Effects of blunt trauma (tennis ball injury) <span class="vip">★</span></span></div>
+<div class="answer">
+<h4>Adnexal</h4>
+<ul>
+<li>Periorbital ecchymosis (panda/raccoon eyes)</li>
+<li>Oedema, subcutaneous emphysema</li>
+<li>Infraorbital nerve anaesthesia (cheek numbness)</li>
+<li>Ophthalmoplegia (EOM restriction)</li>
+<li>Enophthalmos (if severe blow-out fracture)</li>
+<li>Blow-out fracture of orbital floor/medial wall</li>
+<li>Inferior rectus entrapment → vertical diplopia</li>
+</ul>
+<h4>Anterior segment</h4>
+<ul>
+<li>Corneal: abrasion, stromal oedema, traumatic hyphema</li>
+<li>Pupil: Vossius ring (iris pigment on lens), iridodialysis, traumatic mydriasis</li>
+<li>Lens: rosette/stellate cataract (PSC), subluxation, dislocation</li>
+</ul>
+<h4>Posterior segment</h4>
+<ul>
+<li>Commotio retinae (Berlin's oedema) — white retinal oedema peripherally</li>
+<li>Vitreous haemorrhage</li>
+<li>Retinal breaks and detachment (peripheral)</li>
+<li>Rupture globe (if severe)</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">2</span><span class="q-text">Management of chemical injuries <span class="vip">VIP★</span></span></div>
+<div class="answer">
+<h4>Symptoms</h4>
+<ul><li>Severe pain, blurring of vision, loss of vision</li></ul>
+<h4>Signs</h4>
+<ul><li>Corneal opacity/haziness, limbal ischaemia/blanching (worst prognostic sign), conjunctival chemosis</li></ul>
+<h4>Complications</h4>
+<ul>
+<li>Symblepharon, eyelid deformity, involutional trichiasis</li>
+<li>Severe corneal opacity, corneal ulceration</li>
+<li>Secondary glaucoma, phthisis</li>
+</ul>
+<h4>Treatment — Medical</h4>
+<ol>
+<li><strong>Copious irrigation</strong> with water/saline (15–30 min) — MOST URGENT STEP</li>
+<li>Topical steroids (7–10 days)</li>
+<li>Topical + systemic <strong>ascorbic acid</strong> (enhances collagen production)</li>
+<li>Topical <strong>citric acid</strong> (inhibits neutrophil chemotaxis)</li>
+<li>Topical + systemic <strong>tetracycline</strong> (inhibits collagenase &amp; neutrophil activity)</li>
+<li>Cycloplegia (cyclopentolate — improves comfort)</li>
+</ol>
+<h4>Treatment — Surgical</h4>
+<ul>
+<li>Re-establish fornices (symblepharon ring)</li>
+<li>Division of conjunctival bands</li>
+<li>Correction of eyelid deformity / trichiasis</li>
+<li>Keratoplasty / Keratoprosthesis</li>
+</ul>
+<p><em>Alkali burns worse than acid: saponification allows deeper penetration</em></p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">3</span><span class="q-text">Classification of eye injuries</span></div>
+<div class="answer">
+<ul>
+<li><strong>Mechanical:</strong> Blunt (closed globe) / Open globe: penetrating (single wound), perforating (entry + exit), IOFB</li>
+<li><strong>Chemical:</strong> Alkali (NaOH, lime) / Acid (sulphuric)</li>
+<li><strong>Radiation:</strong> UV (welder's flash, snow blindness), IR, X-ray, laser</li>
+<li><strong>Thermal</strong></li>
+<li><strong>Electrical</strong></li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">4</span><span class="q-text">Treatment of ruptured/perforated globe</span></div>
+<div class="answer">
+<ul>
+<li>Do NOT remove IOFB or apply pressure</li>
+<li>Rigid Fox shield (no pad)</li>
+<li>IV antibiotics (cefazolin + gentamicin) + analgesics + antiemetics</li>
+<li>Tetanus prophylaxis (if not up to date)</li>
+<li>Emergency surgical exploration and primary repair</li>
+<li>If irreparable and no vision potential: enucleation → prevents sympathetic ophthalmia</li>
+</ul>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">5</span><span class="q-text">Treatment of hyphema</span></div>
+<div class="answer">
+<p>Bed rest + head elevation 30–45° + Fox shield. Topical steroid + cycloplegic. Anti-fibrinolytic (tranexamic acid). Monitor IOP. Surgical washout if: total hyphema, uncontrolled IOP, corneal blood staining.</p>
+</div></div>
+
+<div class="qa-item">
+<div class="q-label"><span class="q-num">6</span><span class="q-text">Ocular emergencies <span class="vip">VIP</span></span></div>
+<div class="answer">
+<ul>
+<li><strong>Chemical injury</strong> — copious irrigation IMMEDIATELY (most urgent)</li>
+<li><strong>Retrobulbar haemorrhage</strong> — lateral canthotomy + inferior cantholysis</li>
+<li><strong>CRAO</strong> — within 90 minutes: digital massage, IOP lowering, carbogen inhalation</li>
+<li><strong>Acute angle-closure glaucoma</strong> — IV Diamox, mannitol, pilocarpine, LPI</li>
+<li><strong>Endophthalmitis</strong> — intravitreal antibiotics (vancomycin + ceftazidime) ASAP</li>
+<li><strong>Orbital cellulitis</strong> — IV antibiotics, surgical drainage of abscess</li>
+<li><strong>Ruptured globe</strong> — Fox shield + emergency surgical repair</li>
+<li><strong>Central retinal artery occlusion</strong></li>
+<li><strong>Carotid-cavernous fistula</strong> — urgent neurovascular intervention</li>
+</ul>
+</div></div>
+
+</div></section>
+
+</main>
+
+<footer>
+  👁 Ophthalmology Written Exam — Complete Guide &nbsp;|&nbsp; All chapters · Model answers · VIP questions marked &nbsp;|&nbsp; Good luck! 🍀
+</footer>
+
+<script>
+function toggleChapter(header){
+  const ch=header.parentElement;
+  ch.classList.toggle('open');
+}
+function filterContent(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  const items=document.querySelectorAll('.qa-item');
+  const chapters=document.querySelectorAll('.chapter');
+  if(!q){
+    items.forEach(i=>i.style.display='');
+    chapters.forEach(c=>{
+      c.style.display='';
+      c.querySelector('.chapter-body').style.display=c.classList.contains('open')?'block':'none';
+    });
+    return;
+  }
+  chapters.forEach(ch=>{
+    let match=false;
+    ch.querySelectorAll('.qa-item').forEach(item=>{
+      if(item.textContent.toLowerCase().includes(q)){item.style.display='';match=true;}
+      else item.style.display='none';
+    });
+    ch.style.display=match?'':'none';
+    if(match) ch.querySelector('.chapter-body').style.display='block';
+  });
+}
+</script>
+</body>
+</html>
